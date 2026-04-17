@@ -1,7 +1,10 @@
 # Sensitive / volatile
 templates/drafts/
+templates/replies/
+tracking/replies/
 scripts/secrets.json
 scripts/_Config.local.ps1
+Logs/
 *.log
 *.tmp
 
