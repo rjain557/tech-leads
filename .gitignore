@@ -9,6 +9,12 @@ Logs/
 *.log
 *.tmp
 
+# Client-portal knowledge base — contains client-identifying data
+tracking/kb/raw/
+tracking/kb/clients/
+tracking/kb/cache/
+# case-studies/ IS committed — it is industry-anonymized only
+
 # Playwright artifacts
 .playwright-mcp/
 playwright-report/

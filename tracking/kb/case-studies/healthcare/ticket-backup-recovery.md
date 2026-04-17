@@ -1,0 +1,17 @@
+# Healthcare — Backup Recovery (ticket-driven)
+
+- **Industry:** Healthcare
+- **Service theme:** backup-recovery
+- **Source:** 12-month ticket + time-entry data
+- **Tickets:** 42  |  **Work periods:** 44  |  **~Hours:** 40.5
+
+## Representative work (anonymized)
+
+- **2026-03-14  (2.5h)** — Monitor the Veeam backups for the practice , backup job were failed today. So while connected to the server the practice-HQ-VBR-01 and found Veeam console was giving error of connection lost . So reboot the server, after that which indicated that the Veeam services were not running. I rebooted the server and attempted to manually start the services, but they still failed to start. I checked the system and found several missing Windows updates, so I installed all pending updates and rebooted agai
+- **2026-03-26  (1.5h)** — While monitoring the Veeam backups for the practice using the VSPC admin console, I found that the backups had failed for few VM's. I then connected to the server TE-DC-BK-VBR-01 to troubleshoot the issue. After re-scanning the backup repository, I discovered that the backup had failed, I manually started the backups, and now the backups are running and monitored them till completed successfully.
+- **2026-03-26  (1.5h)** — While monitoring the Veeam backups for the practice using the VSPC admin console, I found that the backups had failed for few VM's. I then connected to the server TE-DC-BK-VBR-01 to troubleshoot the issue. After re-scanning the backup repository, I discovered that the backup had failed, I manually started the backups, and now the backups are running and monitored them till completed successfully.
+- **2026-03-26  (1.5h)** — While monitoring the Veeam backups for the practice using the VSPC admin console, I found that the backups had failed for few VM's. I then connected to the server TE-DC-BK-VBR-01 to troubleshoot the issue. After re-scanning the backup repository, I discovered that the backup had failed, I manually started the backups, and now the backups are running and monitored them till completed successfully.
+- **2026-03-07  (1.3h)** — Monitor the veeam backups for the practice and found backups were failed. To resolve this, I cleaned up the repo and then re-scanned the repository. After that edited the backup job and troubleshoot it and retried the backup job and all are passed successfully.
+- **2026-01-10  (1.2h)** — Ticket Summary: Title: Restore Server from Backup - D Drive and VM Restoration Description: The user requested assistance with restoring a virtual machine (VM) from a backup. The backup file is stored on the D drive . The user has selected the "Restore from backup" option in Veeam Backup & Replication. Action Taken: Provided guidance to select the appropriate backup job and restore options. Next Steps: Choose the "Restore from backup" option. Select the appropriate backup job from the available 
+- **2026-01-21  (1.2h)** — Logged into Veeam One server for the practice and then go to web and download and run all missing update for Veeam one and then test the connection with central server. Everything is working as expected.
+- **2026-03-03  (1.2h)** — Monitor the veeam backups for the practice and found backups were failed with warning alerts due to low space in the backup storage. To resolve this, I cleaned up the old backups that were older than 14 days and then re-scanned the repository. After this backup space has increased 158 KB to 4.5 TB. and retried the backup job and all are passed and one backup is in progress.

@@ -1,0 +1,17 @@
+# Other — Security Incident (ticket-driven)
+
+- **Industry:** Other
+- **Service theme:** security-incident
+- **Source:** 12-month ticket + time-entry data
+- **Tickets:** 7  |  **Work periods:** 9  |  **~Hours:** 4.2
+
+## Representative work (anonymized)
+
+- **2026-04-05  (0.7h)** — The client-DC – Update for Microsoft Defender Antivirus antimalware platform (4.18.26020.6) (KB4052623) applied. The client-HQ-PC-09-new – Latest update for Microsoft Defender (1.447.166.0) installed. The client-HQ-VBR-01 – Latest update for Microsoft Defender (1.447.166.0) installed. The client-HQ-VONE – Latest update for Microsoft Defender (1.447.166.0) installed. Verified that all the above updates are reflected in the MyRMM database.
+- **2026-04-05  (0.7h)** — The client-DC – Update for Microsoft Defender Antivirus antimalware platform (4.18.26020.6) (KB4052623) applied. The client-HQ-PC-09-new – Latest update for Microsoft Defender (1.447.166.0) installed. The client-HQ-VBR-01 – Latest update for Microsoft Defender (1.447.166.0) installed. The client-HQ-VONE – Latest update for Microsoft Defender (1.447.166.0) installed. Verified that all the above updates are reflected in the MyRMM database.
+- **2025-12-13  (0.5h)** — It was found that the PST and Microsoft Office files were damaged by a phishing email. I first attempted to repair them, but the issue was not resolved. I then reinstalled the complete Microsoft Office package, but it still did not work. After that, I renamed the old PST/OST files and reset the Outlook profile via PowerShell. It is now working, and Outlook has been reconfigured.
+- **2025-12-13  (0.5h)** — It was found that the PST and Microsoft Office files were damaged by a phishing email. I first attempted to repair them, but the issue was not resolved. I then reinstalled the complete Microsoft Office package, but it still did not work. After that, I renamed the old PST/OST files and reset the Outlook profile via PowerShell. It is now working, and Outlook has been reconfigured.
+- **2026-01-22  (0.5h)** — Got an email from Patricia regarding blocking a suspicious email sender. Logged into the GoDaddy Admin portal and created a block policy for the phishing email by blocking the entire suspicious sender domain. After implementing the block, sent a confirmation email to the user. The issue was resolved successfully, and the ticket was closed.
+- **2026-04-16  (0.4h)** — Got an email from colleen regarding blocking a suspicious email sender. Logged into the GoDaddy Admin portal and created a block policy for the phishing email by blocking the entire suspicious sender domain. After implementing the block, sent a confirmation email to the user. The issue was resolved successfully, and the ticket was closed.
+- **2026-01-24  (0.4h)** — Got an email from Diana Trujillo regarding blocking a suspicious email sender. Logged into the GoDaddy Admin portal and created a block policy for the phishing email by blocking the entire suspicious sender domain. After implementing the block, sent a confirmation email to the user. The issue was resolved successfully, and the ticket was closed.
+- **2026-02-13  (0.3h)** — Received the email on support from Andrew Case regarding receiving a phishing email claiming to be from Deepak Bansal, asking to purchase gift cards. Verified that the message originated from an external Gmail address. Identified the sender as spam and blocked the email address to prevent further communication. Informed the user to mark the message as phishing and delete it from their inbox.

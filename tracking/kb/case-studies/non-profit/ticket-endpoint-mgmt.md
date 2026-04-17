@@ -1,0 +1,17 @@
+# Non-Profit — Endpoint Mgmt (ticket-driven)
+
+- **Industry:** Non-Profit
+- **Service theme:** endpoint-mgmt
+- **Source:** 12-month ticket + time-entry data
+- **Tickets:** 7  |  **Work periods:** 8  |  **~Hours:** 9.5
+
+## Representative work (anonymized)
+
+- **2025-12-12  (3.0h)** — Once I became aware of the issue, I identified the traces and prepared a list of users who received the threatening email. I then installed MyRemote to initiate sessions with the users. During the process, I found that an offline scan was not possible without removing the Falcon sensor, so I removed it from all affected systems. After that, I updated Microsoft Defender and rebooted each system. I was able to complete checks on two systems (Buckley’s system is still pending), and no suspicious th
+- **2025-12-12  (3.0h)** — Once I became aware of the issue, I identified the traces and prepared a list of users who received the threatening email. I then installed MyRemote to initiate sessions with the users. During the process, I found that an offline scan was not possible without removing the Falcon sensor, so I removed it from all affected systems. After that, I updated Microsoft Defender and rebooted each system. I was able to complete checks on two systems (Buckley’s system is still pending), and no suspicious th
+- **2026-03-24  (0.8h)** — As per the task assigned by the Rashid install the technijian on Brenda Chanes system..... Install the technijian tools and also verified the tools on all the portals.. Also install all the windows updates as well...... hence closing the ticket.....
+- **2025-11-13  (0.8h)** — Identified a syncing issue in ManageEngine for the devices DESKTOP-PDULRRL,HHCA-BRANDI,HHCA-Maritza. The systems were not properly synchronizing with the ManageEngine server, causing delays in reporting and updates.Actions Taken:Logged into the ManageEngine portal and verified the sync status for affected machines.Checked communication between the endpoint agent and the ManageEngine server.Performed necessary troubleshooting steps to re-establish connectivity and resolve synchronization errors.R
+- **2025-12-13  (0.8h)** — Work Performed (Current Shift): Continued the task handed over from the previous shift regarding the required virus scan on Maritza’s system. Verified that Microsoft Defender was active after CrowdStrike removal. Initiated a full Microsoft Defender scan and monitored the progress. Scan ran for approximately 2 hours and completed successfully with no threats detected. After confirming system health, reinstalled CrowdStrike to restore endpoint protection. Verified that the CrowdStrike sensor was i
+- **2025-12-04  (0.5h)** — Logged into the ManageEngine portal and verified sync status for devices LAPTOP-MTFA4MM6,DESKTOP-PDULRRL.Checked communication between endpoint agents and the ManageEngine server.Performed troubleshooting steps to restore connectivity.Re-initiated synchronization and confirmed successful communication.Current Status:Synchronization has been successfully restored. All devices are now reporting and syncing properly in ManageEngine..
+- **2026-01-31  (0.3h)** — The system HHCA-Maritza has successfully received Windows updates, feature packs, and configurations. The updates are pending a reboot to complete the deployment.
+- **2026-04-15  (0.2h)** — Buckly opened a email, so scan from the crowdstrike and defender. machine was space...
