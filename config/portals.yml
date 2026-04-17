@@ -1,0 +1,121 @@
+# Job-board portal configuration for tech-leads lead scanner.
+# Two scan scopes run each day:
+#   A. local  — within 60 miles of Technijian HQ (Irvine, CA 92618)
+#   B. remote — remote-US, any state
+#
+# Queries per service live in services.yml (signal_job_titles + signal_keywords).
+# scan_jobs.py renders queries into each portal's URL template.
+
+scopes:
+  local:
+    label: "Local (60mi Irvine)"
+    location: "Irvine, CA"
+    radius_miles: 60
+    hq_zip: "92618"
+    hq_coords: { lat: 33.6471, lng: -117.7286 }
+  remote:
+    label: "Remote US"
+    location: "United States"
+    remote_only: true
+
+portals:
+
+  # ── Indeed (both scopes) ───────────────────────────────────────
+  indeed:
+    enabled: true
+    base_url: "https://www.indeed.com/jobs"
+    params_local:
+      l: "Irvine, CA"
+      radius: 50        # Indeed caps at 50mi; we widen post-filter to 60mi by zip distance
+      sort: "date"
+      fromage: 7        # last 7 days — lead-gen scan runs weekly
+    params_remote:
+      l: "Remote"
+      sc: "0kf%3Aattr(DSQF7)%3B"   # Indeed's remote attribute filter
+      sort: "date"
+      fromage: 7
+
+  # ── LinkedIn Jobs (both scopes) ────────────────────────────────
+  linkedin:
+    enabled: true
+    base_url: "https://www.linkedin.com/jobs/search"
+    params_local:
+      location: "Irvine, California, United States"
+      distance: 50
+      sortBy: "DD"
+      f_TPR: "r604800"   # last 7 days
+    params_remote:
+      location: "United States"
+      f_WT: "2"           # remote work-type
+      sortBy: "DD"
+      f_TPR: "r604800"
+
+  # ── ZipRecruiter ───────────────────────────────────────────────
+  ziprecruiter:
+    enabled: true
+    base_url: "https://www.ziprecruiter.com/jobs-search"
+    params_local:
+      location: "Irvine, CA"
+      radius: 50
+      days: 7
+    params_remote:
+      location: ""
+      refine_by_location_type: "only_remote"
+      days: 7
+
+  # ── Glassdoor ──────────────────────────────────────────────────
+  glassdoor:
+    enabled: true
+    base_url: "https://www.glassdoor.com/Job/jobs.htm"
+    params_local:
+      locT: "C"
+      locKeyword: "Irvine, CA"
+      radius: 50
+      fromAge: 7
+    params_remote:
+      locT: "N"
+      locKeyword: "United States"
+      remoteWorkType: "1"
+      fromAge: 7
+
+  # ── Google Jobs (via Google Careers embed — scraped via Playwright) ──
+  google_jobs:
+    enabled: true
+    base_url: "https://www.google.com/search"
+    params_local:
+      q: "{{query}} jobs near Irvine CA"
+      ibp: "htl;jobs"
+    params_remote:
+      q: "{{query}} remote jobs"
+      ibp: "htl;jobs"
+
+  # ── Dice (tech-heavy, relevant for My Dev / My Cloud / My Security) ──
+  dice:
+    enabled: true
+    relevant_services: [my-dev, my-cloud, my-security, my-office, my-ai]
+    base_url: "https://www.dice.com/jobs"
+    params_local:
+      location: "Irvine, CA"
+      radius: 50
+      radiusUnit: "mi"
+      filters.postedDate: "SEVEN"
+    params_remote:
+      location: "United States"
+      filters.isRemote: "true"
+      filters.postedDate: "SEVEN"
+
+scan_strategy:
+  # Weekly scan — runs in waves so we don't get rate-limited
+  cadence: "weekly"       # daily too aggressive for lead gen; weekly gives freshness without burn
+  day_of_week: "Monday"
+  hour_local: 7           # 07:00 PT
+  max_queries_per_run: 60
+  delay_between_requests_ms: [2000, 5000]   # random jitter
+  max_results_per_query: 50
+  user_agent_rotation: true
+  respect_robots_txt: true
+  # Portals where public page scraping is questionable — prefer their API if/when available:
+  scrape_with_caution:
+    - linkedin
+    - glassdoor
+    - indeed

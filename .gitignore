@@ -1,0 +1,27 @@
+# Sensitive / volatile
+templates/drafts/
+scripts/secrets.json
+scripts/_Config.local.ps1
+*.log
+*.tmp
+
+# Playwright artifacts
+.playwright-mcp/
+playwright-report/
+test-results/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+
+# Node (if scripts get JS later)
+node_modules/
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
+Thumbs.db

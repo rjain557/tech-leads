@@ -1,0 +1,76 @@
+# Lead targeting rules for tech-leads pipeline.
+# Per user direction (2026-04-17): NO ICP constraints — any company hiring for a role
+# Technijian services could cover is a potential lead. Geography is the only split.
+
+geography:
+  scopes:
+    - local_60mi_irvine     # prioritize; higher lead score bonus
+    - remote_us             # all 50 states, remote-only postings
+  local_score_boost: +1.0   # local leads score +1 because we can meet in person
+
+company_filters:
+  # No hard exclusions per user direction. If edge cases surface, log in lessons-learned.md
+  # and revisit here.
+  exclude_companies: []       # case-insensitive substring match
+  exclude_industries: []
+
+service_fit:
+  # How each scan hit is tied to one or more services.
+  # Source of truth = config/services.yml (signal_job_titles + signal_keywords).
+  match_strategy: "any"       # any keyword OR any signal title matches = candidate
+  multi_service_bonus: +0.5   # lead matches >1 service → slight boost (broader MSP fit)
+
+scoring:
+  # Final lead score = base (1.0) + signals. Threshold controlled at generate_outreach time.
+  base: 1.0
+  title_match_weight: 1.5
+  keyword_match_weight: 0.5     # per unique keyword, capped
+  keyword_match_cap: 2.0
+  strong_signal_bonus: 1.5
+  local_scope_bonus: 1.0
+  multi_service_bonus: 0.5
+  recency_bonus:
+    - { max_age_days: 3,  bonus: 0.5 }
+    - { max_age_days: 7,  bonus: 0.2 }
+  priority_threshold_hot: 4.0    # hot lead — outreach draft auto-created
+  priority_threshold_warm: 2.5   # warm — logged, no draft
+
+outreach:
+  mode: "draft_only"            # per user: don't auto-send. Drafts land in templates/drafts/
+  # flip to "auto_send" ONLY after user explicitly approves — and never for cold contacts
+  # without a matched buyer role.
+  sender: "rjain@technijian.com"
+  send_via: "graph_api"          # reuse pattern from technijian-admin-job-postings
+  rate_limit_per_day: 50         # hard cap even in auto_send mode
+  dedup_days: 30                 # don't re-contact same company within 30 days
+
+dedup:
+  # known-companies.json is the source of truth for what we've seen/reported.
+  # Dedup key = lowercase(company_name) + normalized role bucket.
+  role_buckets:
+    - { service: my-it,                keys: [it_support, sysadmin, netadmin, helpdesk] }
+    - { service: my-ai,                keys: [ai_engineer, ml_engineer, prompt_engineer] }
+    - { service: my-ai-lead-gen,       keys: [sdr, bdr, lead_gen] }
+    - { service: my-cloud,             keys: [cloud_engineer, devops, sre, infra_eng] }
+    - { service: my-compliance-hipaa,  keys: [hipaa_officer, privacy_officer, compliance_mgr_hc] }
+    - { service: my-compliance-cmmc,   keys: [cmmc_consultant, nist_specialist, dfars_mgr] }
+    - { service: my-continuity,        keys: [bcm, dr_specialist, backup_admin] }
+    - { service: my-dev,                keys: [software_eng, dotnet_dev, fullstack] }
+    - { service: my-office,             keys: [m365_admin, sharepoint_admin, teams_admin] }
+    - { service: my-seo,                keys: [seo_specialist, content_marketer, digital_mktg] }
+    - { service: my-security,           keys: [soc_analyst, security_engineer, ciso] }
+
+company_research:
+  # When a lead passes the threshold, enrich the company before generating outreach.
+  # Uses Playwright + Claude deep-search like My AI Lead Gen does for clients.
+  enrich_sources:
+    - "company career page"        # look for more open roles (co-fit across services)
+    - "Google search: '{company}' size funding recent news"
+    - "LinkedIn company page (manual review)"
+  enrichment_fields:
+    - employee_count_estimate
+    - hq_location
+    - industry
+    - recent_news_items
+    - other_open_roles_count
+    - tech_stack_signals

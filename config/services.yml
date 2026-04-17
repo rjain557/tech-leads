@@ -1,0 +1,592 @@
+# Technijian services catalog — source of truth for lead scoring.
+# A company hiring for roles in `signal_job_titles` or whose JD contains
+# `signal_keywords` is a candidate lead for the matching service.
+# Ingested from D:\vscode\tech-branding\Services\ — re-run scripts/ingest_services.py if PDFs change.
+
+org:
+  name: Technijian
+  hq: "18 Technology Dr. Ste 141, Irvine CA 92618"
+  phone: "949.379.8500"
+  contact_email: rjain@technijian.com
+  founded: 2000
+  website: technijian.com
+  tagline: "Technology as a Solution."
+
+services:
+
+  # ─────────────────────────────────────────────────────────────────
+  - slug: my-it
+    name: "My IT"
+    tagline: "Managed IT Services for Orange County Businesses."
+    pitch: "25+ years of managed IT — 24/7 help desk, proactive monitoring, vendor consolidation, predictable OpEx, built-in HIPAA/PCI/SOC2 posture."
+    priority: high
+    verticals:
+      - Healthcare
+      - Financial Services
+      - Legal & Professional
+      - Real Estate
+      - Technology & SaaS
+      - Manufacturing
+      - Non-Profit & Education
+      - Retail & eCommerce
+    pain_signals:
+      - "break/fix reactive IT"
+      - "vendor chaos / too many IT vendors"
+      - "unpredictable IT costs / surprise invoices"
+      - "HIPAA/PCI/SOC2 gaps"
+      - "no vCIO / no IT strategy"
+    buyer_titles:
+      - COO
+      - CFO
+      - "Operations Director"
+      - "Office Manager"
+      - CEO
+    signal_job_titles:
+      - "IT Manager"
+      - "IT Director"
+      - "IT Support Specialist"
+      - "Help Desk Technician"
+      - "Systems Administrator"
+      - "Network Administrator"
+      - "IT Coordinator"
+      - "Desktop Support Technician"
+      - "IT Administrator"
+      - "Sole IT Administrator"
+    signal_keywords:
+      - "sole IT"
+      - "only IT person"
+      - "wear many hats"
+      - "help desk"
+      - "ticketing"
+      - "patch management"
+      - "MSP"
+      - "managed services"
+      - "ITIL"
+      - "vCIO"
+    strong_signals:
+      - "SMB (20-500 employees) hiring single IT headcount"
+      - "job requires supporting multiple offices with one person"
+      - "job mentions ticketing AND network AND endpoint AND M365 (kitchen-sink = MSP fit)"
+
+  # ─────────────────────────────────────────────────────────────────
+  - slug: my-ai
+    name: "My AI"
+    tagline: "AI Strategy & Implementation."
+    pitch: "Strategy-through-implementation AI consulting — LLM workflows, multi-agent orchestration, RAG systems, MCP integrations, production deployment with HIPAA/SOC2/PCI/GDPR."
+    priority: high
+    verticals:
+      - Real Estate
+      - Financial Services
+      - Healthcare
+      - Legal & Professional
+      - Technology & SaaS
+      - Manufacturing
+    pain_signals:
+      - "AI strategy unclear"
+      - "pilot purgatory — PoCs never reach production"
+      - "compliance concerns with AI"
+      - "no internal AI talent"
+    buyer_titles:
+      - CTO
+      - CIO
+      - "Chief AI Officer"
+      - "VP of Engineering"
+      - "Head of Innovation"
+    signal_job_titles:
+      - "AI Engineer"
+      - "ML Engineer"
+      - "Prompt Engineer"
+      - "AI Strategist"
+      - "Head of AI"
+      - "VP of AI"
+      - "Director of AI"
+      - "Chief AI Officer"
+      - "AI Product Manager"
+      - "Applied AI Engineer"
+    signal_keywords:
+      - "LLM"
+      - "Claude"
+      - "GPT"
+      - "Gemini"
+      - "RAG"
+      - "vector database"
+      - "multi-agent"
+      - "AI roadmap"
+      - "AI transformation"
+      - "MCP"
+      - "AI governance"
+    strong_signals:
+      - "first AI hire at the company"
+      - "AI role with zero engineering support listed"
+      - "compliance-regulated vertical hiring AI without MLOps track record"
+
+  # ─────────────────────────────────────────────────────────────────
+  - slug: my-ai-lead-gen
+    name: "My AI Lead Gen"
+    tagline: "AI-Driven Lead Generation."
+    pitch: "Fresh, enriched, outreach-ready leads harvested from 10+ public data sources — SAM.gov, SBA, UCC, DOT awards, permits — scored by Claude deep search, delivered weekly."
+    priority: high
+    verticals:
+      - "Equipment Finance"
+      - "Real Estate & Construction"
+      - "MEP Contractors"
+      - "Commercial GCs"
+      - "Federal Subcontractors"
+      - "B2B SaaS"
+      - "Property Management & HOA"
+      - "Architects & Design"
+    pain_signals:
+      - "paying $30K+ on ZoomInfo/Apollo"
+      - "cold list fatigue / low reply rates"
+      - "SDRs burning hours on manual research"
+      - "generic prospecting not tuned to vertical"
+    buyer_titles:
+      - "VP of Sales"
+      - "CRO"
+      - "Head of Growth"
+      - "Head of Marketing"
+      - "Director of Demand Gen"
+    signal_job_titles:
+      - "Sales Development Representative"
+      - "SDR"
+      - "BDR"
+      - "Business Development Representative"
+      - "Lead Generation Specialist"
+      - "Prospecting Specialist"
+      - "Demand Generation Manager"
+      - "Outbound Sales Manager"
+    signal_keywords:
+      - "cold outbound"
+      - "cold email"
+      - "pipeline generation"
+      - "list building"
+      - "prospecting"
+      - "outreach cadence"
+      - "SDR team"
+      - "Apollo"
+      - "ZoomInfo"
+    strong_signals:
+      - "job JD mentions both 'list building' AND a specific vertical we serve"
+      - "company hiring 3+ SDRs = scale pain"
+
+  # ─────────────────────────────────────────────────────────────────
+  - slug: my-cloud
+    name: "My Cloud"
+    tagline: "Private, Public, and Hybrid Cloud."
+    pitch: "Own SOC2 datacenter + AWS/Azure expertise — migrations, FinOps (30-40% savings), HIPAA-eligible architectures, managed 24/7 cloud ops."
+    priority: high
+    verticals:
+      - Healthcare
+      - Financial Services
+      - Legal & Professional
+      - Manufacturing
+      - Technology & SaaS
+      - Real Estate
+    pain_signals:
+      - "AWS/Azure bill out of control"
+      - "hardware refresh CapEx coming due"
+      - "HIPAA workload on unregulated cloud"
+      - "no DR strategy"
+      - "legacy datacenter retirement"
+    buyer_titles:
+      - CTO
+      - CIO
+      - "VP of Infrastructure"
+      - "Director of IT"
+    signal_job_titles:
+      - "Cloud Engineer"
+      - "AWS Engineer"
+      - "Azure Administrator"
+      - "DevOps Engineer"
+      - "Cloud Architect"
+      - "Site Reliability Engineer"
+      - "Infrastructure Engineer"
+      - "Platform Engineer"
+      - "Cloud Operations Engineer"
+    signal_keywords:
+      - "cloud migration"
+      - "AWS"
+      - "Azure"
+      - "vSphere"
+      - "VMware"
+      - "Kubernetes"
+      - "Terraform"
+      - "IaC"
+      - "cost optimization"
+      - "FinOps"
+      - "Well-Architected"
+    strong_signals:
+      - "first cloud hire in a regulated vertical"
+      - "JD mentions VMware on-prem AND AWS/Azure (migration-in-progress tell)"
+
+  # ─────────────────────────────────────────────────────────────────
+  - slug: my-compliance-hipaa
+    name: "My Compliance — HIPAA"
+    tagline: "HIPAA Compliance for Healthcare."
+    pitch: "Security Rule, Privacy Rule, and Breach Notification alignment — risk assessments, PHI mapping, BAA management, OCR audit readiness, fractional Privacy/Security Officer."
+    priority: high
+    verticals:
+      - "Medical Practices"
+      - "Dental Practices"
+      - "Behavioral Health"
+      - "Specialty Clinics"
+      - "Labs & Imaging"
+      - "DME Providers"
+      - "HealthTech SaaS (BA)"
+      - "Healthcare MSPs"
+    pain_signals:
+      - "OCR audit approaching"
+      - "no formal Security Rule risk assessment"
+      - "ransomware = presumptive breach"
+      - "no BAA program for vendors"
+      - "CMIA / state stack on top of HIPAA"
+    buyer_titles:
+      - "Privacy Officer"
+      - "Compliance Officer"
+      - "Practice Administrator"
+      - "CCO"
+      - COO
+      - CEO
+    signal_job_titles:
+      - "HIPAA Compliance Officer"
+      - "Privacy Officer"
+      - "Chief Compliance Officer"
+      - "Healthcare Compliance Manager"
+      - "HIM Director"
+      - "Compliance Analyst"
+      - "Privacy Analyst"
+      - "Compliance Manager"
+      - "Security Officer"
+    signal_keywords:
+      - "HIPAA"
+      - "PHI"
+      - "ePHI"
+      - "Security Rule"
+      - "Privacy Rule"
+      - "OCR"
+      - "Business Associate"
+      - "BAA"
+      - "breach notification"
+      - "CMIA"
+      - "HITECH"
+    strong_signals:
+      - "first-ever compliance hire at a clinic/practice"
+      - "JD mentions 'OCR audit prep' explicitly"
+
+  # ─────────────────────────────────────────────────────────────────
+  - slug: my-compliance-cmmc
+    name: "My Compliance — CMMC"
+    tagline: "CMMC 2.0 for the Defense Industrial Base."
+    pitch: "CUI scoping, NIST 800-171 implementation (all 110 controls), DFARS 7012/7019/7020/7021, SPRS, C3PAO assessment prep, GCC High migrations."
+    priority: high
+    verticals:
+      - "Prime DoD Contractors"
+      - "DoD Sub-contractors"
+      - "Aerospace Manufacturing"
+      - "Precision Machining"
+      - "Defense Electronics"
+      - "Defense Software"
+      - "Research Labs"
+      - "Federally Funded Research"
+    pain_signals:
+      - "CMMC 2.0 enforcement ramping 2025-2026"
+      - "primes flowing down DFARS 7012/7019/7020/7021"
+      - "no SSP or POA&M"
+      - "SPRS score low / missing"
+      - "CUI on M365 Commercial instead of GCC High"
+    buyer_titles:
+      - "Compliance Officer"
+      - "CISO"
+      - "CFO"
+      - "Director of Contracts"
+      - "VP of Operations"
+    signal_job_titles:
+      - "CMMC Consultant"
+      - "NIST 800-171 Specialist"
+      - "DFARS Compliance Manager"
+      - "Cybersecurity Compliance Analyst"
+      - "Information Systems Security Officer"
+      - "ISSO"
+      - "Government Compliance Manager"
+      - "DoD Compliance Analyst"
+    signal_keywords:
+      - "CMMC"
+      - "NIST 800-171"
+      - "NIST 800-172"
+      - "DFARS 7012"
+      - "DFARS 7019"
+      - "DFARS 7020"
+      - "DFARS 7021"
+      - "CUI"
+      - "ITAR"
+      - "SPRS"
+      - "DoD contract"
+      - "GCC High"
+      - "C3PAO"
+      - "DIBCAC"
+    strong_signals:
+      - "DoD sub/prime hiring first compliance person"
+      - "manufacturer mentions ITAR + is <500 employees"
+
+  # ─────────────────────────────────────────────────────────────────
+  - slug: my-continuity
+    name: "My Continuity"
+    tagline: "Backup, DR, BCP — Veeam-powered."
+    pitch: "3-2-1-1-0 immutable backups, cross-cloud DR, orchestrated failover, quarterly restore drills, audit-ready evidence for SOC2/HIPAA/PCI."
+    priority: medium
+    verticals:
+      - Healthcare
+      - Financial Services
+      - Legal & Professional
+      - Manufacturing
+      - Technology & SaaS
+      - Real Estate
+    pain_signals:
+      - "ransomware fears"
+      - "backups never tested"
+      - "no documented BCP"
+      - "cyber-insurance renewal questions about backups"
+    buyer_titles:
+      - CIO
+      - CTO
+      - "IT Director"
+      - "Risk Manager"
+      - "CISO"
+    signal_job_titles:
+      - "Business Continuity Manager"
+      - "Disaster Recovery Specialist"
+      - "BCDR Analyst"
+      - "Backup Administrator"
+      - "Veeam Administrator"
+      - "Data Protection Engineer"
+    signal_keywords:
+      - "Veeam"
+      - "backup"
+      - "disaster recovery"
+      - "RTO"
+      - "RPO"
+      - "BCP"
+      - "ransomware recovery"
+      - "immutable backup"
+      - "3-2-1-1-0"
+    strong_signals:
+      - "company just suffered a ransomware event (google news)"
+      - "JD mentions both 'Veeam' and 'quarterly restore tests'"
+
+  # ─────────────────────────────────────────────────────────────────
+  - slug: my-dev
+    name: "My Dev"
+    tagline: "Custom Apps & AI-Driven Development (SDLC v7.0)."
+    pitch: "3-5× faster delivery via Claude Code-native SDLC — full-stack web, mobile, ERP/CRM integrations, legacy modernization, 100% U.S.-based team."
+    priority: medium
+    verticals:
+      - Healthcare
+      - Financial Services
+      - Legal & Professional
+      - Manufacturing
+      - Technology & SaaS
+      - Real Estate
+      - "Non-Profit & Education"
+      - Retail
+    pain_signals:
+      - "offshore team quality issues"
+      - "legacy app tech debt / Classic ASP / WebForms"
+      - "dev velocity too slow"
+      - "ERP/CRM integrations stuck"
+    buyer_titles:
+      - CTO
+      - "VP of Engineering"
+      - "VP of Product"
+      - "Director of Engineering"
+    signal_job_titles:
+      - "Software Engineer"
+      - ".NET Developer"
+      - "Full Stack Developer"
+      - "React Developer"
+      - "Engineering Manager"
+      - "Dev Lead"
+      - "Staff Software Engineer"
+      - "Senior .NET Developer"
+      - "API Developer"
+    signal_keywords:
+      - ".NET 8"
+      - ".NET Core"
+      - "C#"
+      - "React"
+      - "TypeScript"
+      - "Dapper"
+      - "Epicor"
+      - "NetSuite"
+      - "Salesforce"
+      - "API-first"
+      - "multi-tenant"
+      - "Classic ASP"
+      - "WebForms"
+      - "MCP"
+    strong_signals:
+      - "SMB with <10 engineers hiring to build a net-new product"
+      - "JD mentions legacy stack modernization"
+    exclusions:
+      - "FAANG / Fortune 500 in-house engineering orgs (too big for us)"
+
+  # ─────────────────────────────────────────────────────────────────
+  - slug: my-office
+    name: "My Office"
+    tagline: "Microsoft 365, Productized."
+    pitch: "M365 migration, SharePoint modernization, Teams, security hardening, Copilot pilots — 25+ years of Exchange/SharePoint/Teams delivery."
+    priority: high
+    verticals:
+      - Healthcare
+      - Financial Services
+      - Legal & Professional
+      - Manufacturing
+      - Technology & SaaS
+      - Real Estate
+      - Non-Profit
+      - Retail
+    pain_signals:
+      - "on-prem Exchange / Google Workspace migration needed"
+      - "SharePoint classic sprawl"
+      - "no MFA / Conditional Access"
+      - "Copilot curiosity but no governance"
+    buyer_titles:
+      - CIO
+      - "IT Director"
+      - COO
+      - "Digital Workplace Lead"
+    signal_job_titles:
+      - "Microsoft 365 Administrator"
+      - "M365 Administrator"
+      - "SharePoint Administrator"
+      - "M365 Engineer"
+      - "Teams Administrator"
+      - "Exchange Administrator"
+      - "Collaboration Engineer"
+      - "Digital Workplace Engineer"
+      - "Intune Administrator"
+      - "Entra ID Administrator"
+    signal_keywords:
+      - "Microsoft 365"
+      - "M365"
+      - "SharePoint"
+      - "Teams"
+      - "Exchange Online"
+      - "Entra ID"
+      - "Azure AD"
+      - "Intune"
+      - "Conditional Access"
+      - "Purview"
+      - "Copilot"
+      - "Defender for M365"
+      - "eDiscovery"
+    strong_signals:
+      - "company hiring its first M365 admin"
+      - "JD mentions 'migration from Google Workspace' or 'from on-prem Exchange'"
+
+  # ─────────────────────────────────────────────────────────────────
+  - slug: my-seo
+    name: "My SEO"
+    tagline: "SEO & Digital Marketing — AI-Search-Ready."
+    pitch: "Unlimited-hours SEO, content, video, AI search optimization, syndication (250+ sites), PR (300+ placements), Google/Meta Ads management — tiered $500-$1500/mo."
+    priority: medium
+    verticals:
+      - "Any B2B/B2C with a website"
+      - "Professional Services"
+      - "Local Services"
+      - Healthcare
+      - "Legal & Professional"
+      - "Real Estate"
+    pain_signals:
+      - "organic traffic flat or declining"
+      - "not showing up in AI search (ChatGPT/Perplexity)"
+      - "stuck with an agency on low-quality content"
+      - "no clear SEO strategy or reporting"
+    buyer_titles:
+      - "VP of Marketing"
+      - "CMO"
+      - "Marketing Director"
+      - "Head of Growth"
+      - "Founder (SMB)"
+    signal_job_titles:
+      - "SEO Specialist"
+      - "SEO Manager"
+      - "SEO Analyst"
+      - "Content Marketing Manager"
+      - "Digital Marketing Manager"
+      - "Growth Marketer"
+      - "Content Writer"
+      - "Marketing Coordinator"
+      - "SEO & Content Specialist"
+    signal_keywords:
+      - "SEO"
+      - "search engine optimization"
+      - "content marketing"
+      - "digital marketing"
+      - "PPC"
+      - "Google Ads"
+      - "Meta Ads"
+      - "WordPress"
+      - "backlinks"
+      - "keyword research"
+      - "organic traffic"
+      - "AI search"
+    strong_signals:
+      - "SMB hiring a first/solo marketer expected to own SEO + content + ads"
+
+  # ─────────────────────────────────────────────────────────────────
+  - slug: my-security
+    name: "My Security"
+    tagline: "Cybersecurity & 24/7 SOC."
+    pitch: "Layered defense — EDR/XDR + SIEM + email sec + identity + DLP — run by U.S.-based SOC analysts with 15-min IR SLA. Compliance mapping for HIPAA, SOC2, PCI, CMMC, NIST."
+    priority: high
+    verticals:
+      - Healthcare
+      - Financial Services
+      - Legal & Professional
+      - Manufacturing
+      - Technology & SaaS
+      - Real Estate
+      - Retail
+      - Non-Profit
+    pain_signals:
+      - "no 24/7 monitoring"
+      - "recent breach or near-miss"
+      - "cyber-insurance renewal demands"
+      - "SOC2/HIPAA gap found in audit"
+      - "IT team covering security as a side duty"
+    buyer_titles:
+      - CISO
+      - "Information Security Manager"
+      - CIO
+      - CTO
+      - COO
+    signal_job_titles:
+      - "Security Analyst"
+      - "SOC Analyst"
+      - "Security Engineer"
+      - "CISO"
+      - "Information Security Manager"
+      - "Cybersecurity Analyst"
+      - "Incident Response Analyst"
+      - "Vulnerability Management Analyst"
+      - "Security Operations Engineer"
+      - "GRC Analyst"
+    signal_keywords:
+      - "SOC"
+      - "SIEM"
+      - "Sentinel"
+      - "Splunk"
+      - "EDR"
+      - "XDR"
+      - "CrowdStrike"
+      - "Defender"
+      - "SentinelOne"
+      - "incident response"
+      - "vulnerability management"
+      - "penetration testing"
+      - "pentest"
+      - "MITRE ATT&CK"
+      - "Zero Trust"
+    strong_signals:
+      - "company hiring first/solo security person"
+      - "JD mentions 24/7 coverage for a single hire (impossible = MSSP need)"
