@@ -161,16 +161,44 @@ if ($new.Count -gt 0 -and -not $DryRun) {
 
 # --- 5. Digest email (pending only) ---
 if ($pending.Count -gt 0 -and -not $NoDigest -and -not $DryRun) {
+    # Attempt to attach a matched service per reply by scanning draft JSONs.
+    # The JSON for each outreach lead contains contact_email + matched_service.
+    $draftIndex = @{}
+    $draftsRoot = Join-Path $script:RepoRoot "templates\drafts"
+    if (Test-Path $draftsRoot) {
+        Get-ChildItem -Path $draftsRoot -Filter "*.json" -Recurse -ErrorAction SilentlyContinue | ForEach-Object {
+            try {
+                $d = Get-Content $_.FullName -Raw | ConvertFrom-Json
+                if ($d.contact_email -and $d.matched_service) {
+                    $draftIndex[$d.contact_email.ToLowerInvariant()] = $d.matched_service
+                }
+            } catch {}
+        }
+    }
+    foreach ($r in $pending) {
+        $svc = $null
+        if ($r.From -and $draftIndex.ContainsKey($r.From.ToLowerInvariant())) { $svc = $draftIndex[$r.From.ToLowerInvariant()] }
+        $r | Add-Member -NotePropertyName MatchedService -NotePropertyValue $svc -Force
+        $r | Add-Member -NotePropertyName Department -NotePropertyValue (Get-Department -ServiceSlug $svc) -Force
+    }
+
+    # Per-department tallies (fixed order)
+    $deptCounts = @{}
+    foreach ($d in ($script:DepartmentOrder + @("Unknown"))) { $deptCounts[$d] = 0 }
+    foreach ($r in $pending) { $deptCounts[$r.Department]++ }
+    $deptLine = ($script:DepartmentOrder + @("Unknown") | ForEach-Object { "$_`: $($deptCounts[$_])" }) -join " · "
+
     $rows = foreach ($r in $pending) {
         $age = [math]::Round((([datetime]::UtcNow - $r.Received).TotalHours), 1)
-        "<tr><td style='padding:8px;border-bottom:1px solid #EEE;'>$($r.From)</td><td style='padding:8px;border-bottom:1px solid #EEE;'>$($r.Subject)</td><td style='padding:8px;border-bottom:1px solid #EEE;'>$($r.Sentiment)</td><td style='padding:8px;border-bottom:1px solid #EEE;'>${age}h ago</td></tr>"
+        "<tr><td style='padding:8px;border-bottom:1px solid #EEE;'>$($r.From)</td><td style='padding:8px;border-bottom:1px solid #EEE;'>$($r.Subject)</td><td style='padding:8px;border-bottom:1px solid #EEE;'>$($r.Department)</td><td style='padding:8px;border-bottom:1px solid #EEE;'>$($r.Sentiment)</td><td style='padding:8px;border-bottom:1px solid #EEE;'>${age}h ago</td></tr>"
     }
     $inner = @"
 <p><strong>$($pending.Count) reply$(if ($pending.Count -ne 1) { 'ies' } else { 'y' }) pending your response.</strong></p>
+<p><strong>By department:</strong> $deptLine</p>
 <p>Full log: <code>tracking/replies/$today.md</code><br>
 To draft responses: open Claude Code in the repo and say <em>"draft replies for today"</em> — the <code>draft-reply</code> skill will render drafts into <code>templates/replies/$today/</code>.</p>
 <table style='border-collapse:collapse;width:100%;font-size:14px;'>
-<tr style='background:#F0F4F8;'><th style='padding:8px;text-align:left;'>From</th><th style='padding:8px;text-align:left;'>Subject</th><th style='padding:8px;text-align:left;'>Sentiment</th><th style='padding:8px;text-align:left;'>Age</th></tr>
+<tr style='background:#F0F4F8;'><th style='padding:8px;text-align:left;'>From</th><th style='padding:8px;text-align:left;'>Subject</th><th style='padding:8px;text-align:left;'>Dept</th><th style='padding:8px;text-align:left;'>Sentiment</th><th style='padding:8px;text-align:left;'>Age</th></tr>
 $($rows -join "")
 </table>
 <p style='color:#888;font-size:12px;'>Automated safety-net from scripts/Check-Replies.ps1. You are receiving this because at least one reply was detected.</p>

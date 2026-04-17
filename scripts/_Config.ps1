@@ -92,6 +92,31 @@ function Get-GraphHeaders { @{ Authorization = "Bearer $script:GraphToken"; "Con
 function Invoke-GraphGet  { param([string]$Url) Invoke-RestMethod -Uri $Url -Headers (Get-GraphHeaders) -Method GET }
 function Invoke-GraphPost { param([string]$Url, [string]$Body) Invoke-RestMethod -Uri $Url -Headers (Get-GraphHeaders) -Method POST -Body $Body }
 
+# --- Department mapping for digests ---
+# Maps service slugs from config/services.yml to the three Technijian departments
+# we roll up in digest emails: Tech Support, Development, SEO.
+$script:DepartmentMap = @{
+    "my-it"                = "Tech Support"
+    "my-cloud"             = "Tech Support"
+    "my-compliance-hipaa"  = "Tech Support"
+    "my-compliance-cmmc"   = "Tech Support"
+    "my-continuity"        = "Tech Support"
+    "my-office"            = "Tech Support"
+    "my-security"          = "Tech Support"
+    "my-ai"                = "Development"
+    "my-dev"               = "Development"
+    "my-seo"               = "SEO"
+    "my-ai-lead-gen"       = "SEO"
+}
+$script:DepartmentOrder = @("Tech Support", "Development", "SEO")
+
+function Get-Department {
+    param([string]$ServiceSlug)
+    if (-not $ServiceSlug) { return "Unknown" }
+    if ($script:DepartmentMap.ContainsKey($ServiceSlug)) { return $script:DepartmentMap[$ServiceSlug] }
+    return "Unknown"
+}
+
 # --- Email template + signature helpers ---
 function Get-EmailTemplate {
     param([string]$TemplateName)
