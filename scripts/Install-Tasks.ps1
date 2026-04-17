@@ -36,10 +36,10 @@ if ($Uninstall) {
 Remove-TaskIfExists $TaskScan
 $weeklyPs = Join-Path $RepoRoot "scripts\Run-Weekly.ps1"
 $scanAction = New-ScheduledTaskAction -Execute "powershell.exe" -Argument "-NoProfile -ExecutionPolicy Bypass -File `"$weeklyPs`"" -WorkingDirectory $RepoRoot
-$scanTrigger = New-ScheduledTaskTrigger -Weekly -DaysOfWeek Monday -At 6:00am
+$scanTrigger = New-ScheduledTaskTrigger -Weekly -DaysOfWeek Friday -At 6:00am
 $scanSettings = New-ScheduledTaskSettingsSet -StartWhenAvailable -DontStopOnIdleEnd -ExecutionTimeLimit (New-TimeSpan -Hours 1)
 Register-ScheduledTask -TaskName $TaskScan -Action $scanAction -Trigger $scanTrigger -Settings $scanSettings -Description "Technijian lead-gen weekly scan (SerpAPI) + department digest email" | Out-Null
-Write-Host "Installed: $TaskScan (Mon 06:00 — scan + digest chained)"
+Write-Host "Installed: $TaskScan (Fri 06:00 — scan + digest chained)"
 
 # --- Daily reply check (git pull + Check-Replies chained via Run-Daily.ps1) ---
 Remove-TaskIfExists $TaskReply
