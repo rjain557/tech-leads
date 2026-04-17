@@ -72,10 +72,17 @@ def parse_lead(path: Path) -> dict:
         m = re.match(r"^-\s+\*\*([^:*]+):\*\*\s+(.*)$", line)
         if m:
             fields[m.group(1).strip().lower().replace(" ", "_")] = m.group(2).strip()
-    # Company from H1
-    h1 = re.search(r"^#\s+(.+?)\s+--?\s+", text, re.MULTILINE)
+    # Company from H1 — scan_jobs.py writes "# {company} — {primary_service}".
+    # Must anchor the capture to a single line (use non-newline class) and strip
+    # the trailing " — {service}" suffix. Previous `.+?` let the regex span into
+    # "- **Score:**" on the next line, capturing "{company} — {service}" as the
+    # company value.
+    h1 = re.search(r"^#[^\S\n]+([^\n]+?)[^\S\n]*$", text, re.MULTILINE)
     if h1:
-        fields["company"] = h1.group(1).strip()
+        raw = h1.group(1).strip()
+        # strip trailing " — service-slug" (em/en dash, or ascii -- / -)
+        raw = re.sub(r"\s+[\u2014\u2013\-]{1,2}\s+\S+$", "", raw).strip()
+        fields["company"] = raw
     # JD excerpt (first 1200 chars scan_jobs saves)
     jd = re.search(r"##\s+JD excerpt\s*\n\s*>\s*(.+?)(?:\n##|\Z)", text, re.DOTALL)
     if jd:
@@ -251,6 +258,8 @@ def write_draft(lead: dict, slug: str, rendered: dict, date_dir: Path) -> None:
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--limit", type=int, default=None)
+    ap.add_argument("--only", type=str, default=None,
+                    help="Slug substring to filter leads (e.g. 'bvital' re-renders only bvital-park-city)")
     ap.add_argument("--dry-run", action="store_true")
     args = ap.parse_args()
 
@@ -258,6 +267,9 @@ def main() -> int:
         print("No leads/active/ directory -- nothing to build.")
         return 0
     leads = sorted(LEADS_ACTIVE.glob("*.md"))
+    if args.only:
+        needle = args.only.lower()
+        leads = [p for p in leads if needle in p.stem.lower()]
     if args.limit:
         leads = leads[: args.limit]
     if not leads:
