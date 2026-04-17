@@ -2,6 +2,7 @@
 templates/drafts/
 templates/replies/
 tracking/replies/
+leads/archived/
 scripts/secrets.json
 scripts/_Config.local.ps1
 Logs/

@@ -37,12 +37,21 @@ try {
     }
 
     # --- 2. scan_jobs.py ---
+    $venvPy = Join-Path $RepoRoot ".venv\Scripts\python.exe"
+    $pyExe = if (Test-Path $venvPy) { $venvPy } else { "python" }
+
     if (-not $SkipScan) {
-        Write-Step "scan_jobs.py"
-        $venvPy = Join-Path $RepoRoot ".venv\Scripts\python.exe"
-        $pyExe = if (Test-Path $venvPy) { $venvPy } else { "python" }
+        Write-Step "scan_jobs.py (Stage 1 - keyword prefilter)"
         & $pyExe (Join-Path $RepoRoot "scripts\scan_jobs.py") --scope all
         if ($LASTEXITCODE -ne 0) { $exitCode = $LASTEXITCODE; Write-Host "scan_jobs.py exited $LASTEXITCODE" -ForegroundColor Yellow }
+
+        Write-Step "qualify_leads.py (Stage 2 - LLM qualifier)"
+        & $pyExe (Join-Path $RepoRoot "scripts\qualify_leads.py")
+        if ($LASTEXITCODE -ne 0 -and $exitCode -eq 0) { $exitCode = $LASTEXITCODE; Write-Host "qualify_leads.py exited $LASTEXITCODE" -ForegroundColor Yellow }
+
+        Write-Step "build_outreach.py (Stage 3 - draft rendering)"
+        & $pyExe (Join-Path $RepoRoot "scripts\build_outreach.py")
+        if ($LASTEXITCODE -ne 0 -and $exitCode -eq 0) { $exitCode = $LASTEXITCODE; Write-Host "build_outreach.py exited $LASTEXITCODE" -ForegroundColor Yellow }
     }
 
     # --- 3. Commit scan results and push ---

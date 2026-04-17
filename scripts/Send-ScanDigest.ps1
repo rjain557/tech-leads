@@ -86,15 +86,38 @@ $($rowsHtml -join "")
 "@
 }
 
+# --- Stage 2/3 counts: post-qualifier state ---
+$activeDir = Join-Path $script:RepoRoot "leads\active"
+$rejectedDir = Join-Path $script:RepoRoot "leads\archived\rejected"
+$qualifiedFiles = if (Test-Path $activeDir) { @(Get-ChildItem $activeDir -Filter "*.md" -File) } else { @() }
+$rejectedFiles  = if (Test-Path $rejectedDir) { @(Get-ChildItem $rejectedDir -Filter "*.md" -File) } else { @() }
+$qualifiedCount = $qualifiedFiles.Count
+$rejectedCount = $rejectedFiles.Count
+$qualifiedNames = $qualifiedFiles | Sort-Object -Property LastWriteTime -Descending | Select-Object -First 10 | ForEach-Object {
+    $n = $_.BaseName
+    if ($n -match '^\d+-(.+)$') { $Matches[1] } else { $n }
+}
+
+# --- Drafts ready to review ---
+$today = Get-Date -Format "yyyy-MM-dd"
+$draftsDir = Join-Path $script:RepoRoot "templates\drafts\$today"
+$draftsReady = if (Test-Path $draftsDir) { @(Get-ChildItem $draftsDir -Filter "*.md" -File).Count } else { 0 }
+
+$qualPct = if ($total -gt 0) { [math]::Round(100.0 * $qualifiedCount / $total, 1) } else { 0 }
+
 $inner = @"
-<p><strong>Weekly scan summary — $total leads in the last $Days days.</strong></p>
-<p>HOT (score ≥ 4.0): <strong>$hot</strong> · WARM (2.5–3.99): <strong>$warm</strong> · Local: $local · Remote: $remote</p>
+<p><strong>Weekly scan summary — $qualifiedCount qualified of $total prefiltered (${qualPct}%).</strong></p>
+<p>Stage 1 (prefilter): $total · Stage 2 (qualifier): <strong>$qualifiedCount qualified</strong>, $rejectedCount rejected · Stage 3 (drafts): $draftsReady ready in <code>templates/drafts/$today/</code></p>
+<p>Prefilter breakdown — HOT (≥ 4.0): $hot · WARM (2.5–3.99): $warm · Local: $local · Remote: $remote</p>
+<h3 style='margin:20px 0 6px 0;color:#006DB6;'>Qualified leads (top $([Math]::Min(10, $qualifiedCount)))</h3>
+<ul style='font-size:14px;'>
+$(($qualifiedNames | ForEach-Object { "<li>$_</li>" }) -join "`n")
+</ul>
 $($deptSections -join "")
-<p style='color:#888;font-size:12px;'>Department totals above. Full lead files in <code>leads/active/</code>. Drafts for HOT leads in <code>templates/drafts/$((Get-Date).ToString('yyyy-MM-dd'))/</code>. Reply to this message if you want me to adjust the scoring model or the department mapping.</p>
+<p style='color:#888;font-size:12px;'>Department table above shows the prefilter pool. Qualified-vs-rejected is the binary gate by the Sonnet 4.6 qualifier. Drafts are outbound email touches (touch 1/2/3) ready for rjain review; draft_only mode — nothing is sent automatically.</p>
 "@
 
-$today = Get-Date -Format "yyyy-MM-dd"
-$subj = "[tech-leads] Weekly scan — $total leads (Tech Support: $($byDept['Tech Support'].Count), Dev: $($byDept['Development'].Count), SEO: $($byDept['SEO'].Count)) — $today"
+$subj = "[tech-leads] Weekly scan — $qualifiedCount qualified / $total prefiltered (Tech Support: $($byDept['Tech Support'].Count), Dev: $($byDept['Development'].Count), SEO: $($byDept['SEO'].Count)) — $today"
 $html = Build-BrandedEmail -BodyContent $inner
 
 if ($DryRun) {
