@@ -41,14 +41,14 @@ $scanSettings = New-ScheduledTaskSettingsSet -StartWhenAvailable -DontStopOnIdle
 Register-ScheduledTask -TaskName $TaskScan -Action $scanAction -Trigger $scanTrigger -Settings $scanSettings -Description "Technijian lead-gen weekly scan (SerpAPI) + department digest email" | Out-Null
 Write-Host "Installed: $TaskScan (Mon 06:00 — scan + digest chained)"
 
-# --- Daily reply check ---
+# --- Daily reply check (git pull + Check-Replies chained via Run-Daily.ps1) ---
 Remove-TaskIfExists $TaskReply
-$replyPs = Join-Path $RepoRoot "scripts\Check-Replies.ps1"
-$replyAction = New-ScheduledTaskAction -Execute "powershell.exe" -Argument "-NoProfile -ExecutionPolicy Bypass -File `"$replyPs`"" -WorkingDirectory $RepoRoot
+$dailyPs = Join-Path $RepoRoot "scripts\Run-Daily.ps1"
+$replyAction = New-ScheduledTaskAction -Execute "powershell.exe" -Argument "-NoProfile -ExecutionPolicy Bypass -File `"$dailyPs`"" -WorkingDirectory $RepoRoot
 $replyTrigger = New-ScheduledTaskTrigger -Weekly -DaysOfWeek Monday,Tuesday,Wednesday,Thursday,Friday -At 8:00am
 $replySettings = New-ScheduledTaskSettingsSet -StartWhenAvailable -DontStopOnIdleEnd -ExecutionTimeLimit (New-TimeSpan -Minutes 15)
-Register-ScheduledTask -TaskName $TaskReply -Action $replyAction -Trigger $replyTrigger -Settings $replySettings -Description "Technijian lead-gen daily reply safety-net" | Out-Null
-Write-Host "Installed: $TaskReply (Mon-Fri 08:00)"
+Register-ScheduledTask -TaskName $TaskReply -Action $replyAction -Trigger $replyTrigger -Settings $replySettings -Description "Technijian lead-gen daily reply safety-net (pulls config from other sessions first)" | Out-Null
+Write-Host "Installed: $TaskReply (Mon-Fri 08:00 — pull + reply check)"
 
 Write-Host ""
 Write-Host "Both tasks installed. Manage via Task Scheduler UI or:"

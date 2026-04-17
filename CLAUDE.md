@@ -91,6 +91,28 @@ See `templates/drafts/{date}/{slug}.md`.
 - [ ] Closed won / lost
 ```
 
+## Multi-session write-path convention (MANDATORY)
+
+All pipeline work runs on this workstation. Multiple Claude sessions may be active concurrently — typically a **pipeline session** (scheduled scan / reply check) and a **lead-gen/tuning session** (interactive: iterates on signals, finds new keywords, discovers false-positive patterns, refines scoring + templates). They share the same working tree. The convention below prevents races between them.
+
+**Lead-gen / tuning session** edits (and ONLY these paths):
+- `config/services.yml` — add/refine signal_keywords, signal_job_titles, strong_signals, exclusions
+- `config/targeting.yml` — tune scoring weights / thresholds
+- `tracking/lessons-learned.md` — append lessons learned (date-prefixed)
+- `templates/emails/*.md` — refine per-service copy based on reply data
+
+**Pipeline session** (scan / reply check — whether via `Start-ScheduledTask` or manual invocation) writes (and ONLY these paths):
+- `leads/active/` — new lead files
+- `tracking/known-companies.json` — dedup + scoring history
+- `tracking/lead-log.md` — per-run tally
+- `tracking/replies/` — inbound reply log (gitignored)
+- `templates/drafts/` — outbound draft output (gitignored)
+- `templates/replies/` — inbound response drafts (gitignored)
+
+**Overlap is a bug.** If either session needs to write outside its lane, stop and add the lane here first.
+
+`scripts/Run-Weekly.ps1` does `git pull --rebase` before scanning and `git push` after. That exists for remote backup + commit history — not for inter-session sync on this workstation (sessions share the same working tree directly).
+
 ## Self-Improving Loop (MANDATORY)
 
 **READ at start of every run:** `tracking/lessons-learned.md`
