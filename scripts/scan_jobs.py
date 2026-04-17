@@ -147,13 +147,12 @@ def fetch_serpapi_google_jobs(
         loc = scopes.get("local", {}).get("location", "Irvine, California")
         params["location"] = loc
     elif scope == "remote":
-        # No location, add remote chip
-        params["chips"] = "requirements:remote"
+        # Google Jobs remote filter: ltype=1 plus a broad US location
+        params["location"] = "United States"
+        params["ltype"] = "1"
 
-    # Date-posted chip — "week" = last 7 days
-    existing_chips = params.get("chips")
-    date_chip = "date_posted:week"
-    params["chips"] = f"{existing_chips},{date_chip}" if existing_chips else date_chip
+    # Date-posted chip: "week" = last 7 days
+    params["chips"] = "date_posted:week"
 
     url = f"{SERPAPI_BASE}?{urlencode(params)}"
     req = Request(url, headers={"User-Agent": "tech-leads-scanner/0.1"})
@@ -389,10 +388,21 @@ def run_scan(scope: str, dry_run: bool = False, max_queries: int | None = None) 
             if m:
                 next_seq = int(m.group(1)) + 1
 
-    hot, warm, skipped = 0, 0, 0
+    # Aggregator reposts — shallow JDs, always rejected by qualifier, waste credits.
+    # Filter out at the prefilter stage so qualifier only sees real employers.
+    AGGREGATORS = {
+        "virtual vocations", "flexjobs", "jobgether", "jobs via dice", "whatjobs",
+        "jobleads", "bebee", "ziprecruiter", "jobsora", "joveo", "jooble", "neuvoo",
+        "learn4good", "careerbuilder", "adzuna", "jobomas", "recruit.net",
+    }
+
+    hot, warm, skipped, aggregator_skipped = 0, 0, 0, 0
     dedup_days = targeting["outreach"]["dedup_days"]
     for posting in all_postings:
         if not posting.company or not posting.title:
+            continue
+        if posting.company.strip().lower() in AGGREGATORS:
+            aggregator_skipped += 1
             continue
         cslug = slugify(posting.company)
         score, matched, reasons = score_posting(posting, services, targeting)
@@ -424,8 +434,8 @@ def run_scan(scope: str, dry_run: bool = False, max_queries: int | None = None) 
         }
 
     save_known(known)
-    print(f"[scan] done: postings={len(all_postings)} hot={hot} warm={warm} dedup_skipped={skipped}")
-    return {"postings": len(all_postings), "hot": hot, "warm": warm, "skipped": skipped}
+    print(f"[scan] done: postings={len(all_postings)} hot={hot} warm={warm} dedup_skipped={skipped} aggregator_skipped={aggregator_skipped}")
+    return {"postings": len(all_postings), "hot": hot, "warm": warm, "skipped": skipped, "aggregator_skipped": aggregator_skipped}
 
 
 def main() -> None:

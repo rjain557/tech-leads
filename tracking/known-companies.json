@@ -1,5 +1,1688 @@
 {
   "version": 1,
-  "last_scan_utc": null,
-  "companies": {}
+  "last_scan_utc": "2026-04-17T19:59:31.452706+00:00",
+  "companies": {
+    "hyundai-autoever-america": {
+      "my-it": {
+        "last_seen_utc": "2026-04-17T19:56:50.874242+00:00",
+        "last_score": 7.5,
+        "last_title": "10041 - Windows Systems Administrator",
+        "last_url": "https://www.indeed.com/viewjob?jk=9bfdb0ae36072688&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "local"
+      }
+    },
+    "mercy-house": {
+      "my-it": {
+        "last_seen_utc": "2026-04-17T19:56:50.879494+00:00",
+        "last_score": 10.0,
+        "last_title": "IT Systems Administrator I (5322)",
+        "last_url": "https://www.ziprecruiter.com/c/MERCY-HOUSE/Job/IT-Systems-Administrator-I-(5322)/-in-Santa-Ana,CA?jid=f18a491f75763290&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "local"
+      }
+    },
+    "calance": {
+      "my-it": {
+        "last_seen_utc": "2026-04-17T19:56:50.886128+00:00",
+        "last_score": 8.5,
+        "last_title": "Mid level Network Administrator - 100% onsite",
+        "last_url": "https://www.linkedin.com/jobs/view/mid-level-network-administrator-100%25-onsite-at-calance-4402713427?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "local"
+      },
+      "my-ai": {
+        "last_seen_utc": "2026-04-17T19:59:31.333117+00:00",
+        "last_score": 8.7,
+        "last_title": "M365 Administrator \u2013 local to Denver, CO or Brentwood, TN. go onsite du",
+        "last_url": "https://www.learn4good.com/jobs/online_remote/info_technology/5019355147/e/?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "remote"
+      }
+    },
+    "maxlinear": {
+      "my-it": {
+        "last_seen_utc": "2026-04-17T19:56:50.890415+00:00",
+        "last_score": 9.0,
+        "last_title": "Senior Networking Systems Administrator",
+        "last_url": "https://www.linkedin.com/jobs/view/senior-networking-systems-administrator-at-maxlinear-4403130272?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "local"
+      }
+    },
+    "ampam-parks-mechanical": {
+      "my-it": {
+        "last_seen_utc": "2026-04-17T19:56:50.896860+00:00",
+        "last_score": 8.5,
+        "last_title": "IT Manager",
+        "last_url": "https://www.indeed.com/viewjob?jk=01d5628ff20f6d73&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "local"
+      }
+    },
+    "virtual-vocations-inc": {
+      "my-it": {
+        "last_seen_utc": "2026-04-17T19:56:50.901717+00:00",
+        "last_score": 5.7,
+        "last_title": "IT Support & Systems Administrator",
+        "last_url": "https://www.whatjobs.com/jobs/it-support-systems-administrator/costa-mesa-california?id=2633039250&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "local"
+      },
+      "my-ai": {
+        "last_seen_utc": "2026-04-17T19:56:51.025822+00:00",
+        "last_score": 8.7,
+        "last_title": "Azure Cloud Engineer",
+        "last_url": "https://www.whatjobs.com/jobs/azure-cloud-engineer/mission-viejo?id=2633114919&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "local"
+      },
+      "my-compliance-hipaa": {
+        "last_seen_utc": "2026-04-17T19:56:51.065998+00:00",
+        "last_score": 5.2,
+        "last_title": "Chief Compliance Officer",
+        "last_url": "https://www.talent.com/view?id=614830731883905748&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "local"
+      },
+      "my-compliance-cmmc": {
+        "last_seen_utc": "2026-04-17T19:56:51.105986+00:00",
+        "last_score": 5.2,
+        "last_title": "Cybersecurity ISSO/SME",
+        "last_url": "https://www.whatjobs.com/jobs/cybersecurity-isso-sme/costa-mesa-california?id=2633299949&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "local"
+      },
+      "my-cloud": {
+        "last_seen_utc": "2026-04-17T19:56:51.125456+00:00",
+        "last_score": 9.7,
+        "last_title": "Information Systems Security Officer",
+        "last_url": "https://www.whatjobs.com/jobs/information-systems-security-officer/fullerton-california?id=2633140638&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "local"
+      },
+      "my-continuity": {
+        "last_seen_utc": "2026-04-17T19:56:51.152619+00:00",
+        "last_score": 3.7,
+        "last_title": "Business Continuity Manager",
+        "last_url": "https://www.jobilize.com/job/us-ca-costa-mesa-business-continuity-manager-virtual-vocations-hiring?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "local"
+      },
+      "my-office": {
+        "last_seen_utc": "2026-04-17T19:56:51.274011+00:00",
+        "last_score": 6.2,
+        "last_title": "SharePoint Administrator",
+        "last_url": "https://www.whatjobs.com/jobs/sharepoint-administrator/orange?id=2633286808&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "local"
+      }
+    },
+    "vc5-consulting": {
+      "my-it": {
+        "last_seen_utc": "2026-04-17T19:56:50.905879+00:00",
+        "last_score": 5.2,
+        "last_title": "Solo IT Manager \u2013 Infrastructure & End-User Support",
+        "last_url": "https://www.jobleads.com/us/job/solo-it-manager-infrastructure-end-user-support--irvine--e29a76eaa76779755df93a85c2168f62a?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "local"
+      }
+    },
+    "balboa-technologies": {
+      "my-it": {
+        "last_seen_utc": "2026-04-17T19:56:50.910187+00:00",
+        "last_score": 7.0,
+        "last_title": "Help Desk Technician Tier 1-2",
+        "last_url": "https://www.linkedin.com/jobs/view/help-desk-technician-tier-1-2-at-balboa-technologies-4401134375?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "local"
+      }
+    },
+    "99-ranch-market": {
+      "my-it": {
+        "last_seen_utc": "2026-04-17T19:56:50.914418+00:00",
+        "last_score": 5.5,
+        "last_title": "Senior IT Support Specialist",
+        "last_url": "https://www.ziprecruiter.com/c/99-Ranch-Market/Job/Senior-IT-Support-Specialist/-in-Buena-Park,CA?jid=93ebb761c176b88e&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "local"
+      }
+    },
+    "developlus-inc": {
+      "my-it": {
+        "last_seen_utc": "2026-04-17T19:56:50.918934+00:00",
+        "last_score": 13.0,
+        "last_title": "IT Help Desk Technician II",
+        "last_url": "https://www.indeed.com/viewjob?jk=f6f6ae33f4d2aade&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "local"
+      }
+    },
+    "wsp-in-the-u-s": {
+      "my-ai": {
+        "last_seen_utc": "2026-04-17T19:56:50.923016+00:00",
+        "last_score": 12.5,
+        "last_title": "AI / ML Engineer - Image Analytics",
+        "last_url": "https://www.linkedin.com/jobs/view/ai-ml-engineer-image-analytics-at-wsp-in-the-u-s-4402349243?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "local"
+      }
+    },
+    "unitedhealth-group": {
+      "my-ai": {
+        "last_seen_utc": "2026-04-17T19:56:50.927666+00:00",
+        "last_score": 5.7,
+        "last_title": "Senior AI/ML Engineer - Remote",
+        "last_url": "https://careers.unitedhealthgroup.com/job/san-diego/senior-ai-ml-engineer-remote/34088/93928932000?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "local"
+      }
+    },
+    "baanyan-software-services-inc": {
+      "my-ai": {
+        "last_seen_utc": "2026-04-17T19:56:50.932984+00:00",
+        "last_score": 13.0,
+        "last_title": "AI Engineer \u2014 Agentic Systems & Enterprise AI",
+        "last_url": "https://bebee.com/us/jobs/ai-engineer-agentic-systems-enterprise-ai-baanyan-software-services-inc-huntington-park-ca--theirstack-664131583?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "local"
+      }
+    },
+    "applied-medical": {
+      "my-ai": {
+        "last_seen_utc": "2026-04-17T19:56:50.937227+00:00",
+        "last_score": 10.7,
+        "last_title": "Software Engineer - AI Engineer II/III",
+        "last_url": "https://careers.appliedmedical.com/jobs/14523?lang=en-us&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "local"
+      }
+    },
+    "jack-and-jill-ai": {
+      "my-ai": {
+        "last_seen_utc": "2026-04-17T19:56:50.942194+00:00",
+        "last_score": 6.0,
+        "last_title": "AI Engineer (Generalist) ($180K - $250K + 0.3% - 1% Equity) at BUILD, Inc.",
+        "last_url": "https://www.ziprecruiter.com/c/Jack-and-Jill-AI/Job/AI-Engineer-(Generalist)-($180K-$250K-+-0.3--1-Equity)-at-BUILD,-Inc./-in-San-Jose,CA?jid=4a92e1ac08735ccf&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "local"
+      }
+    },
+    "adobe": {
+      "my-ai": {
+        "last_seen_utc": "2026-04-17T19:56:50.948153+00:00",
+        "last_score": 6.7,
+        "last_title": "Senior / Prompt Engineer (AI/ML), Brand Concierge",
+        "last_url": "https://careers.adobe.com/us/en/job/R158292/Senior-Prompt-Engineer-AI-ML-Brand-Concierge?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "local"
+      }
+    },
+    "vdart-inc": {
+      "my-ai": {
+        "last_seen_utc": "2026-04-17T19:56:50.952911+00:00",
+        "last_score": 14.5,
+        "last_title": "AI Engineer (Generative AI / MLOps / AI Agents)",
+        "last_url": "https://www.dice.com/job-detail/14276722-1200-4b20-a5a3-cd720ad6971f?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "local"
+      }
+    },
+    "howard-hughes-medical-institute-hhmi": {
+      "my-ai": {
+        "last_seen_utc": "2026-04-17T19:56:50.956435+00:00",
+        "last_score": 5.5,
+        "last_title": "AI Engineer - AI+CryoET",
+        "last_url": "https://www.nature.com/naturecareers/job/12858478/ai-engineer-ai-cryoet/?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "local"
+      }
+    },
+    "micro1": {
+      "my-ai": {
+        "last_seen_utc": "2026-04-17T19:56:50.961189+00:00",
+        "last_score": 10.2,
+        "last_title": "AI/ML Engineer",
+        "last_url": "https://www.talent.com/view?id=615041810801106607&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "local"
+      }
+    },
+    "cisco": {
+      "my-ai-lead-gen": {
+        "last_seen_utc": "2026-04-17T19:56:50.966310+00:00",
+        "last_score": 7.5,
+        "last_title": "Sales Development Representative Outbound Sales II (Full Time) - United States",
+        "last_url": "https://careers.cisco.com/global/en/job/CISCISGLOBAL2003091EXTERNALENGLOBAL/Sales-Development-Representative-Outbound-Sales-II-Full-Time-United-States?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "local"
+      }
+    },
+    "zimvie": {
+      "my-ai-lead-gen": {
+        "last_seen_utc": "2026-04-17T19:56:50.971357+00:00",
+        "last_score": 8.5,
+        "last_title": "Clinical Business Development Representative (Irvine, CA)",
+        "last_url": "https://www.ziprecruiter.com/c/ZimVie/Job/Clinical-Business-Development-Representative-(Irvine,-CA)/-in-Orange,CA?jid=1a7472d526f8ce17&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "local"
+      }
+    },
+    "snowflake": {
+      "my-ai-lead-gen": {
+        "last_seen_utc": "2026-04-17T19:56:50.975257+00:00",
+        "last_score": 6.5,
+        "last_title": "Sales Development Representative, Observe",
+        "last_url": "https://careers.snowflake.com/us/en/job/SNCOUS72130A2D6B164E4CBE92F4DC81E5A332EXTERNALENUS1B4CC36A1CEB47DFA4CA1509DE6E52A5/Sales-Development-Representative-Observe?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "local"
+      },
+      "my-office": {
+        "last_seen_utc": "2026-04-17T19:59:31.347060+00:00",
+        "last_score": 4.7,
+        "last_title": "Want O365 Cloud Administrative Engineer in  Chicago, IL",
+        "last_url": "https://jobs4wfh.wuaze.com/job/o365-cloud-administrative-engineer-in-chicago-il?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "remote"
+      }
+    },
+    "arkenstone-defense": {
+      "my-ai": {
+        "last_seen_utc": "2026-04-17T19:56:50.980506+00:00",
+        "last_score": 6.7,
+        "last_title": "Sales Development Rep./Business Development Rep. (SDR/BDR)",
+        "last_url": "https://www.indeed.com/viewjob?jk=38432f299beda08e&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "local"
+      }
+    },
+    "the-hartford": {
+      "my-ai": {
+        "last_seen_utc": "2026-04-17T19:56:50.985494+00:00",
+        "last_score": 7.0,
+        "last_title": "New Business Development Representative",
+        "last_url": "https://www.indeed.com/viewjob?jk=1f1ac1c175ccb819&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "local"
+      }
+    },
+    "crown-equipment-corporation": {
+      "my-ai-lead-gen": {
+        "last_seen_utc": "2026-04-17T19:56:50.990436+00:00",
+        "last_score": 8.2,
+        "last_title": "Sales Representative/Business Development Representative - B2B (Entry Level)",
+        "last_url": "https://us-careers.crown.com/job/Bloomington-Sales-RepresentativeBusiness-Development-Representative-B2B-%28Entry-Level%29-IL-61701/1357233600/?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "local"
+      }
+    },
+    "acoustic": {
+      "my-ai-lead-gen": {
+        "last_seen_utc": "2026-04-17T19:56:50.995561+00:00",
+        "last_score": 8.0,
+        "last_title": "Enterprise Sales Development Representative",
+        "last_url": "https://www.ziprecruiter.com/c/Acoustic/Job/Enterprise-Sales-Development-Representative/-in-San-Diego,CA?jid=c722f6af9d4c35ac&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "local"
+      }
+    },
+    "elevate-talent-solutions": {
+      "my-ai-lead-gen": {
+        "last_seen_utc": "2026-04-17T19:56:51.001636+00:00",
+        "last_score": 6.5,
+        "last_title": "Business Development Representative",
+        "last_url": "https://www.ziprecruiter.com/c/Elevate-Talent-Solutions/Job/Business-Development-Representative/-in-Remote,US?jid=bcd60a817a9cb733&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "local"
+      }
+    },
+    "freeway-toyota-of-gilroy": {
+      "my-ai": {
+        "last_seen_utc": "2026-04-17T19:56:51.007071+00:00",
+        "last_score": 8.0,
+        "last_title": "Business Development Representative BDC",
+        "last_url": "https://www.indeed.com/viewjob?jk=b810a05be37754fc&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "local"
+      }
+    },
+    "cognizant": {
+      "my-cloud": {
+        "last_seen_utc": "2026-04-17T19:56:51.012471+00:00",
+        "last_score": 6.0,
+        "last_title": "Cloud Engineer \u2013 Azure DevOps & Jira | Payer Domain",
+        "last_url": "https://www.whatjobs.com/jobs/cloud-engineer-azure-devops/long-beach-california?id=2638460199&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "local"
+      }
+    },
+    "jobs-via-dice": {
+      "my-cloud": {
+        "last_seen_utc": "2026-04-17T19:56:51.016490+00:00",
+        "last_score": 8.0,
+        "last_title": "Site Reliability Engineer(Autosys Administration)",
+        "last_url": "https://www.linkedin.com/jobs/view/site-reliability-engineer-autosys-administration-at-jobs-via-dice-4402335112?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "local"
+      },
+      "my-dev": {
+        "last_seen_utc": "2026-04-17T19:56:51.228009+00:00",
+        "last_score": 4.0,
+        "last_title": "Network Engineering Manager (hands on) - 100% onsite",
+        "last_url": "https://www.google.com/search?ibp=htl;jobs&q=%22Software+Engineer%22+OR+%22.NET+Developer%22+OR+%22Full+Stack+Developer%22+OR+%22React+Developer%22+OR+%22Engineering+Manager%22+OR+%22Dev+Lead%22&htidocid=gABcDG-tNMTGXvj7AAAAAA%3D%3D&hl=en-US&shndl=37&shmd=H4sIAAAAAAAA_xWOMQrCQBBFsc0RtJlGUNEkCjZaiYqo6BXCZB12V-NM2FlibuQ1XZvPf794_Ow7yK53ih8JLziy9UwUPFu4IaOlABOH_FAQnsIClmU5TlV9pEQXqUEJg3Fpg5OIbWi4dTG2uikK1Sa3GjF6kxt5F8JUS188pdZ_VOowUNtgpGq1Lvu8ZTsbJaVC5xEO3hB4hnPo0qU57Hc_dXbtvqoAAAA&shmds=v1_ATWGeeNyUZaY54R6HxfRiwHYoo6vAb6fsFLWTW1GANbYwY0NTw&source=sh/x/job/li/m1/1#fpstate=tldetail&htivrt=jobs&htiq=%22Software+Engineer%22+OR+%22.NET+Developer%22+OR+%22Full+Stack+Developer%22+OR+%22React+Developer%22+OR+%22Engineering+Manager%22+OR+%22Dev+Lead%22&htidocid=gABcDG-tNMTGXvj7AAAAAA%3D%3D",
+        "last_scope": "local"
+      }
+    },
+    "anduril-industries": {
+      "my-cloud": {
+        "last_seen_utc": "2026-04-17T19:56:51.021307+00:00",
+        "last_score": 8.0,
+        "last_title": "Cloud Engineer \u2013 Factory Systems and Operational Technology",
+        "last_url": "https://www.indeed.com/viewjob?jk=a5424e792b094f21&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "local"
+      },
+      "my-dev": {
+        "last_seen_utc": "2026-04-17T19:56:51.251479+00:00",
+        "last_score": 4.0,
+        "last_title": "Software Engineer - Modeling & Simulation",
+        "last_url": "https://www.google.com/search?ibp=htl;jobs&q=%22Software+Engineer%22+OR+%22.NET+Developer%22+OR+%22Full+Stack+Developer%22+OR+%22React+Developer%22+OR+%22Engineering+Manager%22+OR+%22Dev+Lead%22&htidocid=UIZ3P0FDAdTkXeTtAAAAAA%3D%3D&hl=en-US&shndl=37&shmd=H4sIAAAAAAAA_xWNsQrCQBBEsc0nWG0hFqI5EWy0MQQRhVR-QLgk62XlshtuL5gf8j89mxlmGN5k30V2ecorfmxAuLIjRgywg0o69MQO1vCkYfI2knDqH9KAog1tDynfRJzH5bmPcdSTMao-dxrTuM1bGYwwNjKbtzT6l1r7dDMmGNaH437OR3abVcHdFMjDPbnGQKhADKUkDlSodgtl8QNNptOaqAAAAA&shmds=v1_ATWGeeOmqKe3Uv7rWsCaRTtf1xpdvr8tE-1z6pMyBGH_EKq-dQ&source=sh/x/job/li/m1/1#fpstate=tldetail&htivrt=jobs&htiq=%22Software+Engineer%22+OR+%22.NET+Developer%22+OR+%22Full+Stack+Developer%22+OR+%22React+Developer%22+OR+%22Engineering+Manager%22+OR+%22Dev+Lead%22&htidocid=UIZ3P0FDAdTkXeTtAAAAAA%3D%3D",
+        "last_scope": "local"
+      }
+    },
+    "highbrow-technology-inc": {
+      "my-cloud": {
+        "last_seen_utc": "2026-04-17T19:56:51.030600+00:00",
+        "last_score": 7.0,
+        "last_title": "Senior Devops Engineer (5-10 Yrs and USC/GC/W2/C2H)",
+        "last_url": "https://www.linkedin.com/jobs/view/senior-devops-engineer-5-10-yrs-and-usc-gc-w2-c2h-at-highbrow-technology-inc-4402703746?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "local"
+      },
+      "unknown": {
+        "last_seen_utc": "2026-04-17T19:56:51.258633+00:00",
+        "last_score": 2.5,
+        "last_title": "Software Developer (2 to 4 Years/W2/Only USC or GC)",
+        "last_url": "https://www.google.com/search?ibp=htl;jobs&q=%22Software+Engineer%22+OR+%22.NET+Developer%22+OR+%22Full+Stack+Developer%22+OR+%22React+Developer%22+OR+%22Engineering+Manager%22+OR+%22Dev+Lead%22&htidocid=Vqm0eEc1PB1kIXRVAAAAAA%3D%3D&hl=en-US&shndl=37&shmd=H4sIAAAAAAAA_xXNvQrCMBSGYVy9BKdv1KKNFF10kgr-IDhUESdpwzGpxJySE7S9MO9PXd7lGd7-p9ffF3yP7zIQ1vQixw0FDDNExgxXKoOoS6aO3nU4Fzk4YJOPMMGeK8iPtQV7bJiNo8HSxtjIQikRlxqJZax1qvmp2FPFrXpwJf_cxP6GjSsj3bL5tE0bb5JkWxtbBX7jRNp6dmw67LxG7XFgwcobciRj5KsvC5jC9LgAAAA&shmds=v1_ATWGeePIce1vE3_XrRtSI0-V9VHgnmISbyTn5fEjOXPOnEZ4aw&source=sh/x/job/li/m1/1#fpstate=tldetail&htivrt=jobs&htiq=%22Software+Engineer%22+OR+%22.NET+Developer%22+OR+%22Full+Stack+Developer%22+OR+%22React+Developer%22+OR+%22Engineering+Manager%22+OR+%22Dev+Lead%22&htidocid=Vqm0eEc1PB1kIXRVAAAAAA%3D%3D",
+        "last_scope": "local"
+      }
+    },
+    "vigi-retail-solution": {
+      "my-cloud": {
+        "last_seen_utc": "2026-04-17T19:56:51.034689+00:00",
+        "last_score": 6.7,
+        "last_title": "Cloud DevOps Engineer: CI/CD Platform Builder",
+        "last_url": "https://www.whatjobs.com/jobs/cloud-devops-engineer-ci-cd-platform/irvine-california?id=2629828564&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "local"
+      }
+    },
+    "ingenworks": {
+      "my-cloud": {
+        "last_seen_utc": "2026-04-17T19:56:51.038688+00:00",
+        "last_score": 8.5,
+        "last_title": "Site Reliability Engineer with Autosys Admin Experience",
+        "last_url": "https://www.dice.com/job-detail/8fcf3205-7993-4f6a-a52e-21e6e5b1f5cd?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "local"
+      }
+    },
+    "tata-consultancy-services": {
+      "my-cloud": {
+        "last_seen_utc": "2026-04-17T19:56:51.043315+00:00",
+        "last_score": 5.7,
+        "last_title": "AWS Cloud Architect: Data Center Exit & Landing Zones",
+        "last_url": "https://www.whatjobs.com/jobs/aws-cloud-architect-data-center/irvine-california?id=2629972927&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "local"
+      }
+    },
+    "megazone-cloud-us": {
+      "my-it": {
+        "last_seen_utc": "2026-04-17T19:56:51.047324+00:00",
+        "last_score": 8.2,
+        "last_title": "On-Site Azure Cloud Engineer (MSP) \u2013 Irvine",
+        "last_url": "https://www.whatjobs.com/jobs/on-site-azure-cloud-engineer-msp/irvine-california?id=2630149926&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "local"
+      }
+    },
+    "optomi": {
+      "my-cloud": {
+        "last_seen_utc": "2026-04-17T19:56:51.051984+00:00",
+        "last_score": 6.5,
+        "last_title": "Site Reliability Engineer (Contract/Hybrid)",
+        "last_url": "https://www.ziprecruiter.com/c/Optomi/Job/Site-Reliability-Engineer-(Contract-Hybrid)/-in-Glendale,CA?jid=0e7033ac837d870e&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "local"
+      }
+    },
+    "unitypoint-health": {
+      "my-compliance-hipaa": {
+        "last_seen_utc": "2026-04-17T19:56:51.056089+00:00",
+        "last_score": 6.0,
+        "last_title": "Remote Privacy Officer, Healthcare Compliance",
+        "last_url": "https://www.whatjobs.com/jobs/remote-privacy-officer-healthcare-compliance/west-des-moines-iowa?id=2637478040&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "local"
+      }
+    },
+    "western-health-advantage": {
+      "my-compliance-hipaa": {
+        "last_seen_utc": "2026-04-17T19:56:51.061558+00:00",
+        "last_score": 8.0,
+        "last_title": "Compliance Analyst",
+        "last_url": "https://www.indeed.com/viewjob?jk=365552909dc85c37&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "local"
+      }
+    },
+    "robert-half": {
+      "my-compliance-hipaa": {
+        "last_seen_utc": "2026-04-17T19:56:51.070961+00:00",
+        "last_score": 6.2,
+        "last_title": "IT Audit and Compliance Analyst",
+        "last_url": "https://jobs.cloc.org/job/it-audit-and-compliance-analyst-irvine-ca-08d5b09cde35fd8dbee92ef4a35582ceb?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "local"
+      }
+    },
+    "fiserv-inc": {
+      "my-compliance-hipaa": {
+        "last_seen_utc": "2026-04-17T19:56:51.076652+00:00",
+        "last_score": 9.0,
+        "last_title": "Security Analyst: Governance, Risk and Compliance - Analyst Program I | Sunnyvale, CA, USA",
+        "last_url": "https://www.efinancialcareers.com/jobs-USA-CA-Sunnyvale-Security_Analyst_Governance_Risk_and_Compliance_-_Analyst_Program_I.id24136518?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "local"
+      }
+    },
+    "caresource": {
+      "my-compliance-hipaa": {
+        "last_seen_utc": "2026-04-17T19:56:51.081428+00:00",
+        "last_score": 5.5,
+        "last_title": "REMOTE - Compliance Analyst II - Healthcare Experience Required (Eastern Time Zone) - R12512",
+        "last_url": "https://bebee.com/us/jobs/remote-compliance-analyst-ii-healthcare-experience-required-eastern-time-zone-r12512-caresource--theirstack-664324406?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "local"
+      }
+    },
+    "blue-shield-of-california": {
+      "my-compliance-hipaa": {
+        "last_seen_utc": "2026-04-17T19:56:51.085799+00:00",
+        "last_score": 5.2,
+        "last_title": "Government Programs Compliance Analyst, Consultant",
+        "last_url": "https://www.terra.do/climate-jobs/job-board/Government-Programs-Compliance-Analyst--Consultant-Blue-Shield-Of-California-8388475/?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "local"
+      }
+    },
+    "rsc-solutions": {
+      "my-compliance-hipaa": {
+        "last_seen_utc": "2026-04-17T19:56:51.089728+00:00",
+        "last_score": 6.0,
+        "last_title": "(Remote) Compliance Analyst",
+        "last_url": "https://www.linkedin.com/jobs/view/remote-compliance-analyst-at-rsc-solutions-4389577318?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "local"
+      }
+    },
+    "reinsurance-group-of-america": {
+      "my-compliance-hipaa": {
+        "last_seen_utc": "2026-04-17T19:56:51.096728+00:00",
+        "last_score": 6.5,
+        "last_title": "SVP, Global Chief Compliance Officer",
+        "last_url": "https://www.rgarecareers.com/us/en/job/J26923/SVP-Global-Chief-Compliance-Officer?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "local"
+      }
+    },
+    "hanger-inc": {
+      "my-ai": {
+        "last_seen_utc": "2026-04-17T19:56:51.102243+00:00",
+        "last_score": 9.0,
+        "last_title": "Regulatory Compliance Analyst II",
+        "last_url": "https://careers.hanger.com/us/en/job/31218/Regulatory-Compliance-Analyst-II?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "local"
+      }
+    },
+    "jpl-nasa": {
+      "my-compliance-hipaa": {
+        "last_seen_utc": "2026-04-17T19:56:51.113425+00:00",
+        "last_score": 8.7,
+        "last_title": "Mission-focused Cybersecurity Engineer / Information Systems Security Officer (ISSO)",
+        "last_url": "https://www.jpl.jobs/job/R5475/Mission-focused-Cybersecurity-Engineer-Information-Systems-Security-Officer-ISSO?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "local"
+      }
+    },
+    "raytheon": {
+      "my-compliance-cmmc": {
+        "last_seen_utc": "2026-04-17T19:56:51.118200+00:00",
+        "last_score": 6.5,
+        "last_title": "Onsite ISSO: RMF & Compliance Lead",
+        "last_url": "https://www.jobleads.com/us/job/onsite-isso-rmf-compliance-lead--el-segundo--ecf9b4ad92e06edb1383366829f6e710f?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "local"
+      }
+    },
+    "psc-by-rocket-lab": {
+      "my-compliance-cmmc": {
+        "last_seen_utc": "2026-04-17T19:56:51.131301+00:00",
+        "last_score": 5.2,
+        "last_title": "Senior ISSO \u2014 RMF & Information Security Leader",
+        "last_url": "https://www.whatjobs.com/jobs/senior-isso-rmf/long-beach-california?id=2629976362&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "local"
+      }
+    },
+    "rocket-lab": {
+      "my-compliance-cmmc": {
+        "last_seen_utc": "2026-04-17T19:56:51.135847+00:00",
+        "last_score": 5.5,
+        "last_title": "Senior ISSO - RMF Expert Classified Space Systems",
+        "last_url": "https://www.learn4good.com/jobs/long-beach/california/info_technology/5032704028/e/?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "local"
+      }
+    },
+    "impulsespace": {
+      "my-compliance-hipaa": {
+        "last_seen_utc": "2026-04-17T19:56:51.144051+00:00",
+        "last_score": 10.7,
+        "last_title": "Information System Security Officer (ISSO) Redondo Beach",
+        "last_url": "https://www.whatjobs.com/jobs/information-system-security-officer-isso/redondo-beach-california?id=2630156619&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "local"
+      }
+    },
+    "rocket-lab-usa": {
+      "my-compliance-cmmc": {
+        "last_seen_utc": "2026-04-17T19:56:51.152619+00:00",
+        "last_score": 5.2,
+        "last_title": "Senior ISSO \u2014 Space Systems Information Security",
+        "last_url": "https://www.whatjobs.com/jobs/senior-isso-space-systems/long-beach-california?id=2629994312&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "local"
+      }
+    },
+    "cardinal-health": {
+      "my-continuity": {
+        "last_seen_utc": "2026-04-17T19:56:51.162395+00:00",
+        "last_score": 7.0,
+        "last_title": "Data Protection Engineer - Full-time",
+        "last_url": "https://www.snagajob.com/jobs/1245425979?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "local"
+      },
+      "my-ai": {
+        "last_seen_utc": "2026-04-17T19:59:31.260999+00:00",
+        "last_score": 6.2,
+        "last_title": "Data Protection Engineer: CASB & DB Security (Remote)",
+        "last_url": "https://www.jobleads.com/us/job/data-protection-engineer-casb-db-security-remote--concord--e491168c16a3a069c6981ad603a540277?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "remote"
+      }
+    },
+    "confidential": {
+      "my-ai": {
+        "last_seen_utc": "2026-04-17T19:56:51.167729+00:00",
+        "last_score": 7.2,
+        "last_title": "Business Continuity Management Specialist",
+        "last_url": "https://www.linkedin.com/jobs/view/business-continuity-management-specialist-at-confidential-4401339998?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "local"
+      }
+    },
+    "a-p-moller-maersk": {
+      "my-compliance-hipaa": {
+        "last_seen_utc": "2026-04-17T19:56:51.175350+00:00",
+        "last_score": 11.0,
+        "last_title": "Geographical Cluster Security and Business Continuity Manager, Mainland China",
+        "last_url": "https://www.linkedin.com/jobs/view/geographical-cluster-security-and-business-continuity-manager-mainland-china-at-a-p-moller-maersk-4387636240?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "local"
+      }
+    },
+    "fixity-technologies": {
+      "my-continuity": {
+        "last_seen_utc": "2026-04-17T19:56:51.185180+00:00",
+        "last_score": 7.0,
+        "last_title": "Disaster Recovery Specialist",
+        "last_url": "https://www.indeed.com/viewjob?jk=8f144275f33cab5e&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "local"
+      }
+    },
+    "chembular-manpower": {
+      "my-ai": {
+        "last_seen_utc": "2026-04-17T19:56:51.191722+00:00",
+        "last_score": 7.0,
+        "last_title": "Senior Data Protection Engineer - Pre-Sales NetBackup",
+        "last_url": "https://www.whatjobs.com/jobs/senior-data-protection-engineer/sunnyvale-california?id=2638038274&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "local"
+      }
+    },
+    "src": {
+      "my-ai": {
+        "last_seen_utc": "2026-04-17T19:56:51.198353+00:00",
+        "last_score": 10.0,
+        "last_title": "Data Protection Engineer - Top Secret/SCI Jobs",
+        "last_url": "https://www.clearancejobs.com/jobs/8856223/data-protection-engineer-top-secretsci?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "local"
+      }
+    },
+    "science-applications-international-corporation": {
+      "my-ai": {
+        "last_seen_utc": "2026-04-17T19:56:51.206269+00:00",
+        "last_score": 9.5,
+        "last_title": "Data Protection Engineer",
+        "last_url": "https://bebee.com/us/jobs/data-protection-engineer-science-applications-international-corporation-springfield--the-ladd-86518392?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "local"
+      }
+    },
+    "cgs-federal-contact-government-services": {
+      "my-continuity": {
+        "last_seen_utc": "2026-04-17T19:56:51.213778+00:00",
+        "last_score": 4.2,
+        "last_title": "Senior CommVault Data Protection Engineer (Federal)",
+        "last_url": "https://www.whatjobs.com/jobs/senior-commvault-data-protection-engineer/los-angeles-california?id=2629991684&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "local"
+      }
+    },
+    "irvine-technology-corporation": {
+      "my-dev": {
+        "last_seen_utc": "2026-04-17T19:56:51.221854+00:00",
+        "last_score": 5.2,
+        "last_title": "Full Stack Developer, Sr. (NET, Angular) onsite",
+        "last_url": "https://www.google.com/search?ibp=htl;jobs&q=%22Software+Engineer%22+OR+%22.NET+Developer%22+OR+%22Full+Stack+Developer%22+OR+%22React+Developer%22+OR+%22Engineering+Manager%22+OR+%22Dev+Lead%22&htidocid=EWL62IgGX4GXEYoYAAAAAA%3D%3D&hl=en-US&shndl=37&shmd=H4sIAAAAAAAA_yWNvQrCMBRGce0jON3Rn5qI4KJTqVZ0cGn3koZLEo25IUlLfS2f0IrLNxwO58s-s6yqemuhTkI-4YQDWvIYcqgDg8X93ORQONVbEZZALpqEsIEbdRBRBKknBhciZXF-1Cn5eOA8RstUTCIZySS9ODnsaOQP6uJv2qhFQG9Fwna3347MO7VaX8NgHEKDUjuypN5QUvAUpsp0YRz8hRzK4guwN0cYtQAAAA&shmds=v1_ATWGeeM5d_ju-wZCGxSBMUml70pKuCWPw83vC62kL6yjHkjWng&source=sh/x/job/li/m1/1#fpstate=tldetail&htivrt=jobs&htiq=%22Software+Engineer%22+OR+%22.NET+Developer%22+OR+%22Full+Stack+Developer%22+OR+%22React+Developer%22+OR+%22Engineering+Manager%22+OR+%22Dev+Lead%22&htidocid=EWL62IgGX4GXEYoYAAAAAA%3D%3D",
+        "last_scope": "local"
+      }
+    },
+    "costar": {
+      "my-dev": {
+        "last_seen_utc": "2026-04-17T19:56:51.234988+00:00",
+        "last_score": 4.5,
+        "last_title": "Apartments.com - Software Engineer I (C#/.NET/Database)",
+        "last_url": "https://www.google.com/search?ibp=htl;jobs&q=%22Software+Engineer%22+OR+%22.NET+Developer%22+OR+%22Full+Stack+Developer%22+OR+%22React+Developer%22+OR+%22Engineering+Manager%22+OR+%22Dev+Lead%22&htidocid=_exPacgiu2uQ41oDAAAAAA%3D%3D&hl=en-US&shndl=37&shmd=H4sIAAAAAAAA_xWNMQ6CQBAAY0ttZbWJjRq9MyY2WhEkBgsa7MlCVsDA7eV2o_zHjwrNVJOZ6LeI8thj0IGciql5gAMU_NIvBoLUNZ0jCpDBJllbk6dPe0PFCoW2k_jgCoQw1C2wgztz09Pq2qp6uVgr0ptGFLWr57BlRxWP9s2VzCilnR6-R6XydD6Oxrtmt0y4UAzQOcjCZ5rvIYn_hTw4qaYAAAA&shmds=v1_ATWGeeO21bQEQ7Yc8dqz8QIeA4WUuupjc0imYlNouRojP0F3Qw&source=sh/x/job/li/m1/1#fpstate=tldetail&htivrt=jobs&htiq=%22Software+Engineer%22+OR+%22.NET+Developer%22+OR+%22Full+Stack+Developer%22+OR+%22React+Developer%22+OR+%22Engineering+Manager%22+OR+%22Dev+Lead%22&htidocid=_exPacgiu2uQ41oDAAAAAA%3D%3D",
+        "last_scope": "local"
+      }
+    },
+    "value-spectrum-technologies-llc": {
+      "my-dev": {
+        "last_seen_utc": "2026-04-17T19:56:51.244699+00:00",
+        "last_score": 5.5,
+        "last_title": "Opening for .NET Full stack Developer \u2013 Immediate Hiring",
+        "last_url": "https://www.google.com/search?ibp=htl;jobs&q=%22Software+Engineer%22+OR+%22.NET+Developer%22+OR+%22Full+Stack+Developer%22+OR+%22React+Developer%22+OR+%22Engineering+Manager%22+OR+%22Dev+Lead%22&htidocid=FtQDbcU1PJYW6RGqAAAAAA%3D%3D&hl=en-US&shndl=37&shmd=H4sIAAAAAAAA_xXMPW4CMRRFYaVlCaluHSUzKFIUiVTR8BshogCiRR7nYRvs9yzbgyizh6yKbbASoDnd-Xrnh97PdyR2bLCThGoxWmPceY9clD5gSEfyEinh8vePWQj061QhTF26Ly_4khaZVNIWwpiIGE-PH7aUmAd1nbOvzE0qTldaQi1MrZzqvbT5nm22KlH0N3H7-tY_VZHN0_tG-Y6wiqRL6gLWpC2LF-MoYz5v4BhLxdoKmk6rIGzUM5rPK-GB9IXMAAAA&shmds=v1_ATWGeeMtw7ak4uXaBETZVBNW17i34qO3HaDd2qokDRSWqYOFYg&source=sh/x/job/li/m1/1#fpstate=tldetail&htivrt=jobs&htiq=%22Software+Engineer%22+OR+%22.NET+Developer%22+OR+%22Full+Stack+Developer%22+OR+%22React+Developer%22+OR+%22Engineering+Manager%22+OR+%22Dev+Lead%22&htidocid=FtQDbcU1PJYW6RGqAAAAAA%3D%3D",
+        "last_scope": "local"
+      }
+    },
+    "dexwell-inc": {
+      "my-dev": {
+        "last_seen_utc": "2026-04-17T19:56:51.257198+00:00",
+        "last_score": 5.5,
+        "last_title": "Full Stack Developer",
+        "last_url": "https://www.google.com/search?ibp=htl;jobs&q=%22Software+Engineer%22+OR+%22.NET+Developer%22+OR+%22Full+Stack+Developer%22+OR+%22React+Developer%22+OR+%22Engineering+Manager%22+OR+%22Dev+Lead%22&htidocid=CaAuN04g2my7mta5AAAAAA%3D%3D&hl=en-US&shndl=37&shmd=H4sIAAAAAAAA_xXEsQrCMBAAUFz7CYJws9ZEBBc7SVtFKS4OupVLPNpqzIVclP6Cfy2-4WXfSbbYv52DS0L7hIo-5DhQhCWc2IAQRtsDezgwd46mRZ9SkK3WIk51kjANVll-afZkeNQPNvKvlR4jBYeJ2vVmNargu_msqm_XumlyOJ5LBYOHEqMTg_ccyt0PNNKVlIwAAAA&shmds=v1_ATWGeeMItv_kt5BhV6g1JIbrJpie4VvLqTp9_iuPl_Z79XKodQ&source=sh/x/job/li/m1/1#fpstate=tldetail&htivrt=jobs&htiq=%22Software+Engineer%22+OR+%22.NET+Developer%22+OR+%22Full+Stack+Developer%22+OR+%22React+Developer%22+OR+%22Engineering+Manager%22+OR+%22Dev+Lead%22&htidocid=CaAuN04g2my7mta5AAAAAA%3D%3D",
+        "last_scope": "local"
+      }
+    },
+    "mprogen": {
+      "my-dev": {
+        "last_seen_utc": "2026-04-17T19:56:51.257198+00:00",
+        "last_score": 3.0,
+        "last_title": "C#.Net Developer- Lake Forest, CA- Only Locals",
+        "last_url": "https://www.google.com/search?ibp=htl;jobs&q=%22Software+Engineer%22+OR+%22.NET+Developer%22+OR+%22Full+Stack+Developer%22+OR+%22React+Developer%22+OR+%22Engineering+Manager%22+OR+%22Dev+Lead%22&htidocid=EBslcTRchyGkBnXfAAAAAA%3D%3D&hl=en-US&shndl=37&shmd=H4sIAAAAAAAA_13NvQrCMBAAYFz7CJ0O3MQkIrjoJPUHpKhvUNJwJNU0F3KH1LfxUcXV5Vu_6jOrjs1cX1HggC-MlLEoaO0T4UQFWZbQ7BXcUnxDS85GBgUX6oHRFheAEpyJfMR6F0Qyb41hjtqzWBmcdjQaStjTZB7U84-Ogy2YoxXs1pvVpHPyi3q8F_KYYEj_-RfrG24iowAAAA&shmds=v1_ATWGeeORmii_sOJhJkHAU3QeORKLkyh_OHiJBlXd8q9mhwOv7w&source=sh/x/job/li/m1/1#fpstate=tldetail&htivrt=jobs&htiq=%22Software+Engineer%22+OR+%22.NET+Developer%22+OR+%22Full+Stack+Developer%22+OR+%22React+Developer%22+OR+%22Engineering+Manager%22+OR+%22Dev+Lead%22&htidocid=EBslcTRchyGkBnXfAAAAAA%3D%3D",
+        "last_scope": "local"
+      }
+    },
+    "the-trade-desk": {
+      "my-dev": {
+        "last_seen_utc": "2026-04-17T19:56:51.258945+00:00",
+        "last_score": 3.7,
+        "last_title": "Lead Sr Staff Software Engineer - Front End Fundamentals",
+        "last_url": "https://www.google.com/search?ibp=htl;jobs&q=%22Software+Engineer%22+OR+%22.NET+Developer%22+OR+%22Full+Stack+Developer%22+OR+%22React+Developer%22+OR+%22Engineering+Manager%22+OR+%22Dev+Lead%22&htidocid=YQDdgWBZ2DPfwW1VAAAAAA%3D%3D&hl=en-US&shndl=37&shmd=H4sIAAAAAAAA_xWOvQ6CUAxG48ojGIfORsGYuOhkVIzGxAF2UrjlR6Elt1V5KB9SXL7hnOF8wXcS3G-EDhIPiWFZQiKlfdATnLhqmMjDEmIvbCNwEL_YYUds2OoorpKDEvqiBmE4i1QtTXe1Wa_bKFJtw0oNrSnCQrpImHIZoofk-p9M67HTt2iUrTerIey5ms_SmiD16AiOpE9oGC7-PR5ZwGH_A6rLeYKvAAAA&shmds=v1_ATWGeeOjM7X7OwqNgFtsfdMwOsZl5uyKI0AUUQ9zmcZ-ZPKCUw&source=sh/x/job/li/m1/1#fpstate=tldetail&htivrt=jobs&htiq=%22Software+Engineer%22+OR+%22.NET+Developer%22+OR+%22Full+Stack+Developer%22+OR+%22React+Developer%22+OR+%22Engineering+Manager%22+OR+%22Dev+Lead%22&htidocid=YQDdgWBZ2DPfwW1VAAAAAA%3D%3D",
+        "last_scope": "local"
+      }
+    },
+    "govcio": {
+      "my-it": {
+        "last_seen_utc": "2026-04-17T19:56:51.267336+00:00",
+        "last_score": 13.7,
+        "last_title": "Microsoft 365 Administrator",
+        "last_url": "https://www.whatjobs.com/jobs/microsoft-365-administrator/california?id=2629959809&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "local"
+      }
+    },
+    "trigyn": {
+      "my-cloud": {
+        "last_seen_utc": "2026-04-17T19:56:51.284966+00:00",
+        "last_score": 11.2,
+        "last_title": "Microsoft O365 / Exchange Administrator",
+        "last_url": "https://www.trigyn.com/job/microsoft-o365-exchange-administrator?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "local"
+      }
+    },
+    "earthcam": {
+      "my-cloud": {
+        "last_seen_utc": "2026-04-17T19:56:51.290670+00:00",
+        "last_score": 12.5,
+        "last_title": "Microsoft 365 Administrator - Full-time",
+        "last_url": "https://www.snagajob.com/jobs/1228839743?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "local"
+      }
+    },
+    "mobius-logic-inc": {
+      "my-cloud": {
+        "last_seen_utc": "2026-04-17T19:56:51.298402+00:00",
+        "last_score": 9.7,
+        "last_title": "Azure & M365 Administrator",
+        "last_url": "https://www.indeed.com/viewjob?jk=39ac30f299f3a03b&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "local"
+      }
+    },
+    "eleven-recruiting": {
+      "my-office": {
+        "last_seen_utc": "2026-04-17T19:56:51.305529+00:00",
+        "last_score": 6.2,
+        "last_title": "SharePoint Administrator | Hybrid LA | Power Platform Expert",
+        "last_url": "https://www.whatjobs.com/jobs/sharepoint-administrator-hybrid-la/los-angeles-california?id=2633393299&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "local"
+      }
+    },
+    "corient": {
+      "my-ai": {
+        "last_seen_utc": "2026-04-17T19:56:51.312084+00:00",
+        "last_score": 13.5,
+        "last_title": "Microsoft 365 Administrator",
+        "last_url": "https://www.ziprecruiter.com/c/Corient/Job/Microsoft-365-Administrator/-in-Austin,TX?jid=efaba4c8bbd46620&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "local"
+      }
+    },
+    "ridgewood-technology-partners-llc": {
+      "my-office": {
+        "last_seen_utc": "2026-04-17T19:56:51.323148+00:00",
+        "last_score": 7.5,
+        "last_title": "SharePoint Administrator",
+        "last_url": "https://www.indeed.com/viewjob?jk=268b92f52641fa95&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "local"
+      }
+    },
+    "apex-service-partners": {
+      "my-it": {
+        "last_seen_utc": "2026-04-17T19:56:51.330731+00:00",
+        "last_score": 13.0,
+        "last_title": "Senior Microsoft 365 Administrator",
+        "last_url": "https://www.ziprecruiter.com/c/Apex-Service-Partners/Job/Senior-Microsoft-365-Administrator/-in-Irving,TX?jid=b471d949f92ae539&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "local"
+      }
+    },
+    "directive": {
+      "my-seo": {
+        "last_seen_utc": "2026-04-17T19:56:51.336079+00:00",
+        "last_score": 6.2,
+        "last_title": "Digital Marketing Manager (Remote US) - Future Opening",
+        "last_url": "https://www.ziprecruiter.com/c/Directive/Job/Digital-Marketing-Manager-(Remote-US)-Future-Opening/-in-Irvine,CA?jid=551e7f4c8f282742&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "local"
+      }
+    },
+    "seop-inc": {
+      "my-continuity": {
+        "last_seen_utc": "2026-04-17T19:56:51.344299+00:00",
+        "last_score": 8.2,
+        "last_title": "Seop Inc. is hiring: SEO Analyst in Irvine",
+        "last_url": "https://www.mediabistro.com/jobs/1723795569-seop-inc-is-hiring-seo-analyst-in-irvine?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "local"
+      }
+    },
+    "koppla-marketing": {
+      "my-seo": {
+        "last_seen_utc": "2026-04-17T19:56:51.350650+00:00",
+        "last_score": 7.2,
+        "last_title": "SEO & Content Marketing Manager",
+        "last_url": "https://kopplamarketing.com/careers/seo-content-marketing-manager/?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "local"
+      }
+    },
+    "u-s-bank-national-association": {
+      "my-ai": {
+        "last_seen_utc": "2026-04-17T19:56:51.359748+00:00",
+        "last_score": 10.7,
+        "last_title": "Digital Marketing Manager - Paid Media",
+        "last_url": "https://www.indeed.com/viewjob?jk=1e2bbec07c6aef98&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "local"
+      }
+    },
+    "cypress-hcm": {
+      "my-seo": {
+        "last_seen_utc": "2026-04-17T19:56:51.370696+00:00",
+        "last_score": 4.5,
+        "last_title": "Remote Technical SEO Specialist (Contract)",
+        "last_url": "https://www.whatjobs.com/jobs/technical-seo-specialist-contract/remote?id=2640364132&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "local"
+      }
+    },
+    "oremor-automotive-group": {
+      "my-seo": {
+        "last_seen_utc": "2026-04-17T19:56:51.376159+00:00",
+        "last_score": 6.5,
+        "last_title": "Multi-Brand Auto SEO Specialist (Hybrid)",
+        "last_url": "https://www.whatjobs.com/jobs/multi-brand-auto-seo-specialist-hybrid/tustin?id=2633393845&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "local"
+      }
+    },
+    "virtualvocations": {
+      "my-seo": {
+        "last_seen_utc": "2026-04-17T19:56:51.381050+00:00",
+        "last_score": 4.0,
+        "last_title": "SEO Marketing Project Manager",
+        "last_url": "https://www.talent.com/view?id=544298679161005442&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "local"
+      }
+    },
+    "jv-express-pvt-ltd-variovox": {
+      "my-office": {
+        "last_seen_utc": "2026-04-17T19:56:51.391283+00:00",
+        "last_score": 7.5,
+        "last_title": "Market Performance & SEO Specialist (US Only)",
+        "last_url": "https://www.linkedin.com/jobs/view/market-performance-seo-specialist-us-only-at-jv-express-pvt-ltd-%EF%BC%88variovox%EF%BC%89-4400809353?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "local"
+      }
+    },
+    "getecube": {
+      "my-seo": {
+        "last_seen_utc": "2026-04-17T19:56:51.397212+00:00",
+        "last_score": 5.7,
+        "last_title": "Digital Marketing Manager: SEO/SEM & Influencer Growth",
+        "last_url": "https://www.mediabistro.com/jobs/3062606789-digital-marketing-manager-seo-sem-influencer-growth?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "local"
+      }
+    },
+    "irvine-company": {
+      "my-continuity": {
+        "last_seen_utc": "2026-04-17T19:56:51.410913+00:00",
+        "last_score": 6.7,
+        "last_title": "Senior Security Analyst ($120,500 - $158,500)",
+        "last_url": "https://careers.irvinecompany.com/job/Irvine-Senior-Security-Analyst-%28%24120%2C500-%24158%2C500%29-CA-92617/1364935900/?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "local"
+      }
+    },
+    "vallarta-supermarkets": {
+      "my-continuity": {
+        "last_seen_utc": "2026-04-17T19:56:51.418252+00:00",
+        "last_score": 11.0,
+        "last_title": "Security Analyst I",
+        "last_url": "https://www.linkedin.com/jobs/view/security-analyst-i-at-vallarta-supermarkets-4400776468?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "local"
+      }
+    },
+    "virgin-galactic": {
+      "my-compliance-hipaa": {
+        "last_seen_utc": "2026-04-17T19:56:51.426872+00:00",
+        "last_score": 7.7,
+        "last_title": "Sr. Information Security Engineer",
+        "last_url": "https://vgcareers.virgingalactic.com/global/en/job/2036/Sr-Information-Security-Engineer?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "local"
+      }
+    },
+    "veritas-search-group": {
+      "my-continuity": {
+        "last_seen_utc": "2026-04-17T19:56:51.439764+00:00",
+        "last_score": 8.5,
+        "last_title": "Sr. Endpoint Security Engineer (macOS)",
+        "last_url": "https://www.linkedin.com/jobs/view/sr-endpoint-security-engineer-macos-at-veritas-search-group-4403131868?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "local"
+      }
+    },
+    "lorien": {
+      "my-ai": {
+        "last_seen_utc": "2026-04-17T19:56:51.444601+00:00",
+        "last_score": 9.0,
+        "last_title": "Software Security Engineer (endpoint)",
+        "last_url": "https://www.lorienglobal.com/us/jobs/638294-Software-Security-Engineer-endpoint?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "local"
+      }
+    },
+    "teksystems": {
+      "my-office": {
+        "last_seen_utc": "2026-04-17T19:56:51.455695+00:00",
+        "last_score": 10.0,
+        "last_title": "SKILLBRIDGE OPPORTUNITY! Cyber Security Analyst",
+        "last_url": "https://careers.teksystems.com/us/en/job/JP-005967213/SKILLBRIDGE-OPPORTUNITY!-Cyber-Security-Analyst?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "local"
+      }
+    },
+    "gofo": {
+      "my-ai": {
+        "last_seen_utc": "2026-04-17T19:56:51.462919+00:00",
+        "last_score": 10.5,
+        "last_title": "Information Security Manager",
+        "last_url": "https://www.ziprecruiter.com/c/GOFO/Job/Information-Security-Manager/-in-Chino,CA?jid=8a15c516ecc2c5d1&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "local"
+      }
+    },
+    "akkodis-group-nordics": {
+      "my-compliance-hipaa": {
+        "last_seen_utc": "2026-04-17T19:56:51.470084+00:00",
+        "last_score": 7.5,
+        "last_title": "Senior Security Engineer",
+        "last_url": "https://www.whatjobs.com/jobs/senior-security-engineer/irvine-california?id=2638392190&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "local"
+      }
+    },
+    "northrop-grumman": {
+      "my-ai": {
+        "last_seen_utc": "2026-04-17T19:56:51.478486+00:00",
+        "last_score": 9.7,
+        "last_title": "Industrial Security Analyst - Level 4",
+        "last_url": "https://jobs.northropgrumman.com/careers/job/1340071234549-industrial-security-analyst-level-4-united-states-california-redondo-beach?domain=ngc.com&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "local"
+      }
+    },
+    "horace-mann": {
+      "my-it": {
+        "last_seen_utc": "2026-04-17T19:59:30.989636+00:00",
+        "last_score": 4.5,
+        "last_title": "IT Manager - Desktop Support",
+        "last_url": "https://jobgether.com/offer/69e24461c646310ee392a7c1-it-manager---desktop-support?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "remote"
+      }
+    },
+    "executive-1-holding-company-llc": {
+      "my-it": {
+        "last_seen_utc": "2026-04-17T19:59:30.995815+00:00",
+        "last_score": 5.2,
+        "last_title": "Tier 2 IT Support Specialist \u2014 Desk-side & Remote",
+        "last_url": "https://jooble.org/jdp/6023844748195489871?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "remote"
+      }
+    },
+    "humana": {
+      "my-it": {
+        "last_seen_utc": "2026-04-17T19:59:30.995815+00:00",
+        "last_score": 3.2,
+        "last_title": "Remote Help Desk Tech II \u2014 IT Support Specialist",
+        "last_url": "https://www.jobleads.com/us/job/remote-help-desk-tech-ii-it-support-specialist--montpelier--e0558697c27aae22c945d18321e3d7930?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "remote"
+      },
+      "my-continuity": {
+        "last_seen_utc": "2026-04-17T19:59:31.248246+00:00",
+        "last_score": 7.0,
+        "last_title": "Cyber Data Protection Engineer, DLP Operations",
+        "last_url": "https://www.remoterocketship.com/us/company/humana/jobs/cyber-data-protection-engineer-dlp-operations-united-states-remote/?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "remote"
+      }
+    },
+    "cherrie-give-resultz": {
+      "my-it": {
+        "last_seen_utc": "2026-04-17T19:59:31.000422+00:00",
+        "last_score": 6.5,
+        "last_title": "IT Help Desk Technician",
+        "last_url": "https://www.idealist.org/en/volunteer-opportunity/0b2b04c5337c431ea73bdb8130edf18b-it-help-desk-technician-cherrie-give-resultz-atlanta?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "remote"
+      }
+    },
+    "cloud-information-technology": {
+      "my-it": {
+        "last_seen_utc": "2026-04-17T19:59:31.006542+00:00",
+        "last_score": 4.2,
+        "last_title": "IT Systems Administrator: Onsite & Remote Infrastructure Pro",
+        "last_url": "https://jooble.org/jdp/-229616519269411870?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "remote"
+      }
+    },
+    "good-life-companies": {
+      "my-ai": {
+        "last_seen_utc": "2026-04-17T19:59:31.008787+00:00",
+        "last_score": 3.5,
+        "last_title": "I.T Manager",
+        "last_url": "https://jobs.gem.com/good-life-companies/am9icG9zdDrmvhKJ3FoUgca68eLlBpGd?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "remote"
+      }
+    },
+    "hirevector": {
+      "my-it": {
+        "last_seen_utc": "2026-04-17T19:59:31.012097+00:00",
+        "last_score": 10.7,
+        "last_title": "Junior IT Support Specialist [Raleigh, NC, US]",
+        "last_url": "https://hirevector.liveblog365.com/job/junior-it-support-specialist-raleigh-nc-us?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "remote"
+      },
+      "my-cloud": {
+        "last_seen_utc": "2026-04-17T19:59:31.116849+00:00",
+        "last_score": 11.0,
+        "last_title": "[Remote] Cloud DevOps Engineer (Remote, Continental United States)",
+        "last_url": "https://hirevector.liveblog365.com/job/remote-cloud-devops-engineer-remote-continental-united-states-2?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "remote"
+      },
+      "my-compliance-hipaa": {
+        "last_seen_utc": "2026-04-17T19:59:31.200822+00:00",
+        "last_score": 10.7,
+        "last_title": "Information Systems Security Officer (ISSO) III (Remote)",
+        "last_url": "https://hirevector.liveblog365.com/job/information-systems-security-officer-isso-iii-remote?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "remote"
+      },
+      "my-compliance-cmmc": {
+        "last_seen_utc": "2026-04-17T19:59:31.211295+00:00",
+        "last_score": 7.2,
+        "last_title": "[Remote] CMMC Consultant, CCA",
+        "last_url": "https://hirevector.liveblog365.com/job/remote-cmmc-consultant-cca-2?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "remote"
+      }
+    },
+    "brookfield-properties": {
+      "my-it": {
+        "last_seen_utc": "2026-04-17T19:59:31.014319+00:00",
+        "last_score": 2.7,
+        "last_title": "IT Support Specialist: Enterprise Apps & Remote Helpdesk",
+        "last_url": "https://www.learn4good.com/jobs/online_remote/info_technology/5014718645/e/?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "remote"
+      }
+    },
+    "flexjobs": {
+      "my-it": {
+        "last_seen_utc": "2026-04-17T19:59:31.019411+00:00",
+        "last_score": 4.7,
+        "last_title": "IT Support Specialist | Remote",
+        "last_url": "https://flexjobs.zya.me/job/it-support-specialist-remote-3?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "remote"
+      },
+      "my-ai": {
+        "last_seen_utc": "2026-04-17T19:59:31.039105+00:00",
+        "last_score": 4.2,
+        "last_title": "Head of Machine Learning and AI Engineer (San J...",
+        "last_url": "https://flexjobs.zya.me/job/head-of-machine-learning-and-ai-engineer-san-j?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "remote"
+      },
+      "my-cloud": {
+        "last_seen_utc": "2026-04-17T19:59:31.189527+00:00",
+        "last_score": 7.7,
+        "last_title": "Director of Health Information and Privacy Officer",
+        "last_url": "https://flexjobs.zya.me/job/director-of-health-information-and-privacy-officer-6?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "remote"
+      }
+    },
+    "iron-systems-inc": {
+      "my-it": {
+        "last_seen_utc": "2026-04-17T19:59:31.019411+00:00",
+        "last_score": 3.2,
+        "last_title": "Deskside IT Support Specialist \u2013 VIP & Remote Management",
+        "last_url": "https://www.learn4good.com/jobs/online_remote/info_technology/5015476944/e/?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "remote"
+      }
+    },
+    "upguard": {
+      "my-ai": {
+        "last_seen_utc": "2026-04-17T19:59:31.022579+00:00",
+        "last_score": 7.5,
+        "last_title": "Global Head of AI-Driven SDR & Revenue Growth",
+        "last_url": "https://www.whatjobs.com/jobs/global-head-of-ai-driven-sdr/oregon?id=2638029951&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "remote"
+      }
+    },
+    "foundation-egi": {
+      "my-ai": {
+        "last_seen_utc": "2026-04-17T19:59:31.027865+00:00",
+        "last_score": 7.5,
+        "last_title": "Applied AI Engineer- ML for Manufacturing (Computational Design & Geometry Processing)",
+        "last_url": "https://www.indeed.com/viewjob?jk=f4171aa0c620b4a8&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "remote"
+      }
+    },
+    "lenovo": {
+      "my-ai": {
+        "last_seen_utc": "2026-04-17T19:59:31.033245+00:00",
+        "last_score": 7.5,
+        "last_title": "AI Engineer, Tech Lead",
+        "last_url": "https://bebee.com/us/jobs/ai-engineer-tech-lead-lenovo--theirstack-665200835?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "remote"
+      }
+    },
+    "alignerr": {
+      "my-ai": {
+        "last_seen_utc": "2026-04-17T19:59:31.042850+00:00",
+        "last_score": 5.5,
+        "last_title": "[Remote] Senior Domain Expert \u2014 AI Prompt Engineer",
+        "last_url": "https://jobright.ai/jobs/info/69da06605356a60f40fdf75c?visit=senior-automation-test-engineer-with-generative-ai-experience-jobs-in-united-states&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "remote"
+      }
+    },
+    "fusemachines": {
+      "my-ai": {
+        "last_seen_utc": "2026-04-17T19:59:31.048165+00:00",
+        "last_score": 7.0,
+        "last_title": "Applied AI Engineer (Automation)",
+        "last_url": "https://remotejobs.org/remote-jobs/applied-ai-engineer-automation-fusemachines?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "remote"
+      }
+    },
+    "jc-corporations": {
+      "my-ai": {
+        "last_seen_utc": "2026-04-17T19:59:31.051913+00:00",
+        "last_score": 8.0,
+        "last_title": "AIML Engineer / AI/ML Engineer",
+        "last_url": "https://www.dice.com/job-detail/1e61e00f-d3d3-4a2a-a564-bcd534cc4da2?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "remote"
+      }
+    },
+    "drata": {
+      "my-ai": {
+        "last_seen_utc": "2026-04-17T19:59:31.055177+00:00",
+        "last_score": 4.2,
+        "last_title": "Senior AI Engineer",
+        "last_url": "https://drata.com/about/careers/938b5802-714a-4843-bf43-4b03b3c0bf12?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "remote"
+      }
+    },
+    "stealth": {
+      "my-ai": {
+        "last_seen_utc": "2026-04-17T19:59:31.061310+00:00",
+        "last_score": 9.5,
+        "last_title": "Founding Head of AI (Healthcare AI)",
+        "last_url": "https://www.indeed.com/viewjob?jk=3a124d90268286f0&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "remote"
+      }
+    },
+    "c-t-corporation-system-de": {
+      "my-ai-lead-gen": {
+        "last_seen_utc": "2026-04-17T19:59:31.066606+00:00",
+        "last_score": 5.7,
+        "last_title": "Advanced Inside Sales Representative - Business Development Representative",
+        "last_url": "https://wk.wd3.myworkdayjobs.com/en-US/External/job/USA-WI-Remote/Advanced-Inside-Sales-Representative---Business-Development-Representative_R0056044-1/apply/useMyLastApplication?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "remote"
+      }
+    },
+    "jolly-technologies": {
+      "my-ai-lead-gen": {
+        "last_seen_utc": "2026-04-17T19:59:31.069074+00:00",
+        "last_score": 3.5,
+        "last_title": "Business Development Representative (BDR \u2013 Strategic Outreach & Pipeline Development) - SaaS Applications (Austin, TX)",
+        "last_url": "https://www.indeed.com/viewjob?jk=12976ae18fc97373&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "remote"
+      }
+    },
+    "stampli": {
+      "my-ai-lead-gen": {
+        "last_seen_utc": "2026-04-17T19:59:31.069074+00:00",
+        "last_score": 3.0,
+        "last_title": "Sales Development Representative",
+        "last_url": "https://www.stampli.com/careers/co/nashville-tn/D3.03A/sales-development-representative/all/?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "remote"
+      }
+    },
+    "drp-solutions": {
+      "my-ai-lead-gen": {
+        "last_seen_utc": "2026-04-17T19:59:31.069074+00:00",
+        "last_score": 3.2,
+        "last_title": "Remote SDR: Launch Your Sales Career & Lead Gen",
+        "last_url": "https://www.talent.com/view?id=614668612352344788&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "remote"
+      }
+    },
+    "vialytics": {
+      "my-ai-lead-gen": {
+        "last_seen_utc": "2026-04-17T19:59:31.074396+00:00",
+        "last_score": 4.7,
+        "last_title": "BDR/ SDR Lead",
+        "last_url": "https://builtin.com/job/bdr-sdr-lead/8774440?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "remote"
+      }
+    },
+    "quest-diagnostics": {
+      "my-ai-lead-gen": {
+        "last_seen_utc": "2026-04-17T19:59:31.078642+00:00",
+        "last_score": 7.5,
+        "last_title": "Business Development Representative \u2013 Life Sciences (Remote)",
+        "last_url": "https://builtin.com/job/business-development-representative-life-sciences-remote/9056482?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "remote"
+      },
+      "my-ai": {
+        "last_seen_utc": "2026-04-17T19:59:31.093244+00:00",
+        "last_score": 4.0,
+        "last_title": "Business Development Representative \u2013 Life Sciences (Remote)",
+        "last_url": "https://dailyremote.com/remote-job/business-development-representative-life-sciences-remote-4872847?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "remote"
+      }
+    },
+    "desotec": {
+      "my-ai-lead-gen": {
+        "last_seen_utc": "2026-04-17T19:59:31.082380+00:00",
+        "last_score": 6.7,
+        "last_title": "Sales Development Representative - Gulf Coast Region",
+        "last_url": "https://jobs.desotec.com/en/sales-development-representative-gulf-coast-region?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "remote"
+      }
+    },
+    "parachute-health": {
+      "my-ai-lead-gen": {
+        "last_seen_utc": "2026-04-17T19:59:31.084476+00:00",
+        "last_score": 2.7,
+        "last_title": "Business Development Representative, HME Provider Sales",
+        "last_url": "https://builtin.com/job/business-development-representative-supplier-sales/7314666?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "remote"
+      }
+    },
+    "bvital-park-city": {
+      "my-ai": {
+        "last_seen_utc": "2026-04-17T19:59:31.089386+00:00",
+        "last_score": 6.5,
+        "last_title": "Sales Development / SDR Manager",
+        "last_url": "https://www.indeed.com/viewjob?jk=001acdb9db0f0e96&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "remote"
+      }
+    },
+    "korn-ferry": {
+      "my-it": {
+        "last_seen_utc": "2026-04-17T19:59:31.097983+00:00",
+        "last_score": 9.0,
+        "last_title": "Cloud Engineer/Architect - AWS",
+        "last_url": "https://www.linkedin.com/jobs/view/cloud-engineer-architect-aws-at-korn-ferry-4402999600?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "remote"
+      }
+    },
+    "vytal-solutions-inc": {
+      "my-cloud": {
+        "last_seen_utc": "2026-04-17T19:59:31.100110+00:00",
+        "last_score": 8.5,
+        "last_title": "Gov Cloud Engineer (Remote US East Coast hours)",
+        "last_url": "https://www.indeed.com/viewjob?jk=872959d554e9a0be&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "remote"
+      }
+    },
+    "computer-task-group-inc": {
+      "my-ai": {
+        "last_seen_utc": "2026-04-17T19:59:31.106745+00:00",
+        "last_score": 11.5,
+        "last_title": "DevOps Engineer \u2013 GCP/Azure (CI/CD, API Integration)",
+        "last_url": "https://dailyremote.com/remote-job/dev-ops-engineer-gcp-azure-ci-cd-api-integration-4869016?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "remote"
+      }
+    },
+    "symphony-corporation": {
+      "my-cloud": {
+        "last_seen_utc": "2026-04-17T19:59:31.112047+00:00",
+        "last_score": 6.0,
+        "last_title": "AZURE DEVOPS ENGINEER: Client need CITIZENS ONLY (NO Other Visas Please)",
+        "last_url": "https://www.dice.com/job-detail/87ae8f82-b725-4bad-9fe0-08b7b199a4bd?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "remote"
+      }
+    },
+    "the-mil-corporation": {
+      "my-ai": {
+        "last_seen_utc": "2026-04-17T19:59:31.121550+00:00",
+        "last_score": 8.5,
+        "last_title": "AI and Azure Cloud Engineer (Software Engineering, Senior Associate)",
+        "last_url": "https://bebee.com/us/jobs/ai-and-azure-cloud-engineer-software-engineering-senior-associate-the-mil-corporation-charleston-sc--theirstack-662860702?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "remote"
+      }
+    },
+    "opensesame": {
+      "my-ai": {
+        "last_seen_utc": "2026-04-17T19:59:31.126021+00:00",
+        "last_score": 10.5,
+        "last_title": "Senior DevOps Engineer \u2013 Remote (Argentina or Mexico)",
+        "last_url": "https://builtin.com/job/senior-devops-engineer-remote-argentina-or-mexico/9047523?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "remote"
+      }
+    },
+    "centene-corporation": {
+      "my-cloud": {
+        "last_seen_utc": "2026-04-17T19:59:31.138726+00:00",
+        "last_score": 4.5,
+        "last_title": "Senior Site Reliability Engineer",
+        "last_url": "https://jobs.centene.com/us/en/jobs/1634562/senior-site-reliability-engineer/?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "remote"
+      },
+      "my-it": {
+        "last_seen_utc": "2026-04-17T19:59:31.181048+00:00",
+        "last_score": 6.0,
+        "last_title": "Senior Compliance Analyst",
+        "last_url": "https://jobs.centene.com/us/en/jobs/1636928/senior-compliance-analyst/?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "remote"
+      }
+    },
+    "astreya": {
+      "my-ai": {
+        "last_seen_utc": "2026-04-17T19:59:31.144077+00:00",
+        "last_score": 8.0,
+        "last_title": "Lead Site Reliability Engineer/Manager",
+        "last_url": "https://www.linkedin.com/jobs/view/lead-site-reliability-engineer-manager-at-astreya-4402141961?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "remote"
+      }
+    },
+    "jobflarely": {
+      "my-ai": {
+        "last_seen_utc": "2026-04-17T19:59:31.150473+00:00",
+        "last_score": 11.5,
+        "last_title": "Azure/AWS Cloud Engineer (Remote Opportunity)",
+        "last_url": "https://jobflarely.liveblog365.com/job/azure-aws-cloud-engineer-remote-opportunity?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "remote"
+      },
+      "my-compliance-hipaa": {
+        "last_seen_utc": "2026-04-17T19:59:31.226984+00:00",
+        "last_score": 10.7,
+        "last_title": "Information Systems Security Officer (ISSO) III (Remote) with Security Clearance",
+        "last_url": "https://jobflarely.liveblog365.com/job/information-systems-security-officer-isso-iii-remote-with-security-clearance?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "remote"
+      },
+      "my-seo": {
+        "last_seen_utc": "2026-04-17T19:59:31.398863+00:00",
+        "last_score": 6.2,
+        "last_title": "SEO and Content Marketing Manager (Remote)",
+        "last_url": "https://jobflarely.liveblog365.com/job/seo-and-content-marketing-manager-remote?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "remote"
+      }
+    },
+    "strider-technologies": {
+      "my-ai": {
+        "last_seen_utc": "2026-04-17T19:59:31.160190+00:00",
+        "last_score": 11.5,
+        "last_title": "Governance, Risk, and Compliance Analyst job at Strider Technologies in South Jordan, UT",
+        "last_url": "https://remote.co/job-details/governance-risk-and-compliance-analyst-b5389f69-de12-43ce-816f-8bd2d972e958?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "remote"
+      }
+    },
+    "medamerica": {
+      "my-compliance-hipaa": {
+        "last_seen_utc": "2026-04-17T19:59:31.169289+00:00",
+        "last_score": 4.7,
+        "last_title": "[Hiring] Health Records Compliance Analyst @MedAmerica",
+        "last_url": "https://remotive.com/remote/jobs/medical/health-records-compliance-analyst-4342248?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "remote"
+      }
+    },
+    "advisor-group": {
+      "my-ai": {
+        "last_seen_utc": "2026-04-17T19:59:31.174131+00:00",
+        "last_score": 6.5,
+        "last_title": "Compliance Analyst, Customer Complaints",
+        "last_url": "https://www.tealhq.com/job/compliance-analyst-customer-complaints_7ea1a4ad8617c718b140b49ad06cdd0c74fcc?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "remote"
+      }
+    },
+    "sei1global": {
+      "my-compliance-hipaa": {
+        "last_seen_utc": "2026-04-17T19:59:31.195338+00:00",
+        "last_score": 6.0,
+        "last_title": "[Hiring] Marketing Compliance Analyst @SEI1GLOBAL",
+        "last_url": "https://remotive.com/remote/jobs/marketing/marketing-compliance-analyst-4397415?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "remote"
+      }
+    },
+    "kbr-inc": {
+      "my-compliance-cmmc": {
+        "last_seen_utc": "2026-04-17T19:59:31.205962+00:00",
+        "last_score": 7.0,
+        "last_title": "RMF Cybersecurity ISSO/SME 3",
+        "last_url": "https://www.theladders.com/job/rmf-cybersecurity-isso-sme-3-kbr-virtual-travel_86533802?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "remote"
+      }
+    },
+    "iron-bow-technologies": {
+      "my-compliance-hipaa": {
+        "last_seen_utc": "2026-04-17T19:59:31.216653+00:00",
+        "last_score": 10.0,
+        "last_title": "Senior Information Systems Security Officer (Hybrid, DC)",
+        "last_url": "https://www.whatjobs.com/jobs/senior-information-systems-security-officer?id=2635816524&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "remote"
+      }
+    },
+    "sixgen": {
+      "my-compliance-cmmc": {
+        "last_seen_utc": "2026-04-17T19:59:31.221842+00:00",
+        "last_score": 5.2,
+        "last_title": "ISSO\u200b/ISA-TS\u200b/SCI & CI Poly Security Clearance",
+        "last_url": "https://www.learn4good.com/jobs/online_remote/info_technology/5022113863/e/?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "remote"
+      }
+    },
+    "pkh-enterprises": {
+      "my-compliance-hipaa": {
+        "last_seen_utc": "2026-04-17T19:59:31.232947+00:00",
+        "last_score": 10.0,
+        "last_title": "Information Systems Security Officer Remote / Telecommute Jobs",
+        "last_url": "https://www.clearancejobs.com/jobs/8862021/information-systems-security-officer?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "remote"
+      }
+    },
+    "mcsg-technologies": {
+      "my-compliance-hipaa": {
+        "last_seen_utc": "2026-04-17T19:59:31.240169+00:00",
+        "last_score": 6.5,
+        "last_title": "Information Security Officer / ISSO - CFT L3",
+        "last_url": "https://www.tealhq.com/job/information-security-officer-isso_7ea1a9203ed871b7a39f7121e3f047db09029?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "remote"
+      }
+    },
+    "med-medtronic-inc": {
+      "my-cloud": {
+        "last_seen_utc": "2026-04-17T19:59:31.256250+00:00",
+        "last_score": 4.7,
+        "last_title": "Sr. Privacy and Data Protection Engineer (CRM), Mounds View, MN",
+        "last_url": "https://medtronic.wd1.myworkdayjobs.com/en-US/MedtronicCareers/job/Sr-Privacy-and-Data-Protection-Engineer--CRM---Mounds-View--MN_R64024-1?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "remote"
+      }
+    },
+    "mindlance": {
+      "my-ai": {
+        "last_seen_utc": "2026-04-17T19:59:31.264856+00:00",
+        "last_score": 4.7,
+        "last_title": "Backup Administrator(Cohesity)",
+        "last_url": "https://www.whatjobs.com/jobs/backup-administrator-cohesity/district-of-columbia?id=2626851196&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "remote"
+      }
+    },
+    "sarnova": {
+      "my-dev": {
+        "last_seen_utc": "2026-04-17T19:59:31.270323+00:00",
+        "last_score": 4.2,
+        "last_title": "Remote Software Engineer: C#/.NET & SQL Server Expert",
+        "last_url": "https://www.jobleads.com/us/job/remote-software-engineer-c-net-sql-server-expert--dublin--e61c1cc1c9cb37388cf6fffccfc4701ae?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "remote"
+      }
+    },
+    "lorven-technologies-inc": {
+      "my-ai": {
+        "last_seen_utc": "2026-04-17T19:59:31.275700+00:00",
+        "last_score": 7.0,
+        "last_title": "NET Dev Lead",
+        "last_url": "https://www.linkedin.com/jobs/view/net-dev-lead-at-lorven-technologies-inc-4392899551?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "remote"
+      }
+    },
+    "020-travelers-indemnity-co": {
+      "my-ai": {
+        "last_seen_utc": "2026-04-17T19:59:31.281198+00:00",
+        "last_score": 6.0,
+        "last_title": "Senior Software Engineer (React, React Native, Nodejs)",
+        "last_url": "https://travelers.wd5.myworkdayjobs.com/en-US/External/job/CT---Hartford/Senior-Software-Engineer--React--React-Native--Nodejs-_R-50194?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "remote"
+      }
+    },
+    "agileengine": {
+      "my-ai": {
+        "last_seen_utc": "2026-04-17T19:59:31.284276+00:00",
+        "last_score": 12.0,
+        "last_title": "Full Stack Developer \u2013 Solutions Engineering ID56471",
+        "last_url": "https://www.tealhq.com/job/full-stack-developer_7ea1ae0672112c7111c328d88f42fe9058f8f?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "remote"
+      }
+    },
+    "umb-financial-corporation": {
+      "my-continuity": {
+        "last_seen_utc": "2026-04-17T19:59:31.289278+00:00",
+        "last_score": 6.2,
+        "last_title": "Full-stack Developer - API Development job at UMB Financial Corporation in Kansas City, MO",
+        "last_url": "https://remote.co/job-details/full-stack-developer-api-development-dd29f9e3-cccc-429d-848a-7bddf608aa95?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "remote"
+      }
+    },
+    "luzon-technologies": {
+      "my-ai": {
+        "last_seen_utc": "2026-04-17T19:59:31.296463+00:00",
+        "last_score": 9.5,
+        "last_title": "Senior Full Stack .NET Developer (AI/LLM) \u2013 Remote",
+        "last_url": "https://www.indeed.com/viewjob?jk=ba38bbfc251d3550&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "remote"
+      }
+    },
+    "100-salesforce-inc": {
+      "my-ai": {
+        "last_seen_utc": "2026-04-17T19:59:31.299760+00:00",
+        "last_score": 8.0,
+        "last_title": "Full-Stack Software Engineer: Mid and Senior",
+        "last_url": "https://salesforce.wd12.myworkdayjobs.com/External_Career_Site/job/California---San-Francisco/Full-Stack-Software-Engineer---MTS---SMTS_JR253369/apply?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "remote"
+      }
+    },
+    "sift": {
+      "my-ai": {
+        "last_seen_utc": "2026-04-17T19:59:31.306628+00:00",
+        "last_score": 9.0,
+        "last_title": "Software Engineering Manager (Data)",
+        "last_url": "https://jobgether.com/offer/69e10ec8c646310ee3914361-software-engineering-manager-data?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "remote"
+      }
+    },
+    "best-high-technologies-llc": {
+      "my-ai": {
+        "last_seen_utc": "2026-04-17T19:59:31.310816+00:00",
+        "last_score": 8.0,
+        "last_title": "Software Engineer(AI/ML)\u2013 LLM Evaluation",
+        "last_url": "https://www.monster.com/job-openings/software-engineer-ai-ml-llm-evaluation-east-palo-alto-ca--efaec2f2-52c3-4850-817c-ac8b73f2e76a?mstr_dist=true&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "remote"
+      }
+    },
+    "blueprint-technologies": {
+      "my-dev": {
+        "last_seen_utc": "2026-04-17T19:59:31.316771+00:00",
+        "last_score": 6.0,
+        "last_title": "Software Engineer \u2013 Service Reliability & Observability (.NET)",
+        "last_url": "https://www.tealhq.com/job/software-engineer-service-reliability-observability-net_7ea1aeea3ddcbacc5d270b871d4a8ea0002ed?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "remote"
+      }
+    },
+    "msp-hire-inc": {
+      "my-compliance-cmmc": {
+        "last_seen_utc": "2026-04-17T19:59:31.324278+00:00",
+        "last_score": 11.2,
+        "last_title": "M365 Engineer",
+        "last_url": "https://jobs.msphire.com/apply/HTkeuxLbzn/M365-Engineer?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "remote"
+      }
+    },
+    "conviso-inc": {
+      "my-cloud": {
+        "last_seen_utc": "2026-04-17T19:59:31.329211+00:00",
+        "last_score": 8.5,
+        "last_title": "Microsoft Office 365 Engineer",
+        "last_url": "https://www.linkedin.com/jobs/view/microsoft-office-365-engineer-at-conviso-inc-4389834224?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "remote"
+      },
+      "my-office": {
+        "last_seen_utc": "2026-04-17T19:59:31.337979+00:00",
+        "last_score": 8.7,
+        "last_title": "Remote M365 Engineer: Entra , SharePoint & Zero-Trust",
+        "last_url": "https://www.learn4good.com/jobs/online_remote/info_technology/5024223361/e/?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "remote"
+      }
+    },
+    "teksystems-c-o-allegis-group": {
+      "my-office": {
+        "last_seen_utc": "2026-04-17T19:59:31.343866+00:00",
+        "last_score": 4.7,
+        "last_title": "Senior M365 & Exchange Online Engineer (Remote, C2H)",
+        "last_url": "https://www.jobleads.com/us/job/senior-m365-exchange-online-engineer-remote-c2h--seattle--eba0ecae0a0ebc0ee97f2cd41de71b721?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "remote"
+      }
+    },
+    "adoreal": {
+      "my-ai": {
+        "last_seen_utc": "2026-04-17T19:59:31.356747+00:00",
+        "last_score": 9.5,
+        "last_title": "SEO Content Marketing Manager job at Adoreal in CA, CO, FL, GA, IL, OK, OR, PA, RI, TX, UT, WA",
+        "last_url": "https://remote.co/job-details/seo-content-marketing-manager-4c38794f-eaa1-4dbe-8aba-faf5b600718a?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "remote"
+      }
+    },
+    "manscaped": {
+      "my-office": {
+        "last_seen_utc": "2026-04-17T19:59:31.366370+00:00",
+        "last_score": 6.0,
+        "last_title": "Digital Marketing Manager job at MANSCAPED in US National",
+        "last_url": "https://remote.co/job-details/digital-marketing-manager-5083c0bb-24d6-441f-a788-1f6b9c6f36c0?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "remote"
+      }
+    },
+    "peregrine-technologies": {
+      "my-seo": {
+        "last_seen_utc": "2026-04-17T19:59:31.373660+00:00",
+        "last_score": 4.5,
+        "last_title": "Field Growth Marketer: Events & Demand Gen",
+        "last_url": "https://www.whatjobs.com/jobs/field-growth-marketer-events/california?id=2637572350&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "remote"
+      }
+    },
+    "cosmoquick": {
+      "my-seo": {
+        "last_seen_utc": "2026-04-17T19:59:31.380735+00:00",
+        "last_score": 4.2,
+        "last_title": "Remote Growth Marketer Jobs in Tampa",
+        "last_url": "https://cosmoquick.com/remote-jobs-in/tampa/remote-growth-marketer?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "remote"
+      }
+    },
+    "grand-circle-corporation": {
+      "my-seo": {
+        "last_seen_utc": "2026-04-17T19:59:31.387551+00:00",
+        "last_score": 4.0,
+        "last_title": "Senior SEO Manager \u2014 End-to-End Growth (Hybrid)",
+        "last_url": "https://www.whatjobs.com/jobs/senior-seo-manager-end-to-end/ma-kentucky?id=2637575810&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "remote"
+      }
+    },
+    "jobgether": {
+      "my-continuity": {
+        "last_seen_utc": "2026-04-17T19:59:31.390267+00:00",
+        "last_score": 4.2,
+        "last_title": "Remote SEO Manager",
+        "last_url": "https://www.jobleads.com/us/job/remote-seo-manager--new-york--ea23d652a97811ec37232813c83d4239b?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "remote"
+      }
+    },
+    "unity": {
+      "my-ai": {
+        "last_seen_utc": "2026-04-17T19:59:31.402057+00:00",
+        "last_score": 9.5,
+        "last_title": "Senior SEO Specialist - Tech (Contract)",
+        "last_url": "https://www.linkedin.com/jobs/view/senior-seo-specialist-tech-contract-at-unity-4402636946?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "remote"
+      }
+    },
+    "blavity": {
+      "my-office": {
+        "last_seen_utc": "2026-04-17T19:59:31.406390+00:00",
+        "last_score": 4.2,
+        "last_title": "Remote SEO Analyst for Media Brands | 15 hrs/wk",
+        "last_url": "https://jooble.org/jdp/-1583025390697464617?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "remote"
+      }
+    },
+    "dtcc": {
+      "my-office": {
+        "last_seen_utc": "2026-04-17T19:59:31.410645+00:00",
+        "last_score": 5.5,
+        "last_title": "IT Security Analyst (Machine Identity & Secrets Management)",
+        "last_url": "https://www.tealhq.com/job/it-security-analyst-machine-identity-secrets-management_7ea1a50a3b5f97a4347a5f42b017acc4400b5?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "remote"
+      }
+    },
+    "cyberthink-inc": {
+      "my-cloud": {
+        "last_seen_utc": "2026-04-17T19:59:31.414818+00:00",
+        "last_score": 9.0,
+        "last_title": "Application Security Engineer",
+        "last_url": "https://www.dice.com/job-detail/1e8b17f7-1f31-49f7-8a53-e47f734c23d2?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "remote"
+      }
+    },
+    "the-home-depot": {
+      "my-cloud": {
+        "last_seen_utc": "2026-04-17T19:59:31.422642+00:00",
+        "last_score": 7.7,
+        "last_title": "Senior Cybersecurity Analyst | Strategic Financial Analyst (REMOTE)",
+        "last_url": "https://careers.homedepot.com/job/23258180/senior-cybersecurity-analyst-strategic-financial-analyst-remote-remote/?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "remote"
+      }
+    },
+    "piper-companies": {
+      "my-ai": {
+        "last_seen_utc": "2026-04-17T19:59:31.426997+00:00",
+        "last_score": 8.5,
+        "last_title": "Network Security Analyst (SOC2 / NIST)",
+        "last_url": "https://bebee.com/us/jobs/network-security-analyst-soc2-nist-piper-companies--theirstack-663595599?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "remote"
+      }
+    },
+    "optima-global-solutions-inc": {
+      "my-security": {
+        "last_seen_utc": "2026-04-17T19:59:31.430275+00:00",
+        "last_score": 4.5,
+        "last_title": "Interim CISO",
+        "last_url": "https://www.linkedin.com/jobs/view/interim-ciso-at-optima-global-solutions-inc-4403162680?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "remote"
+      }
+    },
+    "the-boeing-company": {
+      "my-security": {
+        "last_seen_utc": "2026-04-17T19:59:31.435334+00:00",
+        "last_score": 4.2,
+        "last_title": "Product Security Analyst (Mid-level or Senior)",
+        "last_url": "https://boeing.wd1.myworkdayjobs.com/en-US/EXTERNAL_CAREERS/job/Product-Security-Analyst--Mid-level-or-Senior-_JR2026505330-1?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "remote"
+      }
+    },
+    "clarivate": {
+      "my-ai": {
+        "last_seen_utc": "2026-04-17T19:59:31.439809+00:00",
+        "last_score": 8.0,
+        "last_title": "Cyber Security Engineer job at Clarivate in Kansas City, MO",
+        "last_url": "https://remote.co/job-details/cyber-security-engineer-8b32469c-c0dd-42a3-9406-b845b9546825?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "remote"
+      }
+    },
+    "collabera": {
+      "my-cloud": {
+        "last_seen_utc": "2026-04-17T19:59:31.446829+00:00",
+        "last_score": 8.0,
+        "last_title": "Cyber Security Engineer \u2013 Splunk Platform - REMOTE",
+        "last_url": "https://bebee.com/us/jobs/cyber-security-engineer-splunk-platform-remote-collabera--theirstack-665035564?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "remote"
+      }
+    },
+    "modern-technology-solutions-inc": {
+      "my-office": {
+        "last_seen_utc": "2026-04-17T19:59:31.452706+00:00",
+        "last_score": 5.5,
+        "last_title": "Software Security Engineer",
+        "last_url": "https://mtsi-va.eightfold.ai/careers/job/1133912862934?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+        "last_scope": "remote"
+      }
+    }
+  }
 }

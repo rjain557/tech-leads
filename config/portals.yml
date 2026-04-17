@@ -9,7 +9,7 @@
 scopes:
   local:
     label: "Local (60mi Irvine)"
-    location: "Irvine, CA"
+    location: "Irvine, California, United States"
     radius_miles: 60
     hq_zip: "92618"
     hq_coords: { lat: 33.6471, lng: -117.7286 }
