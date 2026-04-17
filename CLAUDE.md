@@ -91,6 +91,22 @@ See `templates/drafts/{date}/{slug}.md`.
 - [ ] Closed won / lost
 ```
 
+## Outlook drafts are the review surface (MANDATORY)
+
+**Every email the pipeline generates ends up in rjain's Outlook Drafts folder.** Not in local `templates/drafts/{date}/` for rjain to open separately — in Outlook, where he proofreads and sends from.
+
+- Outbound outreach drafts (touches 1/2/3): `scripts/Put-DraftsInOutlook.ps1` runs at the end of the weekly chain. All three touches are pushed per lead with categories `tech-leads` + `outreach-touch-{N}` so they can be filtered.
+- Inbound reply drafts (responses to prospect replies): `scripts/Put-ReplyInOutlook.ps1` runs after the `draft-reply` skill renders. Uses Graph `/createReply` so the draft threads into the original conversation.
+
+**Contact enrichment is NOT currently automated.** Apollo free/starter tier rejects the endpoints we need (`mixed_people/search` → 403 API_INACCESSIBLE; `organizations/enrich` → 422 insufficient credits). Until a paid Apollo plan or a scraping-based enrichment is added, every draft pushed to Outlook includes a **CONTACT TODO** research block at the top of the body with:
+
+- Company name, role, likely decision-maker title
+- Pre-built LinkedIn people-search URL (`keywords="{buyer}" "{company}"`)
+- Pre-built Google search URL (`"{company}" {buyer} email`)
+- Original posting URL
+
+Rjain opens the draft in Outlook, clicks the LinkedIn/Google link, finds the contact, pastes the email into To:, deletes the TODO block, sends. Going forward: add contact scraping (Playwright or a paid enrichment API) so drafts arrive with To: populated and the TODO block only appears as a fallback.
+
 ## Multi-session write-path convention (MANDATORY)
 
 All pipeline work runs on this workstation. Multiple Claude sessions may be active concurrently — typically a **pipeline session** (scheduled scan / reply check) and a **lead-gen/tuning session** (interactive: iterates on signals, finds new keywords, discovers false-positive patterns, refines scoring + templates). They share the same working tree. The convention below prevents races between them.
