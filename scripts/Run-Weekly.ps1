@@ -52,6 +52,10 @@ try {
         Write-Step "build_outreach.py (Stage 3 - draft rendering)"
         & $pyExe (Join-Path $RepoRoot "scripts\build_outreach.py")
         if ($LASTEXITCODE -ne 0 -and $exitCode -eq 0) { $exitCode = $LASTEXITCODE; Write-Host "build_outreach.py exited $LASTEXITCODE" -ForegroundColor Yellow }
+
+        Write-Step "Put-DraftsInOutlook.ps1 (Stage 4 - push to Outlook Drafts for rjain proofread)"
+        & powershell.exe -NoProfile -ExecutionPolicy Bypass -File (Join-Path $RepoRoot "scripts\Put-DraftsInOutlook.ps1")
+        if ($LASTEXITCODE -ne 0 -and $exitCode -eq 0) { $exitCode = $LASTEXITCODE; Write-Host "Put-DraftsInOutlook exited $LASTEXITCODE" -ForegroundColor Yellow }
     }
 
     # --- 3. Commit scan results and push ---

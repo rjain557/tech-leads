@@ -107,14 +107,14 @@ $qualPct = if ($total -gt 0) { [math]::Round(100.0 * $qualifiedCount / $total, 1
 
 $inner = @"
 <p><strong>Weekly scan summary — $qualifiedCount qualified of $total prefiltered (${qualPct}%).</strong></p>
-<p>Stage 1 (prefilter): $total · Stage 2 (qualifier): <strong>$qualifiedCount qualified</strong>, $rejectedCount rejected · Stage 3 (drafts): $draftsReady ready in <code>templates/drafts/$today/</code></p>
+<p>Stage 1 (prefilter): $total · Stage 2 (qualifier): <strong>$qualifiedCount qualified</strong>, $rejectedCount rejected · Stage 3 (drafts): $draftsReady rendered · Stage 4: <strong>Touch 1 drafts are in your Outlook Drafts folder — proofread and send from there</strong></p>
 <p>Prefilter breakdown — HOT (≥ 4.0): $hot · WARM (2.5–3.99): $warm · Local: $local · Remote: $remote</p>
 <h3 style='margin:20px 0 6px 0;color:#006DB6;'>Qualified leads (top $([Math]::Min(10, $qualifiedCount)))</h3>
 <ul style='font-size:14px;'>
 $(($qualifiedNames | ForEach-Object { "<li>$_</li>" }) -join "`n")
 </ul>
 $($deptSections -join "")
-<p style='color:#888;font-size:12px;'>Department table above shows the prefilter pool. Qualified-vs-rejected is the binary gate by the Sonnet 4.6 qualifier. Drafts are outbound email touches (touch 1/2/3) ready for rjain review; draft_only mode — nothing is sent automatically.</p>
+<p style='color:#888;font-size:12px;'>Department table above shows the prefilter pool. Qualified-vs-rejected is the binary gate by the Sonnet 4.6 qualifier. Touch 1 is waiting in Outlook Drafts; touches 2 and 3 are rendered locally in <code>templates/drafts/$today/</code> and can be pushed to Outlook with <code>scripts\Put-DraftsInOutlook.ps1 -Touch 2</code> / <code>-Touch 3</code> when you're ready to queue follow-ups.</p>
 "@
 
 $subj = "[tech-leads] Weekly scan — $qualifiedCount qualified / $total prefiltered (Tech Support: $($byDept['Tech Support'].Count), Dev: $($byDept['Development'].Count), SEO: $($byDept['SEO'].Count)) — $today"
