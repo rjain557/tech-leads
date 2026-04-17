@@ -15,6 +15,14 @@ tracking/kb/clients/
 tracking/kb/cache/
 # case-studies/ IS committed — it is industry-anonymized only
 
+# Stray clones of adjacent repos should NOT be committed.
+# If these are needed as submodules, add them via `git submodule add` so
+# a .gitmodules entry exists — otherwise git records them as broken gitlinks.
+/gsd-autonomous-dev/
+/technijian-seo-sdlc/
+/tech-chatai-v8/
+/bbc-leadgen/
+
 # Playwright artifacts
 .playwright-mcp/
 playwright-report/
