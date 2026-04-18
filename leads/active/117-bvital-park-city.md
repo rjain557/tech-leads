@@ -9,6 +9,9 @@
 - **Posting URL:** https://www.indeed.com/viewjob?jk=001acdb9db0f0e96&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic
 - **Location:** Anywhere
 - **Via:** Indeed
+- **Contact email:** cynthia@bvital.com
+- **Contact first name:** Cynthia
+- **Company domain:** bvital.com
 
 ## Qualification
 

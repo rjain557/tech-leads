@@ -135,63 +135,119 @@ def call_anthropic(api_key: str, prompt: str, retries: int = 3) -> str:
     return ""
 
 
-PROMPT_TEMPLATE = """Render a three-touch cold-outreach sequence for this lead using the per-service template below.
+PROMPT_TEMPLATE = """Write a 3-touch cold email sequence in RAVI JAIN's actual writing voice. Not a template. Not AI-generated. Ravi typed this personally.
+
+RAVI'S VOICE FINGERPRINT (from 40 of his real sent emails)
+----
+Openings: first name alone ("Team", "Iris", "Ed") or no greeting. NEVER "Hi team,". NEVER "Dear".
+Sentence rhythm: short. Fragments are fine. He runs clauses together with commas. He thinks out loud and it shows.
+Punctuation: NO em-dashes (-). He uses commas, periods, or nothing. No semicolons.
+Ending: no "Best," / "Regards," / "Thanks,". Just stops where the thought ends. Or a single lowercase "thanks" / "let me know".
+Register for cold outreach (this use case): proper capitalization, casual-but-respectable, under 80 words for touch 1, direct.
+
+REAL EXAMPLE from Ravi's Sent folder (reply to a client, for voice calibration):
+> Ed I checked the spreadsheet from Dell outlet and they don't have that model in inventory. So recommend you purchase that and have it shipped to us so that we can configure it with ESXi and then bring it up to move the servers over add the backup storage device and then get it all configured for you. Do you have the install software for the application that you have installed on the server? if so we can actually build all the new servers in our office and then just move the files and the database over
+
+Note: no formal opening, runs clauses with commas/periods, ends with a question mid-thought. THAT is Ravi's voice. For cold outreach, slightly more polished (the recipient doesn't know him yet), but same rhythm.
+
 
 LEAD
 ----
 Company: {company}
 Role posted: {role}
 Location: {location}
-Primary service match: {service}
-Matched services (all): {all_services}
+Service: {service}
+What Technijian does for this service: {service_pitch}
+Typical pain at companies hiring this role: {service_pain}
 
-JD excerpt (pick a 6-12 word {{jd_quote}} from this that signals the specific pain the role was opened to solve):
+JD excerpt — pick one 6-12 word {{jd_quote}} from here, verbatim, that signals the specific pain the role was opened to solve:
 {jd_excerpt}
 
-PER-SERVICE TEMPLATE (follow structure; resolve placeholders; keep voice)
----------
-{template}
+BANNED PHRASES (never use — these are the AI-generated tells):
+  - "I hope this finds you well"
+  - "Quick question"
+  - "Touching base" / "Circling back" / "per my last email"
+  - "worth a conversation" / "worth a chat"
+  - "~$95K + benefits" / "coverage gaps" / "fractional-MSP run rate"
+  - "covers the 24/7 layer" / "the 24/7 layer" / "MSP layer"
+  - "Before committing" / "Before locking in"
+  - "whoever you bring on" / "whoever you hire"
+  - "Not arguing against the hire" / "Not suggesting don't hire" / "sometimes it's exactly right"
+  - "the work only they can do" / "the work that actually moves"
+  - "help-desk queue and the strategic backlog" / "compete for the same 40 hours"
+  - "strategy always loses" / "strategy quietly loses"
+  - "worth 15 min" as a CTA (use varied closings — "let me know", "open to a call", "your call", "thoughts?", just "—Ravi")
+  - "shake out" / "side by side" / "in practice"
+  - "the part that caught me" / "one thought that came up"
+  - ANY em-dash (—). Use commas, periods, or parentheses.
 
-RULES
------
-- Touch 1 body must be <=120 words. No links. No attachments.
-- Touch 2 body must be 60-80 words. No links. One specific inline observation.
-- Touch 3 body must be <=40 words. No links.
-- Resolve {{company}}={company}. {{role}}={role}. {{signature}} is appended separately - omit it from the body you return.
-- {{contact_first_name}} unknown -> use "team".
-- {{jd_quote}} -> quote 6-12 words verbatim from the JD excerpt that prove you read the posting.
-- Rewrite mechanical-sounding lines so it reads like a human had a thought worth sharing.
-- Pick the SINGLE most specific subject variant from the template - the one that quotes the role or a pain.
+REQUIRED VARIETY
+----
+- Each of the 3 touches must open differently. Don't start all three with the same shape.
+  Mix these: question opener, single-sentence observation, direct statement, "saw X", "one thought", "heard you might be...", or no greeting at all.
+- Don't reuse structural phrases across touches. If touch 1 says "the part that caught me", touch 2 can't.
+- Vary sentence length within each email. Mix 5-word sentences with 20-word ones.
+- Subject lines: lowercase or mixed-case, short. Quote the role or pain. NOT "Re: your {{role}} search" — that's too templated. Try: "the {{role}} posting", "question on the {{role}} role", "saw the {{role}} JD", "{{role}} — one thought", or riff off something specific from the JD.
 
-OUTPUT (JSON only):
+CONTENT
+----
+- Touch 1 (day 0): 50-110 words. Reference the JD quote. ONE specific observation Ravi would have. ONE soft CTA.
+- Touch 2 (day 4): 30-70 words. A follow-up that doesn't repeat touch 1's framing. New angle: a cost observation, a specific pitfall, a question, or "still thinking about this one?"
+- Touch 3 (day 10): 10-35 words. A short human nudge. "Did the role close?" or "No worries if timing's off — {{specific short thought}}".
+
+DO NOT include a signature. Do NOT sign off "— Rajiv Jain / Technijian | Irvine, CA". The signature is appended separately. End each touch with either nothing, or a short sign-off like "—Ravi" or a closing question — never the full block.
+
+Contact first name: {contact_first_name}
+If that says UNKNOWN, open with "Team" or no greeting at all. If it's a real name, open with just the first name (Ravi's style: "Robyn", "Lewis", "Nicola" — no "Hi", no "Hello"). Don't use the first name in every touch; vary across 1/2/3.
+
+OUTPUT (JSON only, no prose, no code fences):
 {{
   "subject": "...",
   "touch1": "...",
   "touch2": "...",
   "touch3": "...",
   "jd_quote_picked": "...",
-  "unresolved_placeholders": ["..."]
+  "unresolved_placeholders": []
 }}"""
+
+
+def load_service_context(svc_slug: str) -> dict:
+    """Pull pitch + pain_signals + buyer_titles for a given service slug from services.yml."""
+    try:
+        services = yaml.safe_load((REPO / "config" / "services.yml").read_text(encoding="utf-8"))
+        for s in services.get("services", []):
+            if s.get("slug") == svc_slug:
+                return {
+                    "pitch": s.get("pitch", ""),
+                    "pain":  "; ".join(s.get("pain_signals", [])[:4]),
+                    "buyers": ", ".join(s.get("buyer_titles", [])[:4]),
+                }
+    except Exception:
+        pass
+    return {"pitch": "", "pain": "", "buyers": ""}
 
 
 def render_draft(api_key: str, lead: dict, template_text: str, dry: bool) -> dict:
     if dry:
         return {
-            "subject": f"[DRY] Re: your {lead.get('role_signaling_need','role')} posting",
+            "subject": f"[DRY] {lead.get('role_signaling_need','role')} posting",
             "touch1": "[DRY RUN - no API call made]",
             "touch2": "[DRY RUN]",
             "touch3": "[DRY RUN]",
             "jd_quote_picked": "",
             "unresolved_placeholders": [],
         }
+    svc_ctx = load_service_context(primary_service(lead))
+    first_name = lead.get("contact_first_name") or "UNKNOWN"
     prompt = PROMPT_TEMPLATE.format(
         company=lead.get("company", "(unknown)"),
         role=lead.get("role_signaling_need", "(unknown role)"),
         location=lead.get("location", ""),
         service=primary_service(lead),
-        all_services=lead.get("matched_services", ""),
+        service_pitch=svc_ctx["pitch"],
+        service_pain=svc_ctx["pain"],
         jd_excerpt=lead.get("jd_excerpt", "(no JD excerpt on file)")[:1800],
-        template=template_text[:6000],
+        contact_first_name=first_name,
     )
     raw = call_anthropic(api_key, prompt)
     # Strip code fences defensively
@@ -247,6 +303,11 @@ def write_draft(lead: dict, slug: str, rendered: dict, date_dir: Path) -> None:
         "confidence": lead.get("confidence"),
         "likely_buyer": lead.get("likely_buyer"),
         "posting_url": lead.get("posting_url"),
+        "contact_email": lead.get("contact_email"),
+        "contact_first_name": lead.get("contact_first_name"),
+        "contact_last_name": lead.get("contact_last_name"),
+        "contact_title": lead.get("contact_title"),
+        "company_domain": lead.get("company_domain"),
         "jd_quote_picked": rendered.get("jd_quote_picked"),
         "unresolved_placeholders": rendered.get("unresolved_placeholders", []),
         "rendered_at_utc": datetime.now(timezone.utc).isoformat(),

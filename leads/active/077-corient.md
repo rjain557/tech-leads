@@ -9,6 +9,11 @@
 - **Posting URL:** https://www.ziprecruiter.com/c/Corient/Job/Microsoft-365-Administrator/-in-Austin,TX?jid=efaba4c8bbd46620&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic
 - **Location:** Austin, TX
 - **Via:** ZipRecruiter
+- **Contact email:** rachel.lim@corient.com
+- **Contact first name:** Rachel
+- **Contact last name:** Lim
+- **Contact title:** Vice President of Digital Marketing
+- **Company domain:** corient.com
 
 ## Qualification
 

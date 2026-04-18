@@ -9,6 +9,11 @@
 - **Posting URL:** https://jobs.desotec.com/en/sales-development-representative-gulf-coast-region?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic
 - **Location:** Anywhere
 - **Via:** DESOTEC Jobs
+- **Contact email:** nicola.russo@desotec.com
+- **Contact first name:** Nicola
+- **Contact last name:** Russo
+- **Contact title:** Sales Director
+- **Company domain:** desotec.com
 
 ## Qualification
 

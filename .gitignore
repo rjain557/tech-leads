@@ -6,6 +6,9 @@ leads/archived/
 scripts/secrets.json
 scripts/_Config.local.ps1
 Logs/
+.cache/
+.tmp-postings/
+.tmp-site-scrape/
 *.log
 *.tmp
 

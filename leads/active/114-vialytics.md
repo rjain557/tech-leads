@@ -9,6 +9,11 @@
 - **Posting URL:** https://builtin.com/job/bdr-sdr-lead/8774440?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic
 - **Location:** Anywhere
 - **Via:** Built In
+- **Contact email:** j.hock@vialytics.de
+- **Contact first name:** Jonas
+- **Contact last name:** Hock
+- **Contact title:** Director of Go-To-Market Enablement
+- **Company domain:** vialytics.de
 
 ## Qualification
 

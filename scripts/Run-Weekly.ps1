@@ -49,6 +49,10 @@ try {
         & $pyExe (Join-Path $RepoRoot "scripts\qualify_leads.py")
         if ($LASTEXITCODE -ne 0 -and $exitCode -eq 0) { $exitCode = $LASTEXITCODE; Write-Host "qualify_leads.py exited $LASTEXITCODE" -ForegroundColor Yellow }
 
+        Write-Step "enrich_contacts.py (Stage 2.5 - Hunter.io contact lookup)"
+        & $pyExe (Join-Path $RepoRoot "scripts\enrich_contacts.py")
+        if ($LASTEXITCODE -ne 0 -and $exitCode -eq 0) { $exitCode = $LASTEXITCODE; Write-Host "enrich_contacts.py exited $LASTEXITCODE" -ForegroundColor Yellow }
+
         Write-Step "build_outreach.py (Stage 3 - draft rendering)"
         & $pyExe (Join-Path $RepoRoot "scripts\build_outreach.py")
         if ($LASTEXITCODE -ne 0 -and $exitCode -eq 0) { $exitCode = $LASTEXITCODE; Write-Host "build_outreach.py exited $LASTEXITCODE" -ForegroundColor Yellow }

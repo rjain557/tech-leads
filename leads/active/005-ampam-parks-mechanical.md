@@ -9,6 +9,11 @@
 - **Posting URL:** https://www.indeed.com/viewjob?jk=01d5628ff20f6d73&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic
 - **Location:** Corona, CA
 - **Via:** Indeed
+- **Contact email:** lewis.averill@ampam.com
+- **Contact first name:** Lewis
+- **Contact last name:** Averill
+- **Contact title:** Chief Operating Officer
+- **Company domain:** ampam.com
 
 ## Qualification
 

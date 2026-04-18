@@ -9,6 +9,11 @@
 - **Posting URL:** https://www.snagajob.com/jobs/1228839743?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic
 - **Location:** Upper Saddle River, NJ
 - **Via:** Snagajob
+- **Contact email:** bcury@earthcam.com
+- **Contact first name:** Brian
+- **Contact last name:** Cury
+- **Contact title:** CEO
+- **Company domain:** earthcam.com
 
 ## Qualification
 

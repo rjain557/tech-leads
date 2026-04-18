@@ -23,36 +23,58 @@ param(
     [switch]$ReplaceExisting  # delete any existing drafts tagged tech-leads before pushing
 )
 
-function Build-ContactTodoBlock {
+function Build-ContactTodoBlockHtml {
     param($Meta)
-    # Build a research block the user pastes into the To: field after looking up.
-    # User deletes this block before sending. Written as plain text so Outlook keeps it intact.
-    $company   = if ($Meta -and $Meta.company) { $Meta.company } else { "[company]" }
-    $role      = if ($Meta -and $Meta.role) { $Meta.role } else { "[role]" }
-    $buyer     = if ($Meta -and $Meta.likely_buyer) { $Meta.likely_buyer } else { "Decision-maker" }
-    $posting   = if ($Meta -and $Meta.posting_url) { $Meta.posting_url } else { "" }
-    # URL-encode for search links (minimal — spaces + quotes)
+    # HTML version: a highlighted yellow callout block at the top of the body.
+    # User deletes this block before sending. Clearly visual in Outlook.
+    $company = if ($Meta -and $Meta.company) { [System.Web.HttpUtility]::HtmlEncode($Meta.company) } else { "[company]" }
+    $role    = if ($Meta -and $Meta.role) { [System.Web.HttpUtility]::HtmlEncode($Meta.role) } else { "[role]" }
+    $buyer   = if ($Meta -and $Meta.likely_buyer) { [System.Web.HttpUtility]::HtmlEncode($Meta.likely_buyer) } else { "Decision-maker" }
+    $posting = if ($Meta -and $Meta.posting_url) { $Meta.posting_url } else { "" }
     $esc = { param($s) ($s -replace '"','%22' -replace ' ','%20') }
-    $q1 = & $esc "`"$buyer`" `"$company`""
-    $q2 = & $esc "`"$company`" $buyer email"
+    $q1 = & $esc "`"$($Meta.likely_buyer)`" `"$($Meta.company)`""
+    $q2 = & $esc "`"$($Meta.company)`" $($Meta.likely_buyer) email"
     $linkedIn = "https://www.linkedin.com/search/results/people/?keywords=$q1"
     $google = "https://www.google.com/search?q=$q2"
 
-    $block = @"
-[CONTACT TODO -- find their email, paste into To:, then delete this entire block before sending]
-Company: $company
-Role they posted: $role
-Likely decision-maker: $buyer
-Look them up:
-  LinkedIn: $linkedIn
-  Google:   $google
-  Original posting: $posting
-[END CONTACT TODO -- delete this block]
-
-
+    return @"
+<div style="background:#FFF8E1;border-left:4px solid #F67D4B;padding:14px 18px;margin:0 0 24px 0;font-family:'Segoe UI',Arial,sans-serif;font-size:13px;color:#5D4037;border-radius:4px">
+<div style="font-weight:700;margin-bottom:8px;color:#BF360C">CONTACT TODO &mdash; find their email, paste into To:, then delete this entire block before sending</div>
+<div><strong>Company:</strong> $company</div>
+<div><strong>Role they posted:</strong> $role</div>
+<div><strong>Likely decision-maker:</strong> $buyer</div>
+<div style="margin-top:8px;"><strong>Look them up:</strong></div>
+<div style="margin-left:12px">&bull; LinkedIn: <a href="$linkedIn" style="color:#006DB6">$linkedIn</a></div>
+<div style="margin-left:12px">&bull; Google: <a href="$google" style="color:#006DB6">$google</a></div>
+<div style="margin-left:12px">&bull; Original posting: <a href="$posting" style="color:#006DB6">$posting</a></div>
+</div>
 "@
-    return $block
 }
+
+function Convert-BodyToHtml {
+    param([string]$PlainBody)
+    # Turn a plain-text body with double-newline paragraphs into HTML paragraphs
+    # wrapped in the Aptos 12pt style that matches rjain's composition default.
+    # Drop the plain-text signature block if present (we append the real HTML one).
+    $text = $PlainBody -replace "`r`n", "`n"
+    # strip the plain-text signature block (everything from the trailing "--" on)
+    $text = [regex]::Replace($text, "(?s)`n+-- Rajiv Jain.*$", "")
+    $text = $text.Trim()
+    $paragraphs = ($text -split "`n`n+") | Where-Object { $_.Trim() -ne "" } | ForEach-Object {
+        $p = [System.Web.HttpUtility]::HtmlEncode($_.Trim()) -replace "`n", "<br>"
+        "<p style=`"margin:0 0 14px 0`">$p</p>"
+    }
+    return "<div style=`"font-family:Aptos,Calibri,'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12pt;color:rgb(0,0,0);line-height:1.45`">" + ($paragraphs -join "`n") + "</div>"
+}
+
+function Get-SignatureHtml {
+    $p = Join-Path $script:RepoRoot "templates\signature.html"
+    if (Test-Path $p) { return Get-Content $p -Raw -Encoding UTF8 }
+    return ""
+}
+
+# Load System.Web for HtmlEncode
+Add-Type -AssemblyName System.Web
 
 function Remove-ExistingTechLeadsDrafts {
     # Query Outlook for drafts categorized 'tech-leads' and delete them.
@@ -117,7 +139,8 @@ foreach ($file in $files) {
         $needsResearch = $false
     }
 
-    $researchBlock = if ($needsResearch) { Build-ContactTodoBlock -Meta $meta } else { "" }
+    $researchBlockHtml = if ($needsResearch) { Build-ContactTodoBlockHtml -Meta $meta } else { "" }
+    $signatureHtml = Get-SignatureHtml
 
     foreach ($t in $touchesToPush) {
         # Match: ## Touch {N} -- Day {D}\n**Subject:** {subj}\n\n{body}\n(signature)\n---
@@ -130,11 +153,12 @@ foreach ($file in $files) {
         }
         $subject = $m.Groups['subj'].Value.Trim()
         $body    = $m.Groups['body'].Value.Trim()
-        $finalBody = $researchBlock + $body
+        $bodyHtml = Convert-BodyToHtml -PlainBody $body
+        $finalBodyHtml = $researchBlockHtml + $bodyHtml + $signatureHtml
 
         $payload = @{
             subject      = $subject
-            body         = @{ contentType = "Text"; content = $finalBody }
+            body         = @{ contentType = "HTML"; content = $finalBodyHtml }
             toRecipients = $toList
             importance   = "normal"
             categories   = @("tech-leads", "outreach-touch-$t")

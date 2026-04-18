@@ -9,6 +9,11 @@
 - **Posting URL:** https://www.indeed.com/viewjob?jk=f6f6ae33f4d2aade&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic
 - **Location:** Corona, CA
 - **Via:** Indeed
+- **Contact email:** adagher@developlus.com
+- **Contact first name:** Andrea
+- **Contact last name:** Dagher
+- **Contact title:** Senior Director of Brand Marketing
+- **Company domain:** developlus.com
 
 ## Qualification
 
