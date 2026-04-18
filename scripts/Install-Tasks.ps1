@@ -35,7 +35,7 @@ if ($Uninstall) {
 # --- Weekly scan + digest (chained via Run-Weekly.ps1) ---
 Remove-TaskIfExists $TaskScan
 $weeklyPs = Join-Path $RepoRoot "scripts\Run-Weekly.ps1"
-$scanAction = New-ScheduledTaskAction -Execute "powershell.exe" -Argument "-NoProfile -ExecutionPolicy Bypass -File `"$weeklyPs`"" -WorkingDirectory $RepoRoot
+$scanAction = New-ScheduledTaskAction -Execute "pwsh.exe" -Argument "-NoProfile -ExecutionPolicy Bypass -File `"$weeklyPs`"" -WorkingDirectory $RepoRoot
 $scanTrigger = New-ScheduledTaskTrigger -Weekly -DaysOfWeek Friday -At 6:00am
 $scanSettings = New-ScheduledTaskSettingsSet -StartWhenAvailable -DontStopOnIdleEnd -ExecutionTimeLimit (New-TimeSpan -Hours 1)
 Register-ScheduledTask -TaskName $TaskScan -Action $scanAction -Trigger $scanTrigger -Settings $scanSettings -Description "Technijian lead-gen weekly scan (SerpAPI) + department digest email" | Out-Null
@@ -44,7 +44,7 @@ Write-Host "Installed: $TaskScan (Fri 06:00 -- scan + digest chained)"
 # --- Daily reply check (git pull + Check-Replies chained via Run-Daily.ps1) ---
 Remove-TaskIfExists $TaskReply
 $dailyPs = Join-Path $RepoRoot "scripts\Run-Daily.ps1"
-$replyAction = New-ScheduledTaskAction -Execute "powershell.exe" -Argument "-NoProfile -ExecutionPolicy Bypass -File `"$dailyPs`"" -WorkingDirectory $RepoRoot
+$replyAction = New-ScheduledTaskAction -Execute "pwsh.exe" -Argument "-NoProfile -ExecutionPolicy Bypass -File `"$dailyPs`"" -WorkingDirectory $RepoRoot
 $replyTrigger = New-ScheduledTaskTrigger -Weekly -DaysOfWeek Monday,Tuesday,Wednesday,Thursday,Friday -At 8:00am
 $replySettings = New-ScheduledTaskSettingsSet -StartWhenAvailable -DontStopOnIdleEnd -ExecutionTimeLimit (New-TimeSpan -Minutes 15)
 Register-ScheduledTask -TaskName $TaskReply -Action $replyAction -Trigger $replyTrigger -Settings $replySettings -Description "Technijian lead-gen daily reply safety-net (pulls config from other sessions first)" | Out-Null

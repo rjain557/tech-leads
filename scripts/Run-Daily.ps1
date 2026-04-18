@@ -29,7 +29,7 @@ try {
 
     Write-Host ""
     Write-Host "=== Check-Replies.ps1 ==="
-    & powershell.exe -NoProfile -ExecutionPolicy Bypass -File (Join-Path $RepoRoot "scripts\Check-Replies.ps1")
+    & pwsh.exe -NoProfile -ExecutionPolicy Bypass -File (Join-Path $RepoRoot "scripts\Check-Replies.ps1")
     if ($LASTEXITCODE -ne 0) { $exitCode = $LASTEXITCODE }
 } finally {
     Pop-Location
