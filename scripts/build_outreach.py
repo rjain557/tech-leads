@@ -187,15 +187,23 @@ REQUIRED VARIETY
   Mix these: question opener, single-sentence observation, direct statement, "saw X", "one thought", "heard you might be...", or no greeting at all.
 - Don't reuse structural phrases across touches. If touch 1 says "the part that caught me", touch 2 can't.
 - Vary sentence length within each email. Mix 5-word sentences with 20-word ones.
-- Subject lines: lowercase or mixed-case, short. Quote the role or pain. NOT "Re: your {{role}} search" — that's too templated. Try: "the {{role}} posting", "question on the {{role}} role", "saw the {{role}} JD", "{{role}} — one thought", or riff off something specific from the JD.
+- Subject lines: Proper Title Case (NOT all lowercase — "the X posting" reads sloppy). Professional-casual, 4-8 words. Reference the role, optionally with the company. Good: "Your IT Manager search", "Saw your Compliance Analyst posting", "Question about the M365 role at Corient", "Quick thought on the SDR Manager search". Bad: "the IT manager posting" (lowercase), "Re: Re: Re: X" (templated), "Introducing Technijian" (salesy).
 
-CONTENT
+CONTENT + FORMATTING (strictly enforced)
 ----
-- Touch 1 (day 0): 50-110 words. Reference the JD quote. ONE specific observation Ravi would have. ONE soft CTA.
-- Touch 2 (day 4): 30-70 words. A follow-up that doesn't repeat touch 1's framing. New angle: a cost observation, a specific pitfall, a question, or "still thinking about this one?"
-- Touch 3 (day 10): 10-35 words. A short human nudge. "Did the role close?" or "No worries if timing's off — {{specific short thought}}".
+- Touch 1 (day 0): 60-110 words, broken into 3 OR 4 short paragraphs. Each paragraph 1-2 sentences. SEPARATE paragraphs with a blank line (two newlines \\n\\n in the JSON string). DO NOT return one giant wall of text. Reference the JD quote in para 1. ONE specific observation in para 2. Soft CTA + booking-link mention in the final paragraph.
+- Touch 2 (day 4): 40-80 words, 2 OR 3 short paragraphs separated by blank lines. New angle from touch 1. End with a question or soft nudge.
+- Touch 3 (day 10): 15-35 words, can be a single paragraph. "Did the role close?" style or short human nudge.
 
-DO NOT include a signature. Do NOT sign off "— Rajiv Jain / Technijian | Irvine, CA". The signature is appended separately. End each touch with either nothing, or a short sign-off like "—Ravi" or a closing question — never the full block.
+BOOKING LINK
+----
+The appended HTML signature has a "Book a Meeting" button. In the LAST paragraph of touches 1 AND 3 (optionally touch 2), mention that there's a calendar link in the signature. Vary the phrasing each touch. Examples:
+- "If a call makes sense, you can grab 15 min on my calendar via the link in my signature."
+- "There's a booking link in my signature if it's easier to just pick a time."
+- "Feel free to grab time directly from the calendar link below."
+Do NOT hardcode the URL. Just reference "the link in my signature" or "the calendar link below."
+
+DO NOT include a typed signature. Do NOT sign off "-- Rajiv Jain / Technijian | Irvine, CA" or "—Ravi". The HTML signature is appended separately and contains everything. End each touch where the content ends.
 
 Contact first name: {contact_first_name}
 If that says UNKNOWN, open with "Team" or no greeting at all. If it's a real name, open with just the first name (Ravi's style: "Robyn", "Lewis", "Nicola" — no "Hi", no "Hello"). Don't use the first name in every touch; vary across 1/2/3.

@@ -18,10 +18,15 @@
 
 param(
     [string]$DraftsDate = (Get-Date -Format "yyyy-MM-dd"),
-    [ValidateSet("1","2","3","all")][string]$Touch = "all",
+    [ValidateSet("1","2","3","all")][string]$Touch = "1",
     [switch]$DryRun,
     [switch]$ReplaceExisting  # delete any existing drafts tagged tech-leads before pushing
 )
+# Default is Touch 1 only. Multi-touch auto-cadence reads as automation to recipients
+# (and feels spammy to send 3 emails to one person about one job posting).
+# Touches 2 and 3 are still rendered locally in templates/drafts/{date}/ for cases
+# where rjain decides a specific lead merits a follow-up — push them individually
+# with -Touch 2 / -Touch 3 / -Touch all when warranted.
 
 function Build-ContactTodoBlockHtml {
     param($Meta)
@@ -57,14 +62,28 @@ function Convert-BodyToHtml {
     # wrapped in the Aptos 12pt style that matches rjain's composition default.
     # Drop the plain-text signature block if present (we append the real HTML one).
     $text = $PlainBody -replace "`r`n", "`n"
-    # strip the plain-text signature block (everything from the trailing "--" on)
     $text = [regex]::Replace($text, "(?s)`n+-- Rajiv Jain.*$", "")
+    $text = [regex]::Replace($text, "(?s)`n+--Ravi\s*$", "")
     $text = $text.Trim()
+    # If the LLM returned one giant paragraph (no \n\n separators), heuristically
+    # break it at sentence boundaries every ~2 sentences so spacing isn't one wall of text.
+    if ($text -notmatch "`n`n") {
+        $sentences = [regex]::Split($text, '(?<=[.!?])\s+(?=[A-Z"])') | Where-Object { $_.Trim() -ne "" }
+        if ($sentences.Count -ge 4) {
+            $grouped = for ($i = 0; $i -lt $sentences.Count; $i += 2) {
+                $end = [Math]::Min($i + 1, $sentences.Count - 1)
+                ($sentences[$i..$end]) -join " "
+            }
+            $text = ($grouped) -join "`n`n"
+        }
+    }
     $paragraphs = ($text -split "`n`n+") | Where-Object { $_.Trim() -ne "" } | ForEach-Object {
         $p = [System.Web.HttpUtility]::HtmlEncode($_.Trim()) -replace "`n", "<br>"
-        "<p style=`"margin:0 0 14px 0`">$p</p>"
+        "<p style=`"margin:0 0 16px 0;line-height:1.55`">$p</p>"
     }
-    return "<div style=`"font-family:Aptos,Calibri,'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12pt;color:rgb(0,0,0);line-height:1.45`">" + ($paragraphs -join "`n") + "</div>"
+    $bodyDiv = "<div style=`"font-family:Aptos,Calibri,'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:12pt;color:rgb(0,0,0);line-height:1.55;margin-bottom:8px`">" + ($paragraphs -join "`n") + "</div>"
+    # Add clear spacing before the signature so body + signature don't run together
+    return $bodyDiv + "<div style=`"height:24px;line-height:24px`">&nbsp;</div>"
 }
 
 function Get-SignatureHtml {
@@ -81,17 +100,17 @@ function Remove-ExistingTechLeadsDrafts {
     # Only touches isDraft=true items; will not delete anything already sent.
     $url = "https://graph.microsoft.com/v1.0/users/$script:UserId/messages?`$filter=isDraft eq true&`$select=id,subject,categories&`$top=200"
     $resp = Invoke-GraphGet $url
-    $matches = @($resp.value | Where-Object { $_.categories -and ($_.categories -contains 'tech-leads') })
-    if ($matches.Count -eq 0) { Write-PipelineLog "  no existing tech-leads drafts to remove."; return 0 }
-    Write-PipelineLog "  removing $($matches.Count) existing tech-leads drafts..."
+    $techLeadDrafts = @($resp.value | Where-Object { $_.categories -and ($_.categories -contains 'tech-leads') })
+    if ($techLeadDrafts.Count -eq 0) { Write-PipelineLog "  no existing tech-leads drafts to remove."; return 0 }
+    Write-PipelineLog "  removing $($techLeadDrafts.Count) existing tech-leads drafts..."
     $removed = 0
-    foreach ($m in $matches) {
+    foreach ($m in $techLeadDrafts) {
         try {
             Invoke-RestMethod -Uri "https://graph.microsoft.com/v1.0/users/$script:UserId/messages/$($m.id)" -Headers (Get-GraphHeaders) -Method DELETE | Out-Null
             $removed++
         } catch { Write-PipelineLog "  delete fail $($m.id.Substring(0,16))...: $($_.Exception.Message)" "WARN" }
     }
-    Write-PipelineLog "  removed $removed/$($matches.Count)."
+    Write-PipelineLog "  removed $removed/$($techLeadDrafts.Count)."
     return $removed
 }
 
