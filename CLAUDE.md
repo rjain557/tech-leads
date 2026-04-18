@@ -91,6 +91,34 @@ See `templates/drafts/{date}/{slug}.md`.
 - [ ] Closed won / lost
 ```
 
+## Lessons learned — 2026-04-17 first-batch mistakes (MANDATORY reading before pipeline changes)
+
+Every mistake in this list was made live today when pushing the first batch of cold-outreach drafts. Each has a fix baked into the current code. Do not regress them.
+
+1. **Subject lines: Title Case, not lowercase.** "the IT Manager posting" reads sloppy for cold first-impression email. Use "Saw Your IT Manager Search" / "Question About the M365 Role at {Company}". Enforced in [build_outreach.py](scripts/build_outreach.py) `PROMPT_TEMPLATE` SUBJECT LINES section.
+
+2. **Body must be 3–4 short paragraphs, not one wall of text.** LLM default was "one paragraph, 100 words". Must be 1–2 sentences per paragraph, separated by blank lines. Enforced in prompt + [Put-DraftsInOutlook.ps1](scripts/Put-DraftsInOutlook.ps1) `Convert-BodyToHtml` has heuristic re-split at sentence boundaries if the LLM returns one big paragraph.
+
+3. **HTML body with real signature — NEVER plain text.** Plain text + the ASCII "-- Rajiv Jain / Technijian | Irvine, CA" block looks amateur. Real signature is at [templates/signature.html](templates/signature.html) (extracted from `/mailFolders/SentItems/messages`). Body: Aptos 12pt, line-height 1.55, 16px paragraph spacing, 24px div spacer before signature table. No exceptions.
+
+4. **Match Ravi's actual voice — sample his Sent folder first.** [scripts/Sample-Voice.ps1](scripts/Sample-Voice.ps1) pulls 40 recent sent emails into `Logs/voice-samples/`. [templates/voice-profile.md](templates/voice-profile.md) distills the patterns. The prompt embeds it. Banned-phrase list enforced: no "fractional-MSP run rate", "$95K + benefits + coverage gaps", "covers the 24/7 layer", "Not arguing against the hire — sometimes it's exactly right", "the part that caught me", em-dashes. These were the AI-generated tells that made the first batch obvious.
+
+5. **Contact enrichment BEFORE draft generation.** Pushing drafts with empty `To:` and a CONTACT TODO research block was a band-aid that made the user rightly ask "how am I supposed to send these?" [scripts/enrich_contacts.py](scripts/enrich_contacts.py) runs Stage 2.5 in [Run-Weekly.ps1](scripts/Run-Weekly.ps1), resolves contacts via Hunter.io, writes to lead files. `contact_first_name` flows into the prompt so drafts open with "Robyn," not "Hi team,".
+
+6. **Default cadence: ONE touch per lead, not three.** User pushback: "You think the lead is going to like get 3 emails from me?" 3-touch auto-cadence reads as spam to the recipient. [Put-DraftsInOutlook.ps1](scripts/Put-DraftsInOutlook.ps1) now defaults `-Touch "1"`. Touches 2 and 3 still render locally for manual push on specific leads that go cold — never auto-pushed.
+
+7. **Mention the booking link in the body.** Signature has a "Book a Meeting" button; the body must reference it ("there's a calendar link in my signature to grab some time"). Otherwise readers scan body → miss the button → reply with "what's the next step?"
+
+8. **Apollo is the wrong enrichment vendor.** Plan tier gates `mixed_people/search` (403 API_INACCESSIBLE) and `mixed_companies/search` runs out of credits. **Hunter.io** is the vendor. `/v2/domain-search?company={name}` resolves domain + returns top executives with verified emails + titles + seniority — exactly what we need. Key in [keys/hunter.md](file:///C:/Users/rjain.TECHNIJIAN/OneDrive%20-%20Technijian,%20Inc/Documents/VSCODE/keys/hunter.md), loaded from `scripts/secrets.json → hunterApiKey`.
+
+9. **BatchData is the wrong tool entirely.** Address-based skip-trace returns property owners — wrong signal for B2B decision-maker outreach. Confirmed by reading `/d/vscode/finance-leadgen/sources/apollo_enrich.py` — finance-leadgen's own docs flagged the gap but never filled it.
+
+10. **Proofread every draft after pushing — not one sample.** [scripts/Proofread-All.ps1](scripts/Proofread-All.ps1) iterates all pushed drafts via Graph, strips HTML, counts paragraphs + words, scans for banned phrases, verifies booking-link mention. Run after every `Put-DraftsInOutlook` execution before declaring a batch ready for review.
+
+11. **Greeting and first sentence go on the SAME paragraph.** Some LLM outputs put "Elizabeth" alone, blank line, then the body. Reads robotic. Enforce: "Robyn, saw the IT Systems Administrator posting..." — comma inline, no newline break after the name.
+
+12. **HTML email draft + Graph API needs `Mail.ReadWrite` permission.** The existing HiringPipeline-Automation app registration has it (verified — 27/27 drafts pushed without 403). If this ever changes, `Put-DraftsInOutlook.ps1` fails with a clear 403 message pointing at the permission.
+
 ## Outlook drafts are the review surface (MANDATORY)
 
 **Every email the pipeline generates ends up in rjain's Outlook Drafts folder.** Not in local `templates/drafts/{date}/` for rjain to open separately — in Outlook, where he proofreads and sends from.
