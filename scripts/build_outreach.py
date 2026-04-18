@@ -53,6 +53,12 @@ Technijian | Irvine, CA
 rjain@technijian.com | 949.379.8500"""
 
 
+CLAUDE_CREDS = (
+    Path(os.environ["USERPROFILE"]) / ".claude" / ".credentials.json"
+    if os.name == "nt" else Path.home() / ".claude" / ".credentials.json"
+)
+
+
 def load_api_key() -> str | None:
     if not SECRETS_FILE.exists():
         return None
@@ -62,6 +68,42 @@ def load_api_key() -> str | None:
         return k if k and isinstance(k, str) and k.strip() else None
     except Exception:
         return None
+
+
+def load_oauth_token() -> str | None:
+    """Return Claude Code OAuth accessToken from ~/.claude/.credentials.json."""
+    if not CLAUDE_CREDS.exists():
+        return None
+    try:
+        data = json.loads(CLAUDE_CREDS.read_text(encoding="utf-8"))
+    except Exception:
+        return None
+    oauth = data.get("claudeAiOauth") or {}
+    token = oauth.get("accessToken")
+    if not token:
+        return None
+    exp_ms = oauth.get("expiresAt") or 0
+    now_ms = int(time.time() * 1000)
+    if exp_ms and exp_ms < now_ms:
+        print(f"  [warn] OAuth token past expiresAt ({exp_ms}); may 401.", file=sys.stderr)
+    return token
+
+
+def load_auths() -> list[tuple[str, str]]:
+    """Prefer OAuth (Claude Code subscription quota) for outreach drafting.
+    Fall back to API key only on auth failure. Per user direction:
+    API key is reserved for bulk qualifier work; draft rendering should
+    consume OAuth first since volume is low (~9 calls/week)."""
+    auths: list[tuple[str, str]] = []
+    oauth = load_oauth_token()
+    if oauth:
+        auths.append(("oauth", oauth))
+    api_key = load_api_key()
+    if api_key:
+        auths.append(("api_key", api_key))
+    if not auths:
+        sys.exit("No Anthropic auth available. Add `anthropicApiKey` to scripts/secrets.json OR run Claude Code so ~/.claude/.credentials.json exists.")
+    return auths
 
 
 def parse_lead(path: Path) -> dict:
@@ -99,39 +141,52 @@ def primary_service(lead: dict) -> str:
     return s or "my-it"
 
 
-def call_anthropic(api_key: str, prompt: str, retries: int = 3) -> str:
+def call_anthropic(auths: list[tuple[str, str]], prompt: str, retries: int = 3) -> str:
+    """Try each auth in order; fall over to the next one on 401/403.
+    Retry transient errors (429/5xx) within each auth with backoff."""
     body = json.dumps({
         "model": ANTHROPIC_MODEL,
         "max_tokens": 1600,
         "system": "You render cold B2B outreach email drafts. Output ONLY a JSON object with keys: subject, touch1, touch2, touch3, jd_quote_picked, unresolved_placeholders. No prose. No code fences.",
         "messages": [{"role": "user", "content": prompt}],
     }).encode("utf-8")
-    headers = {
-        "x-api-key": api_key,
-        "anthropic-version": ANTHROPIC_VERSION,
-        "content-type": "application/json",
-    }
-    delay = 2.0
-    for attempt in range(retries):
-        try:
-            req = Request(ANTHROPIC_URL, data=body, headers=headers, method="POST")
-            with urlopen(req, timeout=60) as resp:
-                data = json.loads(resp.read().decode("utf-8"))
-            content = data.get("content", [])
-            if content and content[0].get("type") == "text":
-                return content[0]["text"]
-            return ""
-        except HTTPError as e:
-            status = e.code
-            if status in (429, 500, 502, 503, 504) and attempt < retries - 1:
-                time.sleep(delay); delay *= 2
-                continue
-            raise
-        except URLError:
-            if attempt < retries - 1:
-                time.sleep(delay); delay *= 2
-                continue
-            raise
+    last_err = None
+    for label, token in auths:
+        headers = {
+            "x-api-key": token,
+            "anthropic-version": ANTHROPIC_VERSION,
+            "content-type": "application/json",
+        }
+        delay = 2.0
+        for attempt in range(retries):
+            try:
+                req = Request(ANTHROPIC_URL, data=body, headers=headers, method="POST")
+                with urlopen(req, timeout=60) as resp:
+                    data = json.loads(resp.read().decode("utf-8"))
+                content = data.get("content", [])
+                if content and content[0].get("type") == "text":
+                    if label == "oauth" and attempt == 0:
+                        pass  # succeeded on OAuth first try — no log noise
+                    return content[0]["text"]
+                return ""
+            except HTTPError as e:
+                status = e.code
+                if status in (401, 403):
+                    # Auth failure — break out of retry loop, try next auth
+                    print(f"  [auth] {label} returned {status}; falling over.", file=sys.stderr)
+                    last_err = e
+                    break
+                if status in (429, 500, 502, 503, 504) and attempt < retries - 1:
+                    time.sleep(delay); delay *= 2
+                    continue
+                raise
+            except URLError:
+                if attempt < retries - 1:
+                    time.sleep(delay); delay *= 2
+                    continue
+                raise
+    if last_err:
+        raise last_err
     return ""
 
 
@@ -235,7 +290,7 @@ def load_service_context(svc_slug: str) -> dict:
     return {"pitch": "", "pain": "", "buyers": ""}
 
 
-def render_draft(api_key: str, lead: dict, template_text: str, dry: bool) -> dict:
+def render_draft(auths: list, lead: dict, template_text: str, dry: bool) -> dict:
     if dry:
         return {
             "subject": f"[DRY] {lead.get('role_signaling_need','role')} posting",
@@ -257,7 +312,7 @@ def render_draft(api_key: str, lead: dict, template_text: str, dry: bool) -> dic
         jd_excerpt=lead.get("jd_excerpt", "(no JD excerpt on file)")[:1800],
         contact_first_name=first_name,
     )
-    raw = call_anthropic(api_key, prompt)
+    raw = call_anthropic(auths, prompt)
     # Strip code fences defensively
     raw = re.sub(r"^```(?:json)?\s*", "", raw.strip())
     raw = re.sub(r"\s*```$", "", raw.strip())
@@ -345,10 +400,12 @@ def main() -> int:
         print("No qualified leads in leads/active/.")
         return 0
 
-    api_key = None if args.dry_run else load_api_key()
-    if not args.dry_run and not api_key:
-        print("ERROR: anthropicApiKey not in secrets.json; cannot render drafts. Use --dry-run for stubs.", file=sys.stderr)
+    auths = [] if args.dry_run else load_auths()
+    if not args.dry_run and not auths:
+        print("ERROR: No Anthropic auth available. Use --dry-run for stubs.", file=sys.stderr)
         return 2
+    if auths:
+        print(f"  Auth order: {', '.join(label for label, _ in auths)} (OAuth preferred; API key fallback)")
 
     date_dir = DRAFTS_ROOT / datetime.now().strftime("%Y-%m-%d")
     date_dir.mkdir(parents=True, exist_ok=True)
@@ -365,7 +422,7 @@ def main() -> int:
         template_text = tpl_path.read_text(encoding="utf-8")
         slug = lp.stem.split("-", 1)[-1]
         try:
-            rendered = render_draft(api_key, lead, template_text, args.dry_run)
+            rendered = render_draft(auths, lead, template_text, args.dry_run)
             write_draft(lead, slug, rendered, date_dir)
             built += 1
             print(f"  [ok] {slug} -- {svc}")

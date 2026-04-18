@@ -1,4 +1,4 @@
-# Check-Replies.ps1 — Daily safety-net for inbound replies to our cold outreach.
+# Check-Replies.ps1 -- Daily safety-net for inbound replies to our cold outreach.
 #
 # Runs via Windows Task Scheduler (see Install-Tasks.ps1). For each run:
 #   1. Auths to M365 Graph
@@ -13,7 +13,7 @@
 #   9. Emails rjain a digest ONLY if there are new unhandled replies
 #
 # Everything stays read-only against the mailbox (no marking as read, no moving).
-# Response drafting is separate — see .claude/skills/draft-reply/SKILL.md.
+# Response drafting is separate -- see .claude/skills/draft-reply/SKILL.md.
 
 param(
     [int]$LookbackHours = 36,
@@ -137,12 +137,12 @@ $logPath = Join-Path $repliesDir "$today.md"
 $pending = @($new | Where-Object { -not $_.Handled -and -not $_.AutoReply -and $_.Sentiment -ne "unsubscribe" })
 
 if ($new.Count -gt 0 -and -not $DryRun) {
-    $hdr = if (Test-Path $logPath) { "" } else { "# Replies — $today`n`n" }
+    $hdr = if (Test-Path $logPath) { "" } else { "# Replies -- $today`n`n" }
     $body = foreach ($r in $new) {
-        $flag = if ($r.Handled) { "✓ HANDLED" } elseif ($r.AutoReply) { "AUTO" } elseif ($r.Sentiment -eq "unsubscribe") { "‼ UNSUBSCRIBE" } else { "→ PENDING" }
+        $flag = if ($r.Handled) { "[OK] HANDLED" } elseif ($r.AutoReply) { "AUTO" } elseif ($r.Sentiment -eq "unsubscribe") { "!! UNSUBSCRIBE" } else { "-> PENDING" }
 @"
 
-## $flag — $($r.From) — $($r.Subject)
+## $flag -- $($r.From) -- $($r.Subject)
 
 - **Received:** $($r.Received.ToString('yyyy-MM-dd HH:mm')) UTC
 - **Sentiment:** $($r.Sentiment)
@@ -186,7 +186,7 @@ if ($pending.Count -gt 0 -and -not $NoDigest -and -not $DryRun) {
     $deptCounts = @{}
     foreach ($d in ($script:DepartmentOrder + @("Unknown"))) { $deptCounts[$d] = 0 }
     foreach ($r in $pending) { $deptCounts[$r.Department]++ }
-    $deptLine = ($script:DepartmentOrder + @("Unknown") | ForEach-Object { "$_`: $($deptCounts[$_])" }) -join " · "
+    $deptLine = ($script:DepartmentOrder + @("Unknown") | ForEach-Object { "$_`: $($deptCounts[$_])" }) -join " | "
 
     $rows = foreach ($r in $pending) {
         $age = [math]::Round((([datetime]::UtcNow - $r.Received).TotalHours), 1)
@@ -196,7 +196,7 @@ if ($pending.Count -gt 0 -and -not $NoDigest -and -not $DryRun) {
 <p><strong>$($pending.Count) reply$(if ($pending.Count -ne 1) { 'ies' } else { 'y' }) pending your response.</strong></p>
 <p><strong>By department:</strong> $deptLine</p>
 <p>Full log: <code>tracking/replies/$today.md</code><br>
-To draft responses: open Claude Code in the repo and say <em>"draft replies for today"</em> — the <code>draft-reply</code> skill will render drafts into <code>templates/replies/$today/</code>.</p>
+To draft responses: open Claude Code in the repo and say <em>"draft replies for today"</em> -- the <code>draft-reply</code> skill will render drafts into <code>templates/replies/$today/</code>.</p>
 <table style='border-collapse:collapse;width:100%;font-size:14px;'>
 <tr style='background:#F0F4F8;'><th style='padding:8px;text-align:left;'>From</th><th style='padding:8px;text-align:left;'>Subject</th><th style='padding:8px;text-align:left;'>Dept</th><th style='padding:8px;text-align:left;'>Sentiment</th><th style='padding:8px;text-align:left;'>Age</th></tr>
 $($rows -join "")
@@ -204,7 +204,7 @@ $($rows -join "")
 <p style='color:#888;font-size:12px;'>Automated safety-net from scripts/Check-Replies.ps1. You are receiving this because at least one reply was detected.</p>
 "@
     $html = Build-BrandedEmail -BodyContent $inner
-    $subj = "[tech-leads] $($pending.Count) pending repl$(if ($pending.Count -ne 1) { 'ies' } else { 'y' }) — $today"
+    $subj = "[tech-leads] $($pending.Count) pending repl$(if ($pending.Count -ne 1) { 'ies' } else { 'y' }) -- $today"
     $payload = @{
         message = @{
             subject = $subj
@@ -220,7 +220,7 @@ $($rows -join "")
         Write-PipelineLog "Digest send failed: $_" "ERROR"
     }
 } elseif ($pending.Count -eq 0) {
-    Write-PipelineLog "No pending replies — no digest (per `only-when-pending` policy)."
+    Write-PipelineLog "No pending replies -- no digest (per `only-when-pending` policy)."
 }
 
 Write-PipelineLog "Check-Replies run complete. new=$($new.Count) pending=$($pending.Count)"

@@ -1,7 +1,7 @@
-# Send-ScanDigest.ps1 — Weekly scan summary emailed to rjain.
+# Send-ScanDigest.ps1 -- Weekly scan summary emailed to rjain.
 #
 # Runs after scan_jobs.py in the weekly Task Scheduler chain. Reads
-# tracking/known-companies.json, finds every (company × service) pair
+# tracking/known-companies.json, finds every (company x service) pair
 # whose last_seen_utc falls within the lookback window, groups by
 # department (Tech Support / Development / SEO), and sends an HTML
 # digest.
@@ -78,7 +78,7 @@ $deptSections = foreach ($dept in ($script:DepartmentOrder + @("Unknown"))) {
         "<tr><td style='padding:6px 10px;border-bottom:1px solid #EEE;'>$anchor</td><td style='padding:6px 10px;border-bottom:1px solid #EEE;'>$($r.Service)</td><td style='padding:6px 10px;border-bottom:1px solid #EEE;text-align:right;'>$($r.Score)</td><td style='padding:6px 10px;border-bottom:1px solid #EEE;color:#888;font-size:13px;'>$($r.Title)</td></tr>"
     }
 @"
-<h3 style='margin:24px 0 8px 0;color:#006DB6;'>$dept — $($list.Count) lead$(if ($list.Count -ne 1) { 's' } else { '' }) ($deptHot HOT)</h3>
+<h3 style='margin:24px 0 8px 0;color:#006DB6;'>$dept -- $($list.Count) lead$(if ($list.Count -ne 1) { 's' } else { '' }) ($deptHot HOT)</h3>
 <table style='border-collapse:collapse;width:100%;font-size:14px;margin-bottom:16px;'>
 <tr style='background:#F0F4F8;'><th style='padding:8px 10px;text-align:left;'>Company</th><th style='padding:8px 10px;text-align:left;'>Service</th><th style='padding:8px 10px;text-align:right;'>Score</th><th style='padding:8px 10px;text-align:left;'>Role</th></tr>
 $($rowsHtml -join "")
@@ -106,9 +106,9 @@ $draftsReady = if (Test-Path $draftsDir) { @(Get-ChildItem $draftsDir -Filter "*
 $qualPct = if ($total -gt 0) { [math]::Round(100.0 * $qualifiedCount / $total, 1) } else { 0 }
 
 $inner = @"
-<p><strong>Weekly scan summary — $qualifiedCount qualified of $total prefiltered (${qualPct}%).</strong></p>
-<p>Stage 1 (prefilter): $total · Stage 2 (qualifier): <strong>$qualifiedCount qualified</strong>, $rejectedCount rejected · Stage 3 (drafts): $draftsReady rendered · Stage 4: <strong>Touch 1 drafts are in your Outlook Drafts folder — proofread and send from there</strong></p>
-<p>Prefilter breakdown — HOT (≥ 4.0): $hot · WARM (2.5–3.99): $warm · Local: $local · Remote: $remote</p>
+<p><strong>Weekly scan summary -- $qualifiedCount qualified of $total prefiltered (${qualPct}%).</strong></p>
+<p>Stage 1 (prefilter): $total | Stage 2 (qualifier): <strong>$qualifiedCount qualified</strong>, $rejectedCount rejected | Stage 3 (drafts): $draftsReady rendered | Stage 4: <strong>Touch 1 drafts are in your Outlook Drafts folder -- proofread and send from there</strong></p>
+<p>Prefilter breakdown -- HOT (>= 4.0): $hot | WARM (2.5-3.99): $warm | Local: $local | Remote: $remote</p>
 <h3 style='margin:20px 0 6px 0;color:#006DB6;'>Qualified leads (top $([Math]::Min(10, $qualifiedCount)))</h3>
 <ul style='font-size:14px;'>
 $(($qualifiedNames | ForEach-Object { "<li>$_</li>" }) -join "`n")
@@ -117,7 +117,7 @@ $($deptSections -join "")
 <p style='color:#888;font-size:12px;'>Department table above shows the prefilter pool. Qualified-vs-rejected is the binary gate by the Sonnet 4.6 qualifier. Touch 1 is waiting in Outlook Drafts; touches 2 and 3 are rendered locally in <code>templates/drafts/$today/</code> and can be pushed to Outlook with <code>scripts\Put-DraftsInOutlook.ps1 -Touch 2</code> / <code>-Touch 3</code> when you're ready to queue follow-ups.</p>
 "@
 
-$subj = "[tech-leads] Weekly scan — $qualifiedCount qualified / $total prefiltered (Tech Support: $($byDept['Tech Support'].Count), Dev: $($byDept['Development'].Count), SEO: $($byDept['SEO'].Count)) — $today"
+$subj = "[tech-leads] Weekly scan -- $qualifiedCount qualified / $total prefiltered (Tech Support: $($byDept['Tech Support'].Count), Dev: $($byDept['Development'].Count), SEO: $($byDept['SEO'].Count)) -- $today"
 $html = Build-BrandedEmail -BodyContent $inner
 
 if ($DryRun) {

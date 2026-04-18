@@ -4,7 +4,7 @@
 Connect-PipelineGraph | Out-Null
 
 # Grab more drafts and match both category AND subject heuristic (some drafts
-# lose category metadata — the filter backs off to subject keywords)
+# lose category metadata -- the filter backs off to subject keywords)
 $url = "https://graph.microsoft.com/v1.0/users/$($script:UserId)/messages?`$filter=isDraft eq true&`$top=500&`$select=id,subject,body,toRecipients,categories,createdDateTime&`$orderby=createdDateTime desc"
 $r = Invoke-GraphGet -Url $url
 $cutoff = [datetime]::UtcNow.AddHours(-2)
@@ -45,7 +45,7 @@ foreach ($d in $drafts) {
     Write-Host ("[$idx] $($d.subject)")
     Write-Host ("    To:               $to")
     Write-Host ("    Paras / Words:    $paraCount / $wordCount")
-    Write-Host ("    Greeting own para (BAD): " + $(if ($greetingOnOwnLine) { 'YES — needs inlining with sentence 1' } else { 'no' }))
+    Write-Host ("    Greeting own para (BAD): " + $(if ($greetingOnOwnLine) { 'YES -- needs inlining with sentence 1' } else { 'no' }))
     Write-Host ("    Booking mention:  " + $(if ($mentionsBooking) { 'YES' } else { 'NO' }))
     Write-Host ("    Banned hits:      " + $(if ($bannedHits.Count -eq 0) { 'none' } else { $bannedHits -join ', ' }))
     Write-Host ("    P1: " + $paras[0].Substring(0, [Math]::Min(80, $paras[0].Length)))

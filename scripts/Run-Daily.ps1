@@ -1,11 +1,11 @@
-# Run-Daily.ps1 — Daily Task Scheduler entrypoint.
+# Run-Daily.ps1 -- Daily Task Scheduler entrypoint.
 #
 # Flow:
-#   1. git pull --rebase (pick up config updates from other sessions — affects
+#   1. git pull --rebase (pick up config updates from other sessions -- affects
 #      dept mapping and services.yml used by draft-reply skill)
-#   2. Check-Replies.ps1 (writes tracking/replies/{date}.md — gitignored, no commit)
+#   2. Check-Replies.ps1 (writes tracking/replies/{date}.md -- gitignored, no commit)
 #
-# Pull failure does not block the reply check — we'd rather run with slightly
+# Pull failure does not block the reply check -- we'd rather run with slightly
 # stale config than miss a reply.
 
 param(

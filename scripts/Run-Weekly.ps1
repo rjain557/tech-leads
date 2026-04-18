@@ -1,4 +1,4 @@
-# Run-Weekly.ps1 — Weekly Task Scheduler entrypoint.
+# Run-Weekly.ps1 -- Weekly Task Scheduler entrypoint.
 #
 # Flow:
 #   1. git pull --rebase (pick up config/lessons updates from other sessions)
@@ -8,7 +8,7 @@
 #
 # Any step can fail without blocking the others. Task exit code reflects worst case.
 #
-# The pull is ff-only by default — if the local tree has uncommitted changes
+# The pull is ff-only by default -- if the local tree has uncommitted changes
 # that'd conflict with remote, the pull aborts and we skip the pull but still
 # run the scan + local commit. This avoids silent state divergence.
 
@@ -65,7 +65,7 @@ try {
     # --- 3. Commit scan results and push ---
     if (-not $SkipGit -and -not $SkipScan) {
         Write-Step "Commit + push scan results"
-        # Stage only the scan-owned paths — never sweep in config changes or stray files
+        # Stage only the scan-owned paths -- never sweep in config changes or stray files
         & git add leads/ tracking/known-companies.json tracking/lead-log.md 2>&1 | Write-Host
 
         $staged = (& git diff --cached --name-only) -join "`n"
@@ -86,7 +86,7 @@ try {
                             try { if ([datetime]::Parse($sp.Value.last_seen_utc) -ge $cutoff) { $deptCount[(Get-Department -ServiceSlug $sp.Name)]++ } } catch {}
                         }
                     }
-                    $msg = "Weekly scan $today — Tech Support: $($deptCount['Tech Support']), Dev: $($deptCount['Development']), SEO: $($deptCount['SEO'])"
+                    $msg = "Weekly scan $today -- Tech Support: $($deptCount['Tech Support']), Dev: $($deptCount['Development']), SEO: $($deptCount['SEO'])"
                 }
             } catch { Write-Host "Message build warn: $_" }
 

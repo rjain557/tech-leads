@@ -1,9 +1,9 @@
-# Install-Tasks.ps1 — One-shot installer for the two scheduled tasks.
+# Install-Tasks.ps1 -- One-shot installer for the two scheduled tasks.
 #
 #   Weekly scan:  every Monday 06:00 local -> scan_jobs.py --scope all
 #   Daily reply:  Mon-Fri 08:00 local       -> Check-Replies.ps1
 #
-# Idempotent — re-running replaces existing tasks. Run once per workstation.
+# Idempotent -- re-running replaces existing tasks. Run once per workstation.
 # Requires Python on PATH for the weekly scan task; the daily task is pure PowerShell.
 #
 # Usage:
@@ -39,7 +39,7 @@ $scanAction = New-ScheduledTaskAction -Execute "powershell.exe" -Argument "-NoPr
 $scanTrigger = New-ScheduledTaskTrigger -Weekly -DaysOfWeek Friday -At 6:00am
 $scanSettings = New-ScheduledTaskSettingsSet -StartWhenAvailable -DontStopOnIdleEnd -ExecutionTimeLimit (New-TimeSpan -Hours 1)
 Register-ScheduledTask -TaskName $TaskScan -Action $scanAction -Trigger $scanTrigger -Settings $scanSettings -Description "Technijian lead-gen weekly scan (SerpAPI) + department digest email" | Out-Null
-Write-Host "Installed: $TaskScan (Fri 06:00 — scan + digest chained)"
+Write-Host "Installed: $TaskScan (Fri 06:00 -- scan + digest chained)"
 
 # --- Daily reply check (git pull + Check-Replies chained via Run-Daily.ps1) ---
 Remove-TaskIfExists $TaskReply
@@ -48,7 +48,7 @@ $replyAction = New-ScheduledTaskAction -Execute "powershell.exe" -Argument "-NoP
 $replyTrigger = New-ScheduledTaskTrigger -Weekly -DaysOfWeek Monday,Tuesday,Wednesday,Thursday,Friday -At 8:00am
 $replySettings = New-ScheduledTaskSettingsSet -StartWhenAvailable -DontStopOnIdleEnd -ExecutionTimeLimit (New-TimeSpan -Minutes 15)
 Register-ScheduledTask -TaskName $TaskReply -Action $replyAction -Trigger $replyTrigger -Settings $replySettings -Description "Technijian lead-gen daily reply safety-net (pulls config from other sessions first)" | Out-Null
-Write-Host "Installed: $TaskReply (Mon-Fri 08:00 — pull + reply check)"
+Write-Host "Installed: $TaskReply (Mon-Fri 08:00 -- pull + reply check)"
 
 Write-Host ""
 Write-Host "Both tasks installed. Manage via Task Scheduler UI or:"

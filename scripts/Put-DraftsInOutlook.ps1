@@ -25,7 +25,7 @@ param(
 # Default is Touch 1 only. Multi-touch auto-cadence reads as automation to recipients
 # (and feels spammy to send 3 emails to one person about one job posting).
 # Touches 2 and 3 are still rendered locally in templates/drafts/{date}/ for cases
-# where rjain decides a specific lead merits a follow-up — push them individually
+# where rjain decides a specific lead merits a follow-up -- push them individually
 # with -Touch 2 / -Touch 3 / -Touch all when warranted.
 
 function Build-ContactTodoBlockHtml {
